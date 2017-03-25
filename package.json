@@ -1,0 +1,48 @@
+{
+  "name": "outworlders",
+  "version": "1.0.0",
+  "description": "Website for the Atlanta Outworders",
+  "main": "index.js",
+  "scripts": {
+    "styleguide": "styleguide --kssSource ./dist/public/css/styles.css --styleSource ./dist/public/css/styles.css --overviewPath README.md --output ./dist/styleguide/ --commonClass sg-common --watch --server --port 3030",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch"
+  },
+  "author": "Christian Hain <christian@crhain.com> (crhain.com)",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "babel-core": "6.24.0",
+    "babel-loader": "6.4.1",
+    "babel-polyfill": "6.23.0",
+    "babel-preset-es2015": "6.24.0",
+    "copy-webpack-plugin": "4.0.1",
+    "css-loader": "0.27.3",
+    "extract-text-webpack-plugin": "2.1.0",
+    "file-loader": "^0.10.1",
+    "imports-loader": "0.7.1",
+    "markdown-toc": "1.1.0",
+    "node-sass": "4.5.1",
+    "postcss-load-config": "1.2.0",
+    "postcss-loader": "1.3.3",
+    "sass-loader": "6.0.3",
+    "sc5-styleguide": "1.5.0",
+    "style-loader": "0.16.0",
+    "url-loader": "0.5.8",
+    "webpack": "2.3.2"
+  },
+  "dependencies": {
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "node-sass": "^4.5.1",
+    "postcss-load-config": "^1.2.0",
+    "sc5-styleguide": "^1.5.0",
+    "webpack": "^2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CRHain88/outworlders.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CRHain88/outworlders/issues"
+  }
+}
