@@ -6,8 +6,11 @@ Navigation
 markup:
 <div class="navigation">
     <sg-insert>3.1</sg-insert>
-    <sg-insert>3.2</sg-insert>
-    <sg-insert>3.3</sg-insert>
+    <sg-insert>3.2.1-1</sg-insert>
+    <div class="navigation__menu">
+        <sg-insert>3.2</sg-insert>
+        <sg-insert>3.3</sg-insert>
+    </div>
 </div>
 
 Styleguide 3.0.0
@@ -15,8 +18,38 @@ Styleguide 3.0.0
 
 .navigation {
     position: relative;
+
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
 }
 
+.navigation__menu {
+     @media (min-width: $navigation-breakpoint) {
+        float: right;
+    }
+
+    .navigation__list--sections {
+        @media (min-width: $navigation-breakpoint) {
+            float: left;
+        }
+    }
+
+    .navigation__list--social {
+        @media (min-width: $navigation-breakpoint) {
+            float: right;
+            margin: 4px 0 0 1rem;
+        }
+    }
+}
+
+.navigation__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
 /*
 Navigation Logo
@@ -26,9 +59,7 @@ markup:
 
 sg-wrapper:
 <div class="navigation">
-    <div class="navigation__menu">
-        <sg-wrapper-content/>
-    </div>
+    <sg-wrapper-content/>
 </div>
 
 Styleguide 3.1.0
@@ -45,15 +76,12 @@ Styleguide 3.1.0
 Navigation Menu
 
 markup:
-<div class="navigation__menu">
-    <sg-insert>3.2.1-1</sg-insert>
-    <ul class="navigation__list navigation__menu-list">
-        <sg-insert>3.2.2-2</sg-insert>
-        <sg-insert>3.2.2-1</sg-insert>
-        <sg-insert>3.2.2-1</sg-insert>
-        <sg-insert>3.2.2-1</sg-insert>
-    </ul>
-</div>
+<ul class="navigation__list navigation__list--sections">
+            <sg-insert>3.2.2-2</sg-insert>
+            <sg-insert>3.2.2-1</sg-insert>
+            <sg-insert>3.2.2-1</sg-insert>
+            <sg-insert>3.2.2-1</sg-insert>
+        </ul>
 
 sg-wrapper:
 <div class="navigation">
@@ -62,14 +90,6 @@ sg-wrapper:
 
 Styleguide 3.2.0
 */
-
-.navigation__menu {
-    &:after {
-        clear: both;
-        content: "";
-        display: table;
-    }
-}
 
 
 /*
@@ -83,9 +103,7 @@ markup:
 
 sg-wrapper:
 <div class="navigation">
-    <div class="navigation__menu">
-        <sg-wrapper-content/>
-    </div>
+    <sg-wrapper-content/>
 </div>
 <i style="display: block; font-size: 10px; letter-spacing: .1em; opacity: .5; width: 50%;">Note: This item disappears at larger screen sizes</i>
 
@@ -185,28 +203,13 @@ markup:
 
 sg-wrapper:
 <div class="navigation">
-    <div class="navigation__menu">
-        <ul class="navigation__list">
-            <sg-wrapper-content/>
-        </ul>
-    </div>
+    <ul class="navigation__list">
+        <sg-wrapper-content/>
+    </ul>
 </div>
 
 Styleguide 3.2.2
 */
-
-.navigation__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navigation__menu-list {
-    @media (min-width: $navigation-breakpoint) {
-        float: right;
-        margin-right: 6rem;
-    }
-}
 
 .navigation__menu-item {
     text-align: center;
@@ -241,23 +244,21 @@ Styleguide 3.2.2
 Navigation Social
 
 markup:
-<ul class="navigation__list navigation__social">
-    <li class="navigation__social-item"><sg-insert>3.3.1-1</sg-insert></li>
-    <li class="navigation__social-item"><sg-insert>3.3.1-2</sg-insert></li>
-    <li class="navigation__social-item"><sg-insert>3.3.1-3</sg-insert></li>
-</ul>
+<ul class="navigation__list--social">
+            <li class="navigation__list--social-item"><sg-insert>3.3.1-1</sg-insert></li>
+            <li class="navigation__list--social-item"><sg-insert>3.3.1-2</sg-insert></li>
+            <li class="navigation__list--social-item"><sg-insert>3.3.1-3</sg-insert></li>
+        </ul>
 
 sg-wrapper:
 <div class="navigation">
-    <div class="navigation__menu">
-        <sg-wrapper-content/>
-    </div>
+    <sg-wrapper-content/>
 </div>
 
 Styleguide 3.3.0
 */
 
-.navigation__social {
+.navigation__list--social {
     border-top: 1px solid rgba($white, .2);
     margin: 1rem auto 0;
     padding: 1rem 0 0;
@@ -273,13 +274,10 @@ Styleguide 3.3.0
         border: 0;
         margin: 0;
         padding: 0;
-        position: absolute;
-        right: 1rem;
-        top: .2rem;
     }
 }
 
-.navigation__social-item {
+.navigation__list--social-item {
     float: left;
 
     & + & {
@@ -296,13 +294,11 @@ markup:
 
 sg-wrapper:
 <div class="navigation">
-    <div class="navigation__menu">
-        <ul class="navigation__list">
-            <li class="navigation__social-item">
-                <sg-wrapper-content/>
-            </li>
-        </ul>
-    </div>
+    <ul class="navigation__list">
+        <li class="navigation__list--social-item">
+            <sg-wrapper-content/>
+        </li>
+    </ul>
 </div>
 
 .social-item.social-item--facebook - Facebook social icon

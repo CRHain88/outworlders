@@ -2,20 +2,22 @@ var gulp = require('gulp');
 var copy = require('gulp-copy');
 var runSequence = require('run-sequence');
 
-var distPublic = './dist/public/';
+var dist = './dist/';
+var distPublic = dist + './public/';
 
 gulp.task('default', function() {
     'use strict';
 
     runSequence(
-        ['copy:assets']
+        ['copy:repo-meta']
     );
 });
 
-gulp.task('copy:assets', function() {
+gulp.task('copy:repo-meta', function() {
     return gulp.src([
-        './src/public/assets/',
-    ], {})
-    .pipe(copy(distPublic))
-    .dest(distPublic);
+            './package.json',
+            './README.md',
+            './LICENSE',
+        ])
+    .pipe(copy(dist, { prefix: 2 }));
 });
