@@ -1,11 +1,18 @@
 @import "_colors";
 
-@import "components/_card";
+@import "components/1.0.typography/_index";
+@import "components/2.0.card/_index";
 
 /* styleguide:ignore:start */
+body {
+    background-color: $black;
+    color: $white;
+    font-family: Helvetica Neue, Arial, sans-serif;
+}
 // Style-guide specific classes
 .sg-common {
-    background: $black;
+    @extend body;
+    background-color: rgba($black, 1);
     padding: 2em 1em;
 }
 /* styleguide:ignore:end */

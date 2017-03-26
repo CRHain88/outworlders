@@ -1,0 +1,55 @@
+/*
+Card Header
+
+markup:
+<div class="{$modifiers}"></div>
+
+sg-wrapper:
+<div class="card card--light card--orange card--no-border">
+    <div class="card__container">
+        <sg-wrapper-content/>
+    </div>
+</div>
+
+.card__header - A card with no header styling.
+.card__header.card__header--solid - A card with a solid header styling.
+
+Styleguide 2.2.0
+*/
+
+.card__header--solid {
+    @media(min-width: 500px) {
+        margin: -1em -1em 0;
+        padding: 1em;
+    }
+}
+
+.card--blue .card__header--solid {
+    @media(min-width: 500px) {
+        background-color: $blue;
+    }
+}
+
+.card--orange .card__header--solid {
+    @media(min-width: 500px) {
+        background-color: $orange;
+    }
+}
+
+.card--pink .card__header--solid {
+    @media(min-width: 500px) {
+        background-color: $pink;
+    }
+}
+
+.card--purple .card__header--solid {
+    @media(min-width: 500px) {
+        background-color: $purple;
+    }
+}
+
+.card--teal .card__header--solid {
+    @media(min-width: 500px) {
+        background-color: $teal  ;
+    }
+}

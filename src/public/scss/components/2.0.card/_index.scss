@@ -1,0 +1,44 @@
+@import "_2.1.base";
+@import "_2.2.header";
+
+/*
+Card
+
+markup:
+<div class="card card--light card--pink">
+    <div class="card__container">
+        <div class="card__header">
+            <sg-insert>1.1.1</sg-insert>
+        </div>
+        <sg-insert>1.1.2</sg-insert>
+        <sg-insert>1.2.1</sg-insert>
+        <sg-insert>1.3</sg-insert>
+    </div>
+</div>
+<div class="card card--dark card--orange card--no-border">
+    <div class="card__container">
+        <div class="card__header card__header--solid">
+            <sg-insert>1.1.1</sg-insert>
+        </div>
+        <sg-insert>1.1.2</sg-insert>
+        <sg-insert>1.2.1</sg-insert>
+        <sg-insert>1.3</sg-insert>
+    </div>
+</div>
+
+Styleguide 2.0.0
+*/
+
+/*
+Card Wrapper
+
+Ignore this sub-section, it's here just to help keep this part of the styleguide
+consistent
+
+markup:
+<div class="card__container">
+        <sg-wrapper-content/>
+    </div>
+
+Styleguide 9.2
+*/

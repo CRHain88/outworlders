@@ -1,0 +1,185 @@
+/*
+Typography
+
+Styleguide 1.0.0
+*/
+
+/*
+Typography Wrapper
+
+Ignore this sub-section, it's here just to help keep this part of the styleguide
+consistent
+
+markup:
+<div class="card--dark" style="background: #250f2c; padding: 2em 1em; margin: -2em -1em 0;">
+    <sg-wrapper-content/>
+</div>
+<div class="card--light" style="background: #fff; padding: 1em; margin: 0 -1em -2em;">
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 9.1
+*/
+
+//////////////////////////////////////////////////////////////////////////////// Headings
+
+/*
+Headings
+
+This section contains all the styles for headings.
+
+Styleguide 1.1
+*/
+
+/*
+H1
+
+markup:
+<h1>I may be dead, but I’m still pretty</h1>
+
+sg-wrapper:
+<sg-insert>9.1</sg-insert>
+
+Styleguide 1.1.1
+*/
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/*
+H2
+
+markup:
+<h2>If the apocalypse comes, beep me</h2>
+
+sg-wrapper:
+<sg-insert>9.1</sg-insert>
+
+Styleguide 1.1.2
+*/
+
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/*
+H3
+
+markup:
+<h3>The Earth is doomed</h3>
+
+sg-wrapper:
+<sg-insert>9.1</sg-insert>
+
+Styleguide 1.1.3
+*/
+
+h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/*
+H4
+
+markup:
+<h4>Seize the moment, 'cause tomorrow you might be dead.</h4>
+
+sg-wrapper:
+<sg-insert>9.1</sg-insert>
+
+Styleguide 1.1.4
+*/
+
+h4 {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+
+    .card--dark & {letter-spacing: .05em; }
+    .card--light & {letter-spacing: .025em; }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////// Paragraphs
+
+/*
+Paragraphs
+
+This section contains all the styles for paragraphs.
+
+Styleguide 1.2.0
+*/
+
+/*
+Paragraphs
+
+markup:
+<p>You’re not friends. You’ll never be friends. Love isn’t brains, children, it’s blood. Blood screaming inside you to work its will. I may be love’s bitch, but at least I’m man enough to admit it.</p>
+<p>Strong is fighting. It’s hard and it’s painful and it’s every day. It’s what we have to do, and we can do it together, but if you’re too much of a coward for that, then burn.</p>
+
+sg-wrapper:
+<sg-insert>9.1</sg-insert>
+
+Styleguide 1.2.1
+*/
+
+p {
+    font-weight: 300;
+    margin: 0;
+
+    & + & {
+        margin-top: 1rem;
+    }
+
+    .card--dark & {letter-spacing: .05em; }
+    .card--light & {letter-spacing: .025em; }
+}
+
+/*
+Small-Set Paragraphs
+
+markup:
+<p class="small">You’re not friends. You’ll never be friends. Love isn’t brains, children, it’s blood. Blood screaming inside you to work its will. I may be love’s bitch, but at least I’m man enough to admit it.</p>
+<p class="small">Strong is fighting. It’s hard and it’s painful and it’s every day. It’s what we have to do, and we can do it together, but if you’re too much of a coward for that, then burn.</p>
+
+sg-wrapper:
+<sg-insert>9.1</sg-insert>
+
+Styleguide 1.2.2
+*/
+
+p.small {
+    font-size: 14px;
+}
+
+/*
+Links
+
+markup:
+<p>I’m beyond tired. I’m beyond scared. I’m standing on the <a class="inline-link" href>mouth of hell</a>, and it’s gonna swallow me whole. And it’ll choke on me. We’re not ready? They’re not ready.</p>
+
+sg-wrapper:
+<sg-insert>9.1</sg-insert>
+
+Styleguide 1.3.0
+ */
+
+.inline-link {
+    color: $teal;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0;
+
+    &:hover {
+        color: rgba($teal, .6);
+    }
+
+    .card--light { letter-spacing: 0; }
+}
