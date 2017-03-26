@@ -1,0 +1,343 @@
+$navigation-breakpoint: 500px;
+
+/*
+Navigation
+
+markup:
+<div class="navigation">
+    <sg-insert>3.1</sg-insert>
+    <sg-insert>3.2</sg-insert>
+    <sg-insert>3.3</sg-insert>
+</div>
+
+Styleguide 3.0.0
+*/
+
+.navigation {
+    position: relative;
+}
+
+
+/*
+Navigation Logo
+
+markup:
+<h1 class="navigation__logo">Atlanta Outworlders</h1>
+
+sg-wrapper:
+<div class="navigation">
+    <div class="navigation__menu">
+        <sg-wrapper-content/>
+    </div>
+</div>
+
+Styleguide 3.1.0
+*/
+
+.navigation__logo {
+    @media (min-width: $navigation-breakpoint) {
+        float: left;
+    }
+}
+
+
+/*
+Navigation Menu
+
+markup:
+<div class="navigation__menu">
+    <sg-insert>3.2.1-1</sg-insert>
+    <ul class="navigation__list navigation__menu-list">
+        <sg-insert>3.2.2-2</sg-insert>
+        <sg-insert>3.2.2-1</sg-insert>
+        <sg-insert>3.2.2-1</sg-insert>
+        <sg-insert>3.2.2-1</sg-insert>
+    </ul>
+</div>
+
+sg-wrapper:
+<div class="navigation">
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 3.2.0
+*/
+
+.navigation__menu {
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+
+/*
+Navigation Toggle
+
+.navigation__menu-toggle - Default navigation menu toggle
+.navigation__menu-toggle.navigation__menu-toggle--close - Default navigation menu toggle
+
+markup:
+<button class="{$modifiers}"><i></i><span>Menu</span></button>
+
+sg-wrapper:
+<div class="navigation">
+    <div class="navigation__menu">
+        <sg-wrapper-content/>
+    </div>
+</div>
+<i style="display: block; font-size: 10px; letter-spacing: .1em; opacity: .5; width: 50%;">Note: This item disappears at larger screen sizes</i>
+
+Styleguide 3.2.1
+*/
+
+.navigation__menu-toggle {
+    background: 0;
+    border: 0;
+    color: $white;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.125em;
+    margin: 0 -.5rem;
+    outline: 0;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    top: 0;
+
+    @media (min-width: $navigation-breakpoint) {
+        display: none;
+    }
+}
+
+.navigation__menu-toggle i {
+    &,
+    &:after,
+    &:before {
+        position: relative;
+        background-color: $white;
+        display: block;
+        height: 2px;
+        width: 1rem;
+        content: "";
+    }
+    top: 7px;
+    left: -1.5rem;
+
+    &:before {
+        top: -4px;
+    }
+
+    &:after {
+        bottom: -2px;
+    }
+}
+
+.navigation__menu-toggle:hover i {
+    &,
+    &:after,
+    &:before {
+        background-color: $teal;
+    }
+}
+
+.navigation__menu-toggle--close i,
+.navigation__menu-toggle--close:hover i {
+    background-color: rgba($white, 0);
+}
+
+.navigation__menu-toggle--close i {
+    &:after,
+    &:before {
+        background-color: $pink;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+        bottom: 2px;
+    }
+}
+
+.navigation__menu-toggle--close:hover i {
+    &:after,
+    &:before {
+        background-color: rgba($pink, .8);
+    }
+}
+
+
+/*
+Navigation Links
+
+.navigation__menu-item - Default navigation menu item
+.navigation__menu-item.navigation__menu-item--active - Active navigation menu item
+
+markup:
+<li class="{$modifiers}"><a class="navigation__menu-link" href>Menu Link</a></li>
+
+sg-wrapper:
+<div class="navigation">
+    <div class="navigation__menu">
+        <ul class="navigation__list">
+            <sg-wrapper-content/>
+        </ul>
+    </div>
+</div>
+
+Styleguide 3.2.2
+*/
+
+.navigation__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation__menu-list {
+    @media (min-width: $navigation-breakpoint) {
+        float: right;
+        margin-right: 6rem;
+    }
+}
+
+.navigation__menu-item {
+    text-align: center;
+    font-weight: 300;
+    @media (min-width: $navigation-breakpoint) {
+        float: left;
+        font-size: 10px;
+        font-weight: 400;
+    }
+}
+
+.navigation__menu-item--active {
+    background-color: rgba($teal, .45);
+    border: 1px solid $teal;
+}
+
+.navigation__menu-link {
+    color: $white;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: block;
+    padding: 0.5rem;
+
+    &:hover {
+        color: $teal;
+    }
+}
+
+
+/*
+Navigation Social
+
+markup:
+<ul class="navigation__list navigation__social">
+    <li class="navigation__social-item"><sg-insert>3.3.1-1</sg-insert></li>
+    <li class="navigation__social-item"><sg-insert>3.3.1-2</sg-insert></li>
+    <li class="navigation__social-item"><sg-insert>3.3.1-3</sg-insert></li>
+</ul>
+
+sg-wrapper:
+<div class="navigation">
+    <div class="navigation__menu">
+        <sg-wrapper-content/>
+    </div>
+</div>
+
+Styleguide 3.3.0
+*/
+
+.navigation__social {
+    border-top: 1px solid rgba($white, .2);
+    margin: 1rem auto 0;
+    padding: 1rem 0 0;
+    width: 68px;
+
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    @media (min-width: $navigation-breakpoint) {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 1rem;
+        top: .2rem;
+    }
+}
+
+.navigation__social-item {
+    float: left;
+
+    & + & {
+        margin-left: .25rem;
+    }
+}
+
+
+/*
+Navigation Social Item
+
+markup:
+<a class="{$modifiers}" href>Social Network</a>
+
+sg-wrapper:
+<div class="navigation">
+    <div class="navigation__menu">
+        <ul class="navigation__list">
+            <li class="navigation__social-item">
+                <sg-wrapper-content/>
+            </li>
+        </ul>
+    </div>
+</div>
+
+.social-item.social-item--facebook - Facebook social icon
+.social-item.social-item--twitter - Twitter social icon
+.social-item.social-item--instagram - Instagram social icon
+
+Styleguide 3.3.1
+*/
+
+.social-item {
+    width: 20px;
+    height: 20px;
+    display: block;
+    overflow: hidden;
+    text-indent: 21px;
+}
+
+.social-item--facebook {
+    background-color: $pink;
+
+    &:hover {
+        background-color: rgba($pink, .8);
+    }
+}
+.social-item--twitter {
+    background-color: $purple;
+
+    &:hover {
+        background-color: rgba($purple, .8);
+    }
+}
+.social-item--instagram {
+    background-color: $teal;
+
+    &:hover {
+        background-color: rgba($teal, .8);
+    }
+}

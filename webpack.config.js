@@ -28,15 +28,19 @@ function getPlugins(customPlugins) {
 
     // Copy config files.
     // This must come before the generic folder for the settings to take hold.
-    plugins.push(new CopyWebpackPlugin([
-        // { from: path.join(__dirname, './src/craft-db-config.php'),      to: dist + 'craft/config/db.php' },
-        // { from: path.join(__dirname, './src/craft-general-config.php'), to: dist + 'craft/config/general.php' },
-        // { from: path.join(__dirname, './src/craft-license.key'),        to: dist + 'craft/config/license.key' },
-    ]));
+    // plugins.push(new CopyWebpackPlugin([
+    //     { from: path.join(__dirname, './src/craft-db-config.php'),      to: dist + 'craft/config/db.php' },
+    //     { from: path.join(__dirname, './src/craft-general-config.php'), to: dist + 'craft/config/general.php' },
+    //     { from: path.join(__dirname, './src/craft-license.key'),        to: dist + 'craft/config/license.key' },
+    // ]));
+
+    console.log(distPublic + 'assets/');
 
     plugins.push(new CopyWebpackPlugin([
         { from: path.join(__dirname, './package.json'),             to: dist + 'package.json' },
         { from: path.join(__dirname, './README.md'),                to: dist + 'README.md' },
+        { from: path.join(__dirname, './LICENSE.md'),               to: dist + 'LICENSE.md' },
+        { from: path.join(__dirname, './src/asset/'),               to: distPublic + 'assets/' },
         // { from: path.join(__dirname, './src/craft/'),               to: dist + 'craft' },
         // { from: path.join(__dirname, './src/public/templates/'),    to: distPublic + 'templates' },
         // { from: path.join(__dirname, './src/public/assets/fonts/'), to: distPublic + 'assets/fonts' },
@@ -50,7 +54,6 @@ function getPlugins(customPlugins) {
     if (envIsProd) {
         plugins.push(new webpack.optimize.UglifyJsPlugin());
     } else {
-        plugins.push(new DashboardPlugin());
         plugins.push(new CopyWebpackPlugin([
             { from: path.join(__dirname, './uploads/'), to: dist + '/uploads' },
         ]));
