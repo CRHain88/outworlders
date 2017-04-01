@@ -1,0 +1,46 @@
+/*
+Card Headings
+
+markup:
+<h2 class="card__heading">I think I know why Joan's the boss!</h2>
+
+sg-wrapper:
+<div class="card card--light card--blue">
+    <div class="card__container">
+        <sg-wrapper-content/>
+        <p>I'm like a superhero or something!</p>
+    </div>
+</div>
+<div class="card card--light card--orange">
+    <div class="card__container">
+        <sg-wrapper-content/>
+        <p>I'm like a superhero or something!</p>
+    </div>
+</div>
+<div class="card card--light card--pink">
+    <div class="card__container">
+        <sg-wrapper-content/>
+        <p>I'm like a superhero or something!</p>
+    </div>
+</div>
+<div class="card card--light card--purple">
+    <div class="card__container">
+        <sg-wrapper-content/>
+        <p>I'm like a superhero or something!</p>
+    </div>
+</div>
+<div class="card card--light card--teal">
+    <div class="card__container">
+        <sg-wrapper-content/>
+        <p>I'm like a superhero or something!</p>
+    </div>
+</div>
+
+Styleguide 2.3.0
+*/
+
+.card--blue   .card__heading { color: $blue; }
+.card--orange .card__heading { color: $orange; }
+.card--pink   .card__heading { color: $pink; }
+.card--purple .card__heading { color: $purple; }
+.card--teal   .card__heading { color: $teal; }
