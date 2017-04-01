@@ -3,12 +3,14 @@
 @import "components/1.0.typography/_index";
 @import "components/2.0.card/_index";
 @import "components/3.0.navigation/_index";
+@import "components/5.0.elements/_index";
 
 /* styleguide:ignore:start */
 body {
     background-color: $black;
     color: $white;
     font-family: Helvetica Neue, Arial, sans-serif;
+    margin: 0;
 }
 // Style-guide specific classes
 .sg-common {

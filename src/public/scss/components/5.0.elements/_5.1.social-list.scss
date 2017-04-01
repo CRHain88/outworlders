@@ -1,0 +1,83 @@
+/*
+Social List
+
+markup:
+<ul class="social-list">
+    <li><sg-insert>5.1.1-1</sg-insert></li>
+    <li><sg-insert>5.1.1-2</sg-insert></li>
+    <li><sg-insert>5.1.1-3</sg-insert></li>
+</ul>
+
+Styleguide 5.1.0
+*/
+
+.social-list {
+    list-style: none;
+    padding: 0;
+
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+.social-list li {
+    float: left;
+}
+
+.social-list li + li {
+    margin-left: .25rem;
+}
+
+/*
+Social Item
+
+markup:
+<a class="{$modifiers}" href>Social Network</a>
+
+sg-wrapper:
+<div class="navigation">
+    <ul class="navigation__list">
+        <li class="navigation__list-item--social">
+            <sg-wrapper-content/>
+        </li>
+    </ul>
+</div>
+
+.social-item.social-item--facebook - Facebook social icon
+.social-item.social-item--twitter - Twitter social icon
+.social-item.social-item--instagram - Instagram social icon
+
+Styleguide 5.1.1
+*/
+
+.social-item {
+    width: 20px;
+    height: 20px;
+    display: block;
+    overflow: hidden;
+    text-indent: 21px;
+}
+
+.social-item--facebook {
+    background-color: $pink;
+
+    &:hover {
+        background-color: rgba($pink, .8);
+    }
+}
+.social-item--twitter {
+    background-color: $purple;
+
+    &:hover {
+        background-color: rgba($purple, .8);
+    }
+}
+.social-item--instagram {
+    background-color: $teal;
+
+    &:hover {
+        background-color: rgba($teal, .8);
+    }
+}
