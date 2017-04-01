@@ -7,6 +7,7 @@ var envIsProd = (process.env.NODE_ENV === 'production');
 
 var dist = path.join(__dirname, './dist/');
 var distPublic = path.join(__dirname, './dist/public/');
+var distStyleguide = path.join(__dirname, './dist/styleguide/');
 
 function getWatch() {
     return (!envIsProd) ? true : false;
@@ -46,9 +47,16 @@ module.exports = [
         },
         plugins: [
             new ExtractTextPlugin('[name].css'),
+
+            // Copy CSS Assets to the main dist foler.
             new CopyWebpackPlugin([
                 { from: path.join(__dirname, './src/public/assets/'), to: distPublic + 'assets/' },
-            ])
+            ]),
+
+            // Copy the same assets to the styleguide dist foler.
+            new CopyWebpackPlugin([
+                { from: path.join(__dirname, './src/public/assets/'), to: distStyleguide + 'assets/' },
+            ]),
         ],
     },
 ];

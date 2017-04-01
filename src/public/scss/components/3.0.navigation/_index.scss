@@ -17,6 +17,8 @@ Styleguide 3.0.0
 */
 
 .navigation {
+    background: $black;
+    min-height: 50px;
     position: relative;
 
     &:after {
@@ -29,6 +31,7 @@ Styleguide 3.0.0
 .navigation__menu {
      @media (min-width: $navigation-breakpoint) {
         float: right;
+        margin-top: 1rem;
     }
 
     .navigation__list--sections {
@@ -40,7 +43,7 @@ Styleguide 3.0.0
     .navigation__list--social {
         @media (min-width: $navigation-breakpoint) {
             float: right;
-            margin: 4px 0 0 1rem;
+            margin: 5px 0 0 1rem;
         }
     }
 }
@@ -66,6 +69,14 @@ Styleguide 3.1.0
 */
 
 .navigation__logo {
+    background-image: url('/assets/logo-navigation.png');
+    background-repeat: no-repeat;
+    background-size: 194px 37px;
+    height: 47px;
+    overflow: hidden;
+    text-indent: 195px;
+    width: 194px;
+
     @media (min-width: $navigation-breakpoint) {
         float: left;
     }
@@ -124,7 +135,7 @@ Styleguide 3.2.1
     position: absolute;
     right: 0;
     text-transform: uppercase;
-    top: 0;
+    top: 12px;
 
     @media (min-width: $navigation-breakpoint) {
         display: none;
@@ -214,10 +225,12 @@ Styleguide 3.2.2
 .navigation__menu-item {
     text-align: center;
     font-weight: 300;
+
     @media (min-width: $navigation-breakpoint) {
         float: left;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 400;
+        letter-spacing: 0.1em;
     }
 }
 
@@ -229,7 +242,6 @@ Styleguide 3.2.2
 .navigation__menu-link {
     color: $white;
     text-decoration: none;
-    letter-spacing: 0.05em;
     text-transform: uppercase;
     display: block;
     padding: 0.5rem;
