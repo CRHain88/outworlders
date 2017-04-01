@@ -1,0 +1,29 @@
+/*
+Notification Banner
+
+markup:
+<div class="notification-banner [ card card--pink ]">
+    <div class="card__container">
+        <ul>
+            <li>
+                <h2 class="card__heading">I killed Angel!</h2>
+                <p>I loved him more than I will ever love anything in this life and I put a sword through his heart because I had to.</p>
+            </li>
+            <li>
+                <h2 class="card__heading">What was the highlight of our relationship?</h2>
+                <p>When you broke up with me or when I killed you?</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+Styleguide 5.2.0
+*/
+
+.notification-banner ul {
+    list-style: none;
+    padding: 0;
+}
+.notification-banner li + li {
+    margin-top: 1rem;
+}
