@@ -10,7 +10,7 @@ gulp.task('default', function() {
     'use strict';
 
     runSequence(
-        ['copy:repo-meta', 'copy:craft', 'copy:public-root-files'],
+        ['copy:repo-meta', 'copy:craft'],
         ['rename:craft-db-config', 'rename:craft-general-config']
     );
 });
@@ -30,14 +30,6 @@ gulp.task('copy:craft', function() {
         './src/craft/**/.*',
     ])
     .pipe(copy(dist, { prefix: 1 }))
-});
-
-gulp.task('copy:public-root-files', function() {
-    return gulp.src([
-        './src/public/*',
-        './src/public/.*',
-    ])
-    .pipe(copy(distPublic, { prefix: 2 }));
 });
 
 gulp.task('rename:craft-db-config', function() {

@@ -1,0 +1,16 @@
+{% if craft.entries.section('notifications') is not empty %}
+<div class="content">
+    <div class="notification-banner [ card card--pink card--dark ]">
+        <div class="card__container">
+            <ul>
+                {% for entry in craft.entries.section('notifications') %}
+                    <li>
+                        <h3 class="card__heading">{{ entry }}</h3>
+                        <p>{{ entry.text }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endif %}

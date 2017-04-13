@@ -57,6 +57,13 @@ module.exports = [
             new CopyWebpackPlugin([
                 { from: path.join(__dirname, './src/public/assets/'), to: distStyleguide + 'assets/' },
             ]),
+
+            new CopyWebpackPlugin([
+                { from: path.join(__dirname, './src/public/.htaccess'), to: distPublic },
+                { from: path.join(__dirname, './src/public/index.php'), to: distPublic },
+                { from: path.join(__dirname, './src/public/robots.txt'), to: distPublic },
+                { from: path.join(__dirname, './src/public/templates/'), to: distPublic + '/templates' },
+            ]),
         ],
     },
 ];

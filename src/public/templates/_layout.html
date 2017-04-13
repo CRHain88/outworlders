@@ -1,0 +1,102 @@
+{#
+ # Layout template
+ # ---------------
+ #
+ # This template defines your site’s global layout. It can be
+ # “extended” by other templates to fill in the gaps.
+ #
+ # See Twig’s Template Inheritance documentation for more details:
+ # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
+ #}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+        <link rel="home" href="{{ siteUrl }}" />
+        <link rel="stylesheet" href="/css/styles.css"/>
+
+        <style>
+            .action-bar {
+                margin: .5rem 0 0;
+                padding: .5rem 0 0;
+                border-top: 1px solid black;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: flex-end;
+            }
+
+            .card__header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+
+            .content {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .content__primary {
+                box-sizing: border-box;
+                width: calc(65% - .5rem);
+                float: left;
+            }
+            .content__secondary {
+                box-sizing: border-box;
+                width: calc(35% - .5rem);
+                float: right
+            }
+            .events__list {
+                list-style: none;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        {# Define the site navigation #}
+        {% set nav = {
+            home: { title: "Home", uri: "/" },
+            events: { title: "Events", uri: "events" },
+            photos: { title: "Photos", uri: "photos" },
+            contact:  { title: "About / Contact", uri: "contact" }
+        } %}
+
+        <div class="content">
+            <div class="navigation">
+                <h1 class="navigation__logo">Atlanta Outworlders</h1>
+                <button class="navigation__menu-toggle"><i></i><span>Menu</span></button>
+                <div class="navigation__menu">
+                    <ul class="navigation__list navigation__list--sections" role="navigation">
+                        {% for item in nav %}
+                            {% set nav_class %}
+                                {% if craft.request.firstSegment == item.uri or craft.request.firstSegment == '' and item.uri == '/' %}
+                                    navigation__list-item--sections navigation__list-item--active
+                                {% else %}
+                                    navigation__list-item--sections
+                                {% endif %}
+                            {% endset %}
+                            <li class="{{ nav_class }}">
+                                <a class="navigation__menu-link" href="{{ url(item.uri) }}">{{ item.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <ul class="navigation-list--social social-list">
+                        <li><a class="social-item social-item--facebook" href>Facebook</a></li>
+                        <li><a class="social-item social-item--twitter" href>Twitter</a></li>
+                        <li><a class="social-item social-item--instagram" href>Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {% include "components/_notification-banner.twig" %}
+
+        {% block content %}
+            <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+            <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+        {% endblock %}
+
+    </body>
+</html>
