@@ -20,7 +20,16 @@
 {% set title = "404" %}
 
 {% block content %}
-	<h1>Page not found</h1>
-
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+    <div class="content">
+        <div class="officers content__primary [ card card--blue card--light ]">
+            <div class="card__container">
+                <div class="card__header">
+                    <span class="http-error">
+                        <span class="http-error__status-code">[404]</span> Page not found
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <i class="planet planet--glitch"></i>
 {% endblock %}
