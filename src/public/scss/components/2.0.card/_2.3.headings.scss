@@ -39,8 +39,8 @@ sg-wrapper:
 Styleguide 2.3.0
 */
 
-.card--blue   .card__heading { color: $blue; }
-.card--orange .card__heading { color: $orange; }
-.card--pink   .card__heading { color: $pink; }
-.card--purple .card__heading { color: $purple; }
-.card--teal   .card__heading { color: $teal; }
+.card--blue   .card__heading { @extend %color-text--blue; }
+.card--orange .card__heading { @extend %color-text--orange; }
+.card--pink   .card__heading { @extend %color-text--pink; }
+.card--purple .card__heading { @extend %color-text--purple; }
+.card--teal   .card__heading { @extend %color-text--teal; }

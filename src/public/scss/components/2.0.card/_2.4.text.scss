@@ -1,0 +1,5 @@
+.card--blue   .card__color-text { @extend %color-text--blue; }
+.card--orange .card__color-text { @extend %color-text--orange; }
+.card--pink   .card__color-text { @extend %color-text--pink; }
+.card--purple .card__color-text { @extend %color-text--purple; }
+.card--teal   .card__color-text { @extend %color-text--teal; }
