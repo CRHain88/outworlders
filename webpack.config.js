@@ -43,7 +43,7 @@ module.exports = [
                 // },
                 // { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: "url-loader?limit=10000&mimetype=application/font-woff" },
                 // { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, use: "file-loader" },
-            ]
+            ],
         },
         plugins: [
             new ExtractTextPlugin('[name].css'),
@@ -65,5 +65,32 @@ module.exports = [
                 { from: path.join(__dirname, './src/public/templates/'), to: distPublic + '/templates' },
             ]),
         ],
+    },
+    {
+        name: 'js',
+        entry: {
+            js: './src/public/js/index.js',
+        },
+        watch: getWatch(),
+        output: {
+            path: distPublic + '/js',
+            filename: './bundle.[name].js',
+        },
+        module: {
+            loaders: [
+                {
+                    test: /\.js$/,
+                    loader: 'imports-loader',
+                },
+                {
+                    test: /\.js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    loader: 'babel-loader',
+                    query: {
+                        presets: ['es2015'],
+                    },
+                },
+            ],
+        },
     },
 ];

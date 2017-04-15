@@ -35,6 +35,7 @@
     "webpack": "2.3.2"
   },
   "dependencies": {
+    "eq.js": "git+https://github.com/Snugug/eq.js.git#v1.9.0",
     "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "0.10.1",
     "node-sass": "4.5.1",
