@@ -15,17 +15,21 @@
 {% block content %}
     <main>
         <div class="content">
-            <div class="mission [ card card--blue card--light ]">
+            <div class="mission content__primary [ card card--blue card--light ]">
                 <div class="card__container">
-                    <h1>Our Mission</h1>
+                    <div class="card__header">
+                        <h1>Our Mission</h1>
+                    </div>
                     <p>The purposes of this organization, OutWorlders Inc., shall be to have fun and to provide a community which promotes Gay, Lesbian, Bisexual, and Transgendered (GLBT) issues in Science Fiction, Fantasy, and Horror media (SF/F/H), provides forums for those for those with such interests, and promotes the presence of GLBT elements within SF/F/H, within fandom, and within the GLBT community.</p>
                 </div>
             </div>
         </div>
         <div class="content">
-            <div class="officers [ card card--orange card--dark ]">
+            <div class="officers content__secondary [ card card--orange card--transparent card--dark ]">
                 <div class="card__container">
-                    <h1>Officers</h1>
+                    <div class="card__header card__header--solid">
+                        <h1>Officers</h1>
+                    </div>
                     <ul class="officers__list">
                         {% for entry in craft.entries.section('officers') %}
                             {% if entry.members|length %}
