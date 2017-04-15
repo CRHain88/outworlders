@@ -38,15 +38,16 @@
                 max-width: 1200px;
                 margin: 0 auto;
             }
-            .content__primary {
+            .content:after { clear: both; content: ""; display: table; }
+            [data-eq-state~="content--large"] .content__primary {
                 box-sizing: border-box;
-                width: calc(65% - .5rem);
                 float: left;
+                width: calc(65% - .5rem);
             }
-            .content__secondary {
+            [data-eq-state~="content--large"] .content__secondary {
                 box-sizing: border-box;
+                float: right;
                 width: calc(35% - .5rem);
-                float: right
             }
             .events__list {
                 list-style: none;
