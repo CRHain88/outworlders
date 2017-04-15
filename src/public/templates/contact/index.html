@@ -1,0 +1,53 @@
+{#
+ # Contact index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/contact is requested,
+ # because it is located at contact/index.html in the public/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+ {% extends "_layout" %}
+ {% set title = "Contact" %}
+
+{% block content %}
+    <main>
+        <div class="content">
+            <div class="mission [ card card--blue card--light ]">
+                <div class="card__container">
+                    <h1>Our Mission</h1>
+                    <p>The purposes of this organization, OutWorlders Inc., shall be to have fun and to provide a community which promotes Gay, Lesbian, Bisexual, and Transgendered (GLBT) issues in Science Fiction, Fantasy, and Horror media (SF/F/H), provides forums for those for those with such interests, and promotes the presence of GLBT elements within SF/F/H, within fandom, and within the GLBT community.</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="officers [ card card--orange card--dark ]">
+                <div class="card__container">
+                    <h1>Officers</h1>
+                    <ul class="officers__list">
+                        {% for entry in craft.entries.section('officers') %}
+                            {% if entry.members|length %}
+                                <li class="officers__list-item">
+                                    {% include "contact/_officer.twig" %}
+                                </li>
+                            {% endif%}
+                        {% endfor %}
+                    </ul>
+
+                    <h2 class="officers__open-positions">Open Positions</h2>
+                    <ul class="officers__list">
+                        {% for entry in craft.entries.section('officers') %}
+                            {% if not entry.members|length %}
+                                <li class="officers__list-item">
+                                    {% include "contact/_officer.twig" %}
+                                </li>
+                            {% endif%}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
