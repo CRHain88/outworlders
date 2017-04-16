@@ -18,38 +18,14 @@ Styleguide 2.2.0
 */
 
 .card__header--solid {
-    @media(min-width: 500px) {
-        margin: -1em -1em 0;
-        padding: 1em;
-    }
+    margin: -1em -1em 0;
+    padding: 1em;
 }
 
-.card--blue .card__header--solid {
-    @media(min-width: 500px) {
-        background-color: $blue;
-    }
-}
+.card__header--solid + * { margin-top: 1rem; }
 
-.card--orange .card__header--solid {
-    @media(min-width: 500px) {
-        background-color: $orange;
-    }
-}
-
-.card--pink .card__header--solid {
-    @media(min-width: 500px) {
-        background-color: $pink;
-    }
-}
-
-.card--purple .card__header--solid {
-    @media(min-width: 500px) {
-        background-color: $purple;
-    }
-}
-
-.card--teal .card__header--solid {
-    @media(min-width: 500px) {
-        background-color: $teal  ;
-    }
-}
+.card--blue .card__header--solid { background-color: $blue; }
+.card--orange .card__header--solid { background-color: $orange; }
+.card--pink .card__header--solid { background-color: $pink; }
+.card--purple .card__header--solid { background-color: $purple; }
+.card--teal .card__header--solid { background-color: $teal; }
