@@ -276,6 +276,7 @@ Styleguide 3.3.0
     }
 
     @media (min-width: $navigation-breakpoint) {
+        border: 0;
         float: right;
         margin: 5px 0 0 1rem;
     }
@@ -283,4 +284,8 @@ Styleguide 3.3.0
 
 .navigation-list--social.social-list {
     padding: 1rem 0 0;
+
+    @media (min-width: $navigation-breakpoint) {
+        padding: 0;
+    }
 }
