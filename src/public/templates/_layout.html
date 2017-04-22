@@ -77,44 +77,9 @@
         </style>
     </head>
     <body>
-        {# Define the site navigation #}
-        {% set nav = {
-            home: { title: "Home", uri: "/" },
-            events: { title: "Events", uri: "events" },
-            photos: { title: "Photos", uri: "photos" },
-            contact:  { title: "About / Contact", uri: "contact" }
-        } %}
-
         <div class="flex-content">
             <div class="content flex-content--navigation" data-eq--content>
-                <div class="navigation">
-                    <a href="/">
-                        <h1 class="navigation__logo">Atlanta Outworlders</h1>
-                    </a>
-
-                    <button class="navigation__menu-toggle"><i></i><span>Menu</span></button>
-                    <div class="navigation__menu">
-                        <ul class="navigation__list navigation__list--sections" role="navigation">
-                            {% for item in nav %}
-                                {% set nav_class %}
-                                    {% if craft.request.firstSegment == item.uri or craft.request.firstSegment == '' and item.uri == '/' %}
-                                        navigation__list-item--sections navigation__list-item--active
-                                    {% else %}
-                                        navigation__list-item--sections
-                                    {% endif %}
-                                {% endset %}
-                                <li class="{{ nav_class }}">
-                                    <a class="navigation__menu-link" href="{{ url(item.uri) }}">{{ item.title }}</a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                        <ul class="navigation-list--social social-list">
-                            <li><a class="social-item social-item--facebook" href>Facebook</a></li>
-                            <li><a class="social-item social-item--twitter" href>Twitter</a></li>
-                            <li><a class="social-item social-item--instagram" href>Instagram</a></li>
-                        </ul>
-                    </div>
-                </div>
+                {% include "components/_navigation.twig" %}
             </div>
 
             <div class="flex-content---main-content">
