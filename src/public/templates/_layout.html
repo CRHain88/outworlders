@@ -53,6 +53,27 @@
                 list-style: none;
                 padding: 0;
             }
+
+            body,
+            html {
+                height: 100%;
+            }
+
+            .flex-content {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .flex-content > .content {
+                width: 100%;
+            }
+
+            .flex-content---main-content {
+                flex-grow: 1;
+                margin-top: 2rem;
+            }
         </style>
     </head>
     <body>
@@ -64,40 +85,46 @@
             contact:  { title: "About / Contact", uri: "contact" }
         } %}
 
-        <div class="content" data-eq--content>
-            <div class="navigation">
-                <h1 class="navigation__logo">Atlanta Outworlders</h1>
-                <button class="navigation__menu-toggle"><i></i><span>Menu</span></button>
-                <div class="navigation__menu">
-                    <ul class="navigation__list navigation__list--sections" role="navigation">
-                        {% for item in nav %}
-                            {% set nav_class %}
-                                {% if craft.request.firstSegment == item.uri or craft.request.firstSegment == '' and item.uri == '/' %}
-                                    navigation__list-item--sections navigation__list-item--active
-                                {% else %}
-                                    navigation__list-item--sections
-                                {% endif %}
-                            {% endset %}
-                            <li class="{{ nav_class }}">
-                                <a class="navigation__menu-link" href="{{ url(item.uri) }}">{{ item.title }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                    <ul class="navigation-list--social social-list">
-                        <li><a class="social-item social-item--facebook" href>Facebook</a></li>
-                        <li><a class="social-item social-item--twitter" href>Twitter</a></li>
-                        <li><a class="social-item social-item--instagram" href>Instagram</a></li>
-                    </ul>
+        <div class="flex-content">
+            <div class="content flex-content--navigation" data-eq--content>
+                <div class="navigation">
+                    <h1 class="navigation__logo">Atlanta Outworlders</h1>
+                    <button class="navigation__menu-toggle"><i></i><span>Menu</span></button>
+                    <div class="navigation__menu">
+                        <ul class="navigation__list navigation__list--sections" role="navigation">
+                            {% for item in nav %}
+                                {% set nav_class %}
+                                    {% if craft.request.firstSegment == item.uri or craft.request.firstSegment == '' and item.uri == '/' %}
+                                        navigation__list-item--sections navigation__list-item--active
+                                    {% else %}
+                                        navigation__list-item--sections
+                                    {% endif %}
+                                {% endset %}
+                                <li class="{{ nav_class }}">
+                                    <a class="navigation__menu-link" href="{{ url(item.uri) }}">{{ item.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <ul class="navigation-list--social social-list">
+                            <li><a class="social-item social-item--facebook" href>Facebook</a></li>
+                            <li><a class="social-item social-item--twitter" href>Twitter</a></li>
+                            <li><a class="social-item social-item--instagram" href>Instagram</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+            <div class="flex-content---main-content">
+                {% include "components/_notification-banner.twig" %}
+
+                {% block content %}
+                    <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+                    <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+                {% endblock %}
+            </div>
+
+            <i class="planet planet--normal"></i>
         </div>
-
-        {% include "components/_notification-banner.twig" %}
-
-        {% block content %}
-            <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-            <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-        {% endblock %}
 
         <script src="/js/bundle.js.js"></script>
     </body>
