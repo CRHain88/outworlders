@@ -29,26 +29,9 @@
                     <h1>Events</h1>
                     <a class="action-link" href>See all events</a>
                 </div>
-                <h2>February</h2>
-                <ul class="events__list">
-                    <li data-block-link="" itemscope itemtype="http://schema.org/Event">
-                        <meta itemprop="startDate" content="2016-04-21T20:00">
-                        <meta itemprop="description" content="Come have fun">
-                        <h3>19 Sunday</h3>
-                        <p>11:00 AM</p>
-                        <p itemprop="name">AOW Business Meeting</p>
-                        <span class="small" itemprop="location" itemscope itemtype="http://schema.org/Place">
-                            <meta itemprop="name" content="StudioPlex">
-                            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                                <span itemprop="streetAddress">659 Auburn Road #140</span>, <span itemprop="addressLocality">Atlanta</span> <span itemprop="addressRegion">GA</span> <span itemprop="postalCode">30312</span>
-                            </span>
-                        </span>
-                        <div class="action-bar">
-                            <a class="action-link" href="/" itemprop="url">More Info</a>
-                            <a class="action-link" href>Share</a>
-                        </div>
-                    </li>
-                </ul>
+
+                {% include "components/events/_month.twig" with {currentDate: now|date_modify("-12 hour")} %}
+                {% include "components/events/_month.twig" with {currentDate: now|date_modify("+1 month"), arePastEventsVisible: true} %}
             </div>
         </main>
 

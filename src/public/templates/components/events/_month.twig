@@ -1,0 +1,51 @@
+{#
+ # Month's event template
+ # ---------------
+ #
+ # Params:
+ # - currentDate {Date}
+ #   The starting point for the template. It will use this value to find events
+ #   in that month.
+ #
+ # - arePastEventsVisible {Boolean[false]}
+ #   A boolean to determine if the template should return events that have
+ #   already happened in the specificed month. This is intended to be used when
+ #   showing future months relative to today's current date.
+ #
+ # Example:
+ #
+ # ```twig
+ # {% include "components/events/_month.twig" with {
+ #     currentDate: now|date_modify("+1 month"),
+ #     arePastEventsVisible: true
+ # } %}
+ # ```
+ #}
+
+{% set startDate = currentDate %}
+{% set currentMonth = startDate|date("F") %}
+{% set currentMonthFirstDay = currentDate|date("Y-m-01") %}
+{% set currentMonthTotalDays = currentMonthFirstDay|date('t') %}
+{% set currentMonthLastDay  = currentDate|date("Y-m-") ~ currentMonthTotalDays %}
+
+{% if arePastEventsVisible is defined %}
+    {% set startDate = currentMonthFirstDay %}
+{% endif %}
+
+{% set allEvents = craft.entries.section('events') %}
+{% set visibleEvents = [] %}
+
+{% for entry in allEvents %}
+    {% for block in entry.dateAndTime %}
+        {% if block.startDateAndTime >= startDate and block.startDateAndTime <= currentMonthLastDay %}
+            {% set visibleEvents = visibleEvents|merge([entry]) %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+<h2>{{ currentMonth }}</h2>
+{% for entry in visibleEvents %}
+    <ul class="events__list">
+        {% include "components/events/_event.twig" %}
+    </ul>
+{% endfor %}

@@ -1,0 +1,42 @@
+<li data-block-link="" itemscope itemtype="http://schema.org/Event">
+    <meta itemprop="description" content="Come have fun">
+    {% for block in entry.dateAndTime %}
+        <h3 itemprop="startDate" content="{{ block.startDateAndTime|date("c") }}">{{ block.startDateAndTime|date("d l") }}</h3>
+        <p>{{ block.startDateAndTime|date("g:i A") }}</p>
+    {% endfor %}
+    <p itemprop="name">{{ entry }}</p>
+    <span class="small" itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            {% set addressName = "" %}
+            {% set addressStreet = "" %}
+            {% set addressCity = "" %}
+            {% set addressRegion = "" %}
+            {% set addressPostalCode = "" %}
+
+            {% if entry.address is defined and entry.address != "" %}
+                {% set addressName = entry.address.name|trim %}
+                {% set addressStreet = entry.address.street|trim ~ " " ~ entry.address.street2|trim %}
+                {% set addressCity = entry.address.city|trim %}
+                {% set addressRegion = entry.address.region|trim %}
+                {% set addressPostalCode = entry.address.postalCode|trim %}
+            {% endif %}
+
+            {% for block in entry.location %}
+                {% if block.address is defined and block.address != "" %}
+                    {% set addressName = block.address.name|trim %}
+                    {% set addressStreet = block.address.street|trim ~ " " ~ block.address.street2|trim %}
+                    {% set addressCity = block.address.city|trim %}
+                    {% set addressRegion = block.address.region|trim %}
+                    {% set addressPostalCode = block.address.postalCode|trim %}
+                {% endif %}
+            {% endfor %}
+
+            <meta itemprop="name" content="{{ addressName }}">
+            <span itemprop="streetAddress">{{ addressStreet|trim }}</span>, <span itemprop="addressLocality">{{ addressCity }}</span> <span itemprop="addressRegion">{{ addressRegion }}</span> <span itemprop="postalCode">{{ addressPostalCode }}</span>
+        </span>
+    </span>
+    <div class="action-bar">
+        <a class="action-link" href="/" itemprop="url">More Info</a>
+        <a class="action-link" href>Share</a>
+    </div>
+</li>
