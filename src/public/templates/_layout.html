@@ -34,45 +34,9 @@
                 align-items: baseline;
             }
 
-            .content {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-            .content:after { clear: both; content: ""; display: table; }
-            [data-eq-state~="content--large"] .content__primary {
-                box-sizing: border-box;
-                float: left;
-                width: calc(65% - .5rem);
-            }
-            [data-eq-state~="content--large"] .content__secondary {
-                box-sizing: border-box;
-                float: right;
-                width: calc(35% - .5rem);
-            }
             .events__list {
                 list-style: none;
                 padding: 0;
-            }
-
-            body,
-            html {
-                height: 100%;
-            }
-
-            .flex-content {
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .flex-content > .content {
-                width: 100%;
-            }
-
-            .flex-content---main-content {
-                flex-grow: 1;
-                margin-top: 2rem;
             }
         </style>
     </head>
