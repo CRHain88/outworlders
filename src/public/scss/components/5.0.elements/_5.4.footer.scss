@@ -1,0 +1,23 @@
+/*
+Footer
+
+markup:
+<div class="footer">
+    <p>&copy; 2017 OutWorlders, Inc. OutWorlders is a 501(c)7 tax exempt organization. Your contribution is not tax deductible.</p>
+</div>
+
+Styleguide 5.4.0
+*/
+
+.footer {
+    font-size: .8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 1rem 0;
+}
+
+.footer p {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
