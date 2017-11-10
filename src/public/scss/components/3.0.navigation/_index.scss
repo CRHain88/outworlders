@@ -5,11 +5,13 @@ Navigation
 
 markup:
 <div class="navigation">
-    <sg-insert>3.1</sg-insert>
-    <sg-insert>3.2.1-1</sg-insert>
-    <div class="navigation__menu">
-        <sg-insert>3.2</sg-insert>
-        <sg-insert>3.3</sg-insert>
+    <div class="navigation__container">
+        <sg-insert>3.1</sg-insert>
+        <sg-insert>3.2.1-1</sg-insert>
+        <div class="navigation__menu">
+            <sg-insert>3.2</sg-insert>
+            <sg-insert>3.3</sg-insert>
+        </div>
     </div>
 </div>
 
@@ -22,11 +24,20 @@ Styleguide 3.0.0
     position: relative;
     padding: 0 .5rem;
 
+    @media (min-width: 900px) {
+       padding: 0 1rem;
+   }
+
     &:after {
         clear: both;
         content: "";
         display: table;
     }
+}
+
+.navigation__container {
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .navigation__menu {

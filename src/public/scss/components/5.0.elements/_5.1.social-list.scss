@@ -54,30 +54,23 @@ Styleguide 5.1.1
 
 .social-item {
     width: 20px;
-    height: 20px;
+    height: 19px;
     display: block;
     overflow: hidden;
     text-indent: 21px;
+    display: block;
+
+    &:hover {
+        opacity: .8;
+    }
 }
 
 .social-item--facebook {
-    background-color: $pink;
-
-    &:hover {
-        background-color: rgba($pink, .8);
-    }
+    background-image: url('/assets/social-facebook.svg');
 }
 .social-item--twitter {
-    background-color: $purple;
-
-    &:hover {
-        background-color: rgba($purple, .8);
-    }
+    background-image: url('/assets/social-twitter.svg');
 }
 .social-item--instagram {
-    background-color: $teal;
-
-    &:hover {
-        background-color: rgba($teal, .8);
-    }
+    background-image: url('/assets/social-instagram.svg');
 }

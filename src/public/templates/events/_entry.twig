@@ -1,0 +1,166 @@
+{#
+ # Events index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/events is requested,
+ # because it is located at events/index.html in the public/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+ {% extends "_layout" %}
+ {% set title = "Events" %}
+
+{% block content %}
+<style>
+    .events__body-copy {
+        margin-top: 1rem;
+    }
+
+    .events__details {
+        margin-top: 1rem;
+    }
+
+    .events__details p {
+        margin: 0;
+    }
+
+    .events__detail-note {
+        margin-top: 1rem;
+    }
+</style>
+<div class="content" data-eq--content>
+    <main class="events content__primary [ card card--blue card--light ]">
+        <div class="card__container">
+            <div class="card__header">
+                <h1>{{ entry }}</h1>
+            </div>
+
+            {% for block in eventDescriptions.eventDescriptions %}
+                {% if block.eventType == entry.type %}
+                    <div class="small">
+                        {{ block.eventDescription }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            <div class="events__body-copy">
+                {{ entry.body }}
+            </div>
+
+            {% if entry.movies is defined %}
+                <style>
+                    .movie {
+                        margin-top: 1rem;
+                    }
+
+                    .movie__link {
+                        color: inherit;
+                        display: block;
+                        text-decoration: none;
+                    }
+
+                    .movie__header {
+                        align-items: baseline;
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+                </style>
+                {% for block in entry.movies %}
+                    <div class="movie">
+                        {% set movieContent %}
+                            <div class="movie__header">
+                                <h2 class="movie__title">{{ block.movieTitle }}</h2>
+                                <p class="movie__show-time">{{ block.movieStartTime|date("g:i A") }}</p>
+                            </div>
+                            <p>{{ block.synopsis }}</p>
+                        {% endset %}
+
+                        {% if block.movieLink != "" %}
+                            <a class="movie__link" href="{{ block.movieLink }}" target="_blank" rel="nofollow">
+                                {{ movieContent }}
+                            </a>
+                        {% else %}
+                            {{ movieContent}}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <div class="events__details">
+                <h3>When?</h3>
+                {% for block in entry.dateAndTime %}
+                    <p class="small" itemprop="startDate" content="{{ block.startDateAndTime|date("c") }}">{{ block.startDateAndTime|date("l, F d, Y") }}</p>
+                    <p class="small">{{ block.startDateAndTime|date("g:i A") }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="events__details">
+                <style>
+                    .location__notes > p{
+                        font-size: .75rem;
+                    }
+                </style>
+                <h3>Where?</h3>
+                <span class="small" itemprop="location" itemscope itemtype="http://schema.org/Place">
+                    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        {% set addressName = "" %}
+                        {% set addressStreet = "" %}
+                        {% set addressCity = "" %}
+                        {% set addressRegion = "" %}
+                        {% set addressPostalCode = "" %}
+
+                        {% if entry.address is defined and entry.address != "" %}
+                            {% set addressName = entry.address.name|trim %}
+                            {% set addressStreet = entry.address.street|trim ~ " " ~ entry.address.street2|trim %}
+                            {% set addressCity = entry.address.city|trim %}
+                            {% set addressRegion = entry.address.region|trim %}
+                            {% set addressPostalCode = entry.address.postalCode|trim %}
+                        {% endif %}
+
+                        {% for block in entry.location %}
+                            {% if block.address is defined and block.address != "" %}
+                                {% set addressName = block.address.name|trim %}
+                                {% set addressStreet = block.address.street|trim ~ " " ~ block.address.street2|trim %}
+                                {% set addressCity = block.address.city|trim %}
+                                {% set addressRegion = block.address.region|trim %}
+                                {% set addressPostalCode = block.address.postalCode|trim %}
+                            {% endif %}
+                        {% endfor %}
+
+                        <span itemprop="name">{{ addressName }}</span><br />
+                        <span itemprop="streetAddress">{{ addressStreet|trim }}</span><br />
+                        <span itemprop="addressLocality">{{ addressCity }}</span> <span itemprop="addressRegion">{{ addressRegion }}</span> <span itemprop="postalCode">{{ addressPostalCode }}</span>
+                    </span>
+                </span>
+
+                <div>
+                    {% set locationNotes = [] %}
+
+                    {% for block in entry.locationNotes %}
+                        {% set locationNotes = locationNotes|merge([block])%}
+                    {% endfor %}
+
+                    {% for block in entry.location %}
+                        {% for block in block.locationNotes %}
+                            {% set locationNotes = locationNotes|merge([block])%}
+                        {% endfor %}
+                    {% endfor %}
+
+                    {% for block in locationNotes %}
+                        <div class="events__detail-note">
+                            <h4>{{ block.noteTitle }}</h4>
+                            <div class="small">
+                                {{ block.noteText }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+{% endblock %}

@@ -3,11 +3,11 @@
 body {
     @media (min-width: $navigation-breakpoint) {
         background-image: url('/assets/background-stars.png');
+        background-size: 50%;
+        -webkit-font-smoothing: antialiased;
     }
 
     @media (min-width: 900px) {
-        padding: 0 1rem;
-
         &:before {
             content: "";
             background-image: url('/assets/background-planet-top.png');

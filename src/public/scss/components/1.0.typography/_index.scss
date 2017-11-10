@@ -102,12 +102,9 @@ Styleguide 1.1.4
 
 h4,
 .h4 {
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 14px;
+    font-weight: 500;
     margin: 0;
-
-    .card--dark & {letter-spacing: .05em; }
-    .card--light & {letter-spacing: .025em; }
 }
 
 
@@ -137,12 +134,9 @@ Styleguide 1.2.1
 p,
 div,
 span {
-    font-weight: 300;
+    font-weight: 400;
     margin: 0;
     line-height: 1.25;
-
-    .card--dark & {letter-spacing: .05em; }
-    .card--light & {letter-spacing: .025em; }
 }
 
 p + p {
@@ -162,6 +156,7 @@ sg-wrapper:
 Styleguide 1.2.2
 */
 
+.small,
 p.small,
 span.small {
     font-size: 14px;
@@ -183,14 +178,11 @@ p > a,
 .inline-link {
     color: $teal;
     text-decoration: none;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-weight: 500;
 
     &:hover {
         color: rgba($teal, .6);
     }
-
-    .card--light { letter-spacing: 0; }
 }
 
 /*

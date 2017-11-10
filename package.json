@@ -4,6 +4,7 @@
   "description": "Website for the Atlanta Outworders",
   "main": "index.js",
   "scripts": {
+    "start": "docker-compose up && npm run webpack",
     "styleguide": "styleguide --kssSource ./dist/public/css/styles.css --styleSource ./dist/public/css/styles.css --overviewPath README.md --output ./dist/styleguide/ --commonClass sg-common --watch --server --port 3030",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch"
@@ -38,6 +39,7 @@
     "eq.js": "git+https://github.com/Snugug/eq.js.git#v1.9.0",
     "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "0.10.1",
+    "instafeed.js": "1.4.1",
     "node-sass": "4.5.1",
     "postcss-load-config": "1.2.0",
     "sc5-styleguide": "1.5.0",

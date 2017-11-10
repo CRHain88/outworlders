@@ -1,0 +1,27 @@
+/*
+Event Summary
+
+markup:
+<div class="footer">
+    <p>&copy; 2017 OutWorlders, Inc. OutWorlders is a 501(c)7 tax exempt organization. Your contribution is not tax deductible.</p>
+</div>
+
+Styleguide 5.5.0
+*/
+
+.event__link {
+    text-decoration: inherit;
+    color: inherit;
+    display: block;
+}
+
+.event__date {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.event__start-time {
+    font-weight: 400;
+    font-size: .75rem;
+}

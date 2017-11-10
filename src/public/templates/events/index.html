@@ -1,0 +1,40 @@
+{#
+ # Events index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/events is requested,
+ # because it is located at events/index.html in the public/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+ {% extends "_layout" %}
+ {% set title = "Events" %}
+
+{% block content %}
+<div class="content" data-eq--content>
+    <main class="events content__primary [ card card--blue card--light ]">
+        <div class="card__container">
+            <div class="card__header">
+                <h1>Events</h1>
+            </div>
+
+            {% set currentYear = now|date("Y-01-01") %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("-12 hour")} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+1 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+2 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+3 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+4 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+5 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+6 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+7 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+8 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+9 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+10 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+11 month"), arePastEventsVisible: true} %}
+            {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+12 month"), arePastEventsVisible: true} %}
+        </div>
+    </main>
+</div>
+{% endblock %}

@@ -37,7 +37,7 @@
 
 {% for entry in allEvents %}
     {% for block in entry.dateAndTime %}
-        {% if block.startDateAndTime >= startDate and block.startDateAndTime <= currentMonthLastDay %}
+        {% if block.startDateAndTime >= startDate and block.startDateAndTime <= currentMonthLastDay and loop.index == 1 %}
             {% set visibleEvents = visibleEvents|merge([entry]) %}
         {% endif %}
     {% endfor %}
