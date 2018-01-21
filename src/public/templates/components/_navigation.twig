@@ -11,8 +11,8 @@
             <h1 class="navigation__logo">Atlanta Outworlders</h1>
         </a>
 
-        <button class="navigation__menu-toggle"><i></i><span>Menu</span></button>
-        <div class="navigation__menu">
+        <button class="navigation__menu-toggle" aria-pressed="false"><i></i><span>Menu</span></button>
+        <div class="navigation__menu" aria-expanded="false">
             <ul class="navigation__list navigation__list--sections" role="navigation">
                 {% for item in nav %}
                     {% set nav_class %}

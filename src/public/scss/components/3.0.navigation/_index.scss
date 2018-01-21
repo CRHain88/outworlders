@@ -8,7 +8,7 @@ markup:
     <div class="navigation__container">
         <sg-insert>3.1</sg-insert>
         <sg-insert>3.2.1-1</sg-insert>
-        <div class="navigation__menu">
+        <div class="navigation__menu" aria-expanded="false">
             <sg-insert>3.2</sg-insert>
             <sg-insert>3.3</sg-insert>
         </div>
@@ -41,10 +41,22 @@ Styleguide 3.0.0
 }
 
 .navigation__menu {
+    transition: height .2s ease-in-out;
+    overflow: hidden;
+
      @media (min-width: $navigation-breakpoint) {
         float: right;
+        height: 100% !important;
         margin-top: 1rem;
     }
+}
+
+.navigation__menu[aria-expanded='false'] {
+	height: 0;
+}
+
+.navigation__menu[aria-expanded='true'] {
+	height: 162px;
 }
 
 .navigation__list {
