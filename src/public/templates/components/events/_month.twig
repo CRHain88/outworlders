@@ -44,8 +44,8 @@
 {% endfor %}
 
 <h2>{{ currentMonth }}</h2>
-{% for entry in visibleEvents %}
-    <ul class="events__list">
+<ul class="events__list">
+    {% for entry in visibleEvents %}
         {% include "components/events/_event.twig" %}
-    </ul>
-{% endfor %}
+    {% endfor %}
+</ul>
