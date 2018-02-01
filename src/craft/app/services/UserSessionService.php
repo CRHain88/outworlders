@@ -432,13 +432,7 @@ class UserSessionService extends \CWebUser
 
 			if (!craft()->request->isAjaxRequest())
 			{
-				$url = craft()->request->getPath();
-
-				if (($queryString = craft()->request->getQueryStringWithoutPath()))
-				{
-					$url .= '?'.$queryString;
-				}
-
+				$url = UrlHelper::getUrl(craft()->request->getPath(), craft()->request->getQueryStringWithoutPath());
 				$this->setReturnUrl($url);
 				$url = UrlHelper::getUrl(craft()->config->getLoginPath());
 				craft()->request->redirect($url);
@@ -504,10 +498,25 @@ class UserSessionService extends \CWebUser
 		{
 			$this->_identity = new UserIdentity($username, $password);
 
-			// Did we authenticate?
-			if ($this->_identity->authenticate())
+			// Fire an 'onBeforeAuthenticate' event
+			$event = new Event($this, array(
+				'identity' => $this->_identity,
+				'rememberMe' => $rememberMe,
+			));
+
+			$this->onBeforeAuthenticate($event);
+
+			// Should we continue authenticating?
+			if ($event->performAction)
 			{
-				return $this->loginByUserId($this->_identity->getUserModel()->id, $rememberMe, true);
+				// Did we authenticate?
+				if ($this->_identity->authenticate())
+				{
+					// In the case we have got a new value for the 'rememberMe'
+					$rememberMe = $event->params['rememberMe'];
+
+					return $this->loginByUserId($this->_identity->getUserModel()->id, $rememberMe, true);
+				}
 			}
 		}
 
@@ -516,7 +525,7 @@ class UserSessionService extends \CWebUser
 	}
 
 	/**
-	 * Logs a user in for solely by their user ID.
+	 * Logs a user in by their user ID.
 	 *
 	 * This method doesn’t have any sort of credential verification, so use it at your own peril.
 	 *
@@ -1010,7 +1019,6 @@ class UserSessionService extends \CWebUser
 	{
 		return !(
 			craft()->request->isGetRequest() &&
-			craft()->request->isCpRequest() &&
 			craft()->request->getParam('dontExtendSession')
 		);
 	}
@@ -1204,6 +1212,18 @@ class UserSessionService extends \CWebUser
 
 	// Events
 	// -------------------------------------------------------------------------
+
+	/**
+	 * Fires an 'onBeforeAuthenticate' event.
+	 *
+	 * @param Event $event
+	 *
+	 * @return null
+	 */
+	public function onBeforeAuthenticate(Event $event)
+	{
+		$this->raiseEvent('onBeforeAuthenticate', $event);
+	}
 
 	/**
 	 * Fires an 'onBeforeLogin' event.
@@ -1423,7 +1443,7 @@ class UserSessionService extends \CWebUser
 			}
 			else
 			{
-				Craft::log('Tried to restore session from a cookie, but it appears we the data in the cookie is invalid.', LogLevel::Warning);
+				Craft::log('Tried to restore session from a cookie, but it appears the data in the cookie is invalid.', LogLevel::Warning);
 				$this->logout(true);
 			}
 		}
