@@ -31,7 +31,7 @@
                 </div>
 
                 {% include "components/events/_month.twig" with {currentDate: now|date_modify("-12 hour")} %}
-                {% include "components/events/_month.twig" with {currentDate: now|date_modify("+1 month"), arePastEventsVisible: true} %}
+                {% include "components/events/_month.twig" with {currentDate: now|date_modify("+28 day"), arePastEventsVisible: true} %}
             </div>
         </main>
         <div class="events content__primary [ card card--tinted card--dark card--pink ]">
