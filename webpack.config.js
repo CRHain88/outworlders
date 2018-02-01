@@ -48,6 +48,11 @@ module.exports = [
         plugins: [
             new ExtractTextPlugin('[name].css'),
 
+            // Copy Craft resources
+            new CopyWebpackPlugin([
+                { from: path.join(__dirname, './src/craft/'), to: dist + '/craft' },
+            ]),
+
             // Copy CSS Assets to the main dist foler.
             new CopyWebpackPlugin([
                 { from: path.join(__dirname, './src/public/assets/'), to: distPublic + 'assets/' },
