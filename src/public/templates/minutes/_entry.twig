@@ -1,0 +1,43 @@
+{#
+ # Minutes entry template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/minutes is requested,
+ # because it is located at minutes/_entry.twig in the public/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+ {% extends "_layout" %}
+ {% set title = "Minutes" %}
+
+{% block content %}
+<div class="content" data-eq--content>
+    <main class="content__primary [ card card--blue card--light ]">
+        <div class="card__container">
+            <div class="card__header">
+                <h1>{{ entry }}</h1>
+            </div>
+
+            {{ entry.body }}
+
+        </div>
+    </main>
+
+    {% if entry.minutesAssets | length %}
+        <div class="content__secondary [ card card--purple card--light ]">
+            <div class="card__container">
+                <div class="card__header">
+                    <h2>Downloads</h2>
+                </div>
+                <ul>
+                    {% for asset in entry.minutesAssets %}
+                        <li><a href="{{ asset.getUrl() }}" target="blank">{{ asset }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
