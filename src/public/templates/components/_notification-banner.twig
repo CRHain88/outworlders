@@ -6,7 +6,7 @@
                     {% for entry in craft.entries.section('notifications') %}
                         <li>
                             <h3 class="card__heading">{{ entry }}</h3>
-                            <p>{{ entry.text }}</p>
+                            {{ entry.body }}
                         </li>
                     {% endfor %}
                 </ul>

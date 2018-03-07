@@ -21,13 +21,25 @@ Styleguide 5.2.0
 */
 
 .notification-banner {
-    max-width: 40%;
+    @media (min-width: 900px) {
+        max-width: calc(65% - .5rem);
+    }
 }
 
 .notification-banner ul {
     list-style: none;
     padding: 0;
 }
+
 .notification-banner li + li {
     margin-top: 1rem;
+}
+
+.notification-banner a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover {
+        color: $pink;
+    }
 }
