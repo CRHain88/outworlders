@@ -1,4 +1,4 @@
 import './eqjs';
-import './instagram';
+// import './instagram';
 import './navigation';
 import './convertMapLinks';
