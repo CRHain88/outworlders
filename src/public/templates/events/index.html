@@ -13,15 +13,23 @@
  {% set title = "Events" %}
 
 {% block content %}
-<div class="content" data-eq--content>
-    <main class="events content__primary [ card card--blue card--light ]">
+{% set currentYear = now|date("Y-m-d") %}
+<main class="content" data-eq--content>
+    <div class="events content__primary [ card card--blue card--light ]">
         <div class="card__container">
             <div class="card__header">
                 <h1>Events</h1>
             </div>
 
-            {% set currentYear = now|date("Y-01-01") %}
             {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("-12 hour")} %}
+        </div>
+    </div>
+    <div class="events content__primary [ card card--blue card--dark ]">
+        <div class="card__container">
+            <div class="card__header">
+                <h1>Upcoming Events</h1>
+            </div>
+
             {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+1 month"), arePastEventsVisible: true} %}
             {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+2 month"), arePastEventsVisible: true} %}
             {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+3 month"), arePastEventsVisible: true} %}
@@ -35,6 +43,6 @@
             {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+11 month"), arePastEventsVisible: true} %}
             {% include "components/events/_month.twig" with {currentDate: currentYear|date_modify("+12 month"), arePastEventsVisible: true} %}
         </div>
-    </main>
-</div>
+    </div>
+</main>
 {% endblock %}
