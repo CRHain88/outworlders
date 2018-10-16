@@ -1,0 +1,41 @@
+{#
+ # Minutes index template
+ # ----------------------
+ #
+ # This template is loaded whenever http://example.com/minutes is requested,
+ # because it is located at minutes/index.html in the public/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+ {% extends "_layout" %}
+ {% set title = "Minutes" %}
+
+{% block content %}
+    <main>
+        <div class="content" data-eq--content>
+            <div class="content__primary [ card card--blue card--light ]">
+                <div class="card__container">
+                    <div class="card__header">
+                        <h1>Meeting Minutes</h1>
+                    </div>
+
+                    <p>We're working hard to provide the greatest experiences we can for our members and the community. Keep up to date with what goes on behind the scenes with our meeting minutes.</p>
+
+                    <h2>The latest minutes</h2>
+                    {% for entry in craft.entries.section('minutes').limit(1) %}
+                        <a href="{{entry.url}}">{{entry.title}}</a>
+                    {% endfor %}
+
+                    <h2>Archives</h2>
+                    <ul>
+                      {% for entry in craft.entries.section('minutes').offset(1) %}
+                          <li><a href="{{entry.url}}">{{entry.title}}</a></li>
+                      {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

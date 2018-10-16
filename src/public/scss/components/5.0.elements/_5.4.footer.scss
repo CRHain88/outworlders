@@ -3,6 +3,23 @@ Footer
 
 markup:
 <div class="footer">
+    <div class="content" data-eq--content>
+        <div class="footer content__primary">
+            <div class="footer-navigation">
+                <div class="footer-navigation__menu">
+                    <ul class="footer-navigation__list" role="navigation">
+                        <li class="footer-navigation__list-item">
+                            <a class="footer-navigation__menu-link" href="//outworlders.info/minutes">Minutes</a>
+                        </li>
+                        <li class="footer-navigation__list-item">
+                            <a class="footer-navigation__menu-link" href="//wiki.outworlders.info">Wiki</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">&copy;2018 OutWorlders, Inc. OutWorlders is a 501(c)7 tax exempt organization. Your contribution is not tax deductible.</p>
+        </div>
+    </div>
     <p>&copy; 2017 OutWorlders, Inc. OutWorlders is a 501(c)7 tax exempt organization. Your contribution is not tax deductible.</p>
 </div>
 
@@ -16,8 +33,44 @@ Styleguide 5.4.0
     margin: 1rem 0;
 }
 
-.footer p {
-    width: 50%;
+.footer-navigation {
     text-align: center;
-    margin: 0 auto;
+}
+
+.footer-navigation__menu {
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+    padding: 0 1rem .5rem;
+}
+
+.footer-navigation__list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+.footer-navigation__menu-link {
+    color: #fff;
+    line-height: 1rem;
+    padding: 0 .5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $pink;
+    }
+}
+
+.copyright {
+    margin: .5rem auto 0;
+    text-align: center;
+    width: 50%;
 }
