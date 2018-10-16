@@ -13,7 +13,7 @@
 
         <button class="navigation__menu-toggle" aria-pressed="false"><i></i><span>Menu</span></button>
         <div class="navigation__menu" aria-expanded="false">
-            <ul class="navigation__list navigation__list--sections" role="navigation">
+            <ul class="navigation__list navigation__list--sections inline-list" role="navigation">
                 {% for item in nav %}
                     {% set nav_class %}
                         {% if craft.request.firstSegment == item.uri or craft.request.firstSegment == '' and item.uri == '/' %}
@@ -27,7 +27,7 @@
                     </li>
                 {% endfor %}
             </ul>
-            <ul class="navigation-list--social social-list">
+            <ul class="navigation-list--social social-list inline-list">
                 <li><a class="social-item social-item--facebook" href="https://www.facebook.com/Outworlders" rel="nofollow">Facebook</a></li>
                 <li><a class="social-item social-item--twitter" href="https://twitter.com/outworlders" rel="nofollow">Twitter</a></li>
                 <li><a class="social-item social-item--instagram" href="https://www.instagram.com/outworlders" rel="nofollow">Instagram</a></li>

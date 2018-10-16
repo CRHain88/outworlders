@@ -23,7 +23,7 @@
 {% block content %}
 
     <div class="content" data-eq--content>
-        <main class="events content__secondary [ card card--blue card--light ]">
+        <main class="events content__primary [ card card--blue card--light ]">
             <div class="card__container">
                 <div class="card__header">
                     <h1>Events</h1>
@@ -34,18 +34,6 @@
                 {% include "components/events/_month.twig" with {currentDate: now|date_modify("+28 day"), arePastEventsVisible: true} %}
             </div>
         </main>
-        <div class="events content__primary [ card card--tinted card--dark card--pink ]">
-            <div class="card__container">
-                <div class="card__header">
-                    <h2>OutWorlders</h2>
-                    <p>Tag your posts with <strong>#OutWorlders</strong></p>
-                </div>
-                <div id="instafeed" style="display:flex; flex-wrap: wrap; justify-content: space-between"></div>
-                <a href="">See All Photos</a>
-            </div>
-        </div>
-    </div>
-    <div class="content" data-eq--content>
         <div class="about-us content__secondary [ card card--orange card--dark ]" data-eq--card="about-us">
             <div class="card__container">
                 <div class="card__header">
@@ -54,7 +42,8 @@
                 {{aboutUs.body}}
             </div>
         </div>
-
+    </div>
+    <div class="content" data-eq--content>
         <div class="membership content__primary [ card card--teal card--tinted card--dark ]">
             <div class="card__container">
                 <h1>{{becomeAMember.text}}</h1>

@@ -22,28 +22,10 @@
         <link rel="stylesheet" href="/css/styles.css"/>
 
         <style>
-            .action-bar {
-                margin: .5rem 0 0;
-                padding: .5rem 0 0;
-                border-top: 1px solid black;
-                display: flex;
-                justify-content: space-between;
-                flex-direction: flex-end;
-            }
-
             .card__header {
                 display: flex;
                 justify-content: space-between;
                 align-items: baseline;
-            }
-
-            .events__list {
-                list-style: none;
-                padding: 0;
-            }
-
-            .event + .event {
-                margin: 1rem 0 0;
             }
         </style>
 
@@ -79,17 +61,23 @@
                     <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
                 {% endblock %}
 
-                <div class="content" data-eq--content>
-                    <div class="footer content__primary">
-                        <p>&copy;{{ now.year }} OutWorlders, Inc. OutWorlders is a 501(c)7 tax exempt organization. Your contribution is not tax deductible.</p>
-                    </div>
-                    <div class="footer content__primary">
-                        <nav>
-                          <ul>
-                            <li><a>Wiki</a></li>
-                            <li><a>Meeting Minutes</a></li>
-                          </ul>
-                        </nav>
+                <div class="footer">
+                    <div class="content" data-eq--content>
+                        <div class="footer content__primary">
+                            <div class="footer-navigation">
+                                <div class="footer-navigation__menu">
+                                    <ul class="footer-navigation__list inline-list" role="navigation">
+                                        <li class="footer-navigation__list-item">
+                                            <a class="footer-navigation__menu-link" href="//outworlders.info/minutes">Minutes</a>
+                                        </li>
+                                        <li class="footer-navigation__list-item">
+                                            <a class="footer-navigation__menu-link" href="//wiki.outworlders.info">Wiki</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="copyright">&copy;2018 OutWorlders, Inc. OutWorlders is a 501(c)7 tax exempt organization. Your contribution is not tax deductible.</p>
+                        </div>
                     </div>
                 </div>
             </div>
