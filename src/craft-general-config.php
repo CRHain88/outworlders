@@ -17,11 +17,11 @@ return array(
             'baseUrl'  => 'http://localhost/',
         ),
     ),
-    'dev.outworlders.info' => array(
+    'dev.outworlders.org' => array(
         'devMode' => false,
         'environmentVariables' => array(
-            'basePath' => '/var/www/vhosts/outworlders.info/dev.outworlders.info',
-            'baseUrl'  => 'http://dev.outworlders.info',
+            'basePath' => '/home/outwuopz/public_html/www.outworlders.org/public',
+            'baseUrl'  => 'http://dev.outworlders.org',
         ),
     ),
 );
