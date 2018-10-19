@@ -61,25 +61,7 @@
                     <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
                 {% endblock %}
 
-                <div class="footer">
-                    <div class="content" data-eq--content>
-                        <div class="footer content__primary">
-                            <div class="footer-navigation">
-                                <div class="footer-navigation__menu">
-                                    <ul class="footer-navigation__list inline-list" role="navigation">
-                                        <li class="footer-navigation__list-item">
-                                            <a class="footer-navigation__menu-link" href="{{ baseUrl }}/minutes">Minutes</a>
-                                        </li>
-                                        <li class="footer-navigation__list-item">
-                                            <a class="footer-navigation__menu-link" href="//wiki.outworlders.org">Wiki</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <p class="copyright">&copy;2018 OutWorlders, Inc. OutWorlders is a 501(c)7 tax exempt organization. Your contribution is not tax deductible.</p>
-                        </div>
-                    </div>
-                </div>
+                {% include "components/_footer.twig" %}
             </div>
 
             <i class="planet planet--normal"></i>
