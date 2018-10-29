@@ -1,10 +1,16 @@
 <li class="event" itemscope itemtype="http://schema.org/Event">
-    <a class="event__link" href="{{ entry.url }}">
+    <a class="event__link" href="{{ entry.url }}" itemprop="url">
         <meta itemprop="description" content="Come have fun">
+        <div itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+          <meta itemprop="price" content="0">
+          <meta itemprop="priceCurrency" content="USD">
+          <meta itemprop="availability" content="http://schema.org/InStock">
+        </div>
 
         {% for block in entry.dateAndTime %}
             <div class="event__date">
                 <h3 class="event__start-date" itemprop="startDate" content="{{ block.startDateAndTime|date("c") }}">{{ block.startDateAndTime|date("d l") }}</h3>
+                <meta itemprop="endDate" content="{{ block.endDateAndTime|date("c") }}">
                 <p class="event__start-time">{{ block.startDateAndTime|date("g:i A") }}</p>
             </div>
         {% endfor %}
@@ -43,6 +49,7 @@
         <a class="event__link" href="{{ addressMapLink }}" target="blank" data-map-link="location">
     {% endif %}
         <span class="small" itemprop="location" itemscope itemtype="http://schema.org/Place">
+            {% if addressName %}<meta itemprop="name" content="{{ addressName }}">{% endif %}
             <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                 {% if addressName %}<meta itemprop="name" content="{{ addressName }}">{% endif %}
                 {% if addressStreet %}<span itemprop="streetAddress">{{ addressStreet|trim }}</span>,&nbsp;{% endif %}
@@ -58,7 +65,7 @@
     <div class="action-bar">
         <a class="action-link" href="{{ entry.url }}" itemprop="url">More Info</a>
         {% if addressMapLink %}
-            <a class="action-link" href="{{ addressMapLink }}" itemprop="url" data-map-link="directions">Directions</a>
+            <a class="action-link" href="{{ addressMapLink }}" data-map-link="directions">Directions</a>
         {% endif %}
         {# <a class="action-link" href>Share</a> #}
     </div>

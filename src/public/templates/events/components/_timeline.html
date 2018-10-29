@@ -18,7 +18,7 @@
                         {% if event.allDay %}
                             All Day
                         {% else %}
-                            <p>{{ event.startDate|date("g:i a") }} - {{ event.endDate|date("g:i a") }}</p>
+                            <p>{{ event.startDate|date("g:i a") }} - {{ event.endDateAndTime|date("g:i a") }}</p>
                         {% endif %}
                     </div>
                   </a>
