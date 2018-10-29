@@ -5,11 +5,22 @@ Styleguide 2.1
 
 */
 
-%color-text--blue { color: $blue; }
+%color-text--blue   { color: $blue; }
 %color-text--orange { color: $orange; }
-%color-text--pink { color: $pink; }
+%color-text--pink   { color: $pink; }
 %color-text--purple { color: $purple; }
-%color-text--teal { color: $teal; }
+%color-text--teal   { color: $teal; }
+
+%color-text--blue-onDark    { color: $blue-onDark; }
+%color-text--blue-onLight   { color: $blue-onLight; }
+%color-text--orange-onDark  { color: $orange-onDark; }
+%color-text--orange-onLight { color: $orange-onLight; }
+%color-text--pink-onDark    { color: $pink-onDark; }
+%color-text--pink-onLight   { color: $pink-onLight; }
+%color-text--purple-onDark  { color: $purple-onDark; }
+%color-text--purple-onLight { color: $purple-onLight; }
+%color-text--teal-onDark    { color: $teal-onDark; }
+%color-text--teal-onLight   { color: $teal-onLight; }
 
 /*
 Card States

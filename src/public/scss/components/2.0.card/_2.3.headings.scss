@@ -35,12 +35,47 @@ sg-wrapper:
         <p>I'm like a superhero or something!</p>
     </div>
 </div>
+<div class="card card--dark card--blue">
+    <div class="card__container">
+        <sg-wrapper-content/>
+        <p>I'm like a superhero or something!</p>
+    </div>
+</div>
+<div class="card card--dark card--orange">
+    <div class="card__container">
+        <sg-wrapper-content/>
+        <p>I'm like a superhero or something!</p>
+    </div>
+</div>
+<div class="card card--dark card--pink">
+    <div class="card__container">
+        <sg-wrapper-content/>
+        <p>I'm like a superhero or something!</p>
+    </div>
+</div>
+<div class="card card--dark card--purple">
+    <div class="card__container">
+        <sg-wrapper-content/>
+        <p>I'm like a superhero or something!</p>
+    </div>
+</div>
+<div class="card card--dark card--teal">
+    <div class="card__container">
+        <sg-wrapper-content/>
+        <p>I'm like a superhero or something!</p>
+    </div>
+</div>
 
 Styleguide 2.3.0
 */
 
-.card--blue   .card__heading { @extend %color-text--blue; }
-.card--orange .card__heading { @extend %color-text--orange; }
-.card--pink   .card__heading { @extend %color-text--pink; }
-.card--purple .card__heading { @extend %color-text--purple; }
-.card--teal   .card__heading { @extend %color-text--teal; }
+.card--blue.card--dark    .card__heading { @extend %color-text--blue-onDark; }
+.card--blue.card--light   .card__heading { @extend %color-text--blue-onLight; }
+.card--orange.card--dark  .card__heading { @extend %color-text--orange-onDark; }
+.card--orange.card--light .card__heading { @extend %color-text--orange-onLight; }
+.card--pink.card--dark    .card__heading { @extend %color-text--pink-onDark; }
+.card--pink.card--light   .card__heading { @extend %color-text--pink-onLight; }
+.card--purple.card--dark  .card__heading { @extend %color-text--purple-onDark; }
+.card--purple.card--light .card__heading { @extend %color-text--purple-onLight; }
+.card--teal.card--dark    .card__heading { @extend %color-text--teal-onDark; }
+.card--teal.card--light   .card__heading { @extend %color-text--teal-onLight; }

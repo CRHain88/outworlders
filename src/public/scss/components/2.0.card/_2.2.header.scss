@@ -24,8 +24,8 @@ Styleguide 2.2.0
 
 .card__header--solid + * { margin-top: 1rem; }
 
-.card--blue .card__header--solid { background-color: $blue; }
+.card--blue   .card__header--solid { background-color: $blue; }
 .card--orange .card__header--solid { background-color: $orange; }
-.card--pink .card__header--solid { background-color: $pink; }
+.card--pink   .card__header--solid { background-color: $pink; }
 .card--purple .card__header--solid { background-color: $purple; }
-.card--teal .card__header--solid { background-color: $teal; }
+.card--teal   .card__header--solid { background-color: $teal; }

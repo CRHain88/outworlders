@@ -176,7 +176,6 @@ Styleguide 1.3.0
 
 p > a,
 .inline-link {
-    color: $teal;
     text-decoration: none;
     font-weight: 500;
 
@@ -184,6 +183,11 @@ p > a,
         color: rgba($teal, .6);
     }
 }
+
+.card--dark p > a,
+.card--dark .inline-link { color: $teal-onDark; }
+.card--light p > a,
+.card--light .inline-link { color: $teal-onLight; }
 
 /*
 Action Link
