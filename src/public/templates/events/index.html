@@ -1,6 +1,6 @@
 {#
  # Events index template
- # -------------------
+ # ---------------------
  #
  # This template is loaded whenever http://example.com/events is requested,
  # because it is located at events/index.html in the public/templates/ folder.
@@ -9,8 +9,7 @@
  # http://craftcms.com/docs/routing
  #}
 
- {% extends "_layout" %}
- {% set title = "Events" %}
+{% extends "_layout" %}
 
 {% block content %}
 {% set currentYear = now|date("Y-m-d") %}
