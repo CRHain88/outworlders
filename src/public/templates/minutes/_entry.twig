@@ -14,18 +14,18 @@
 {% block content %}
 <div class="content" data-eq--content>
     <main class="content__primary [ card card--blue card--light ]">
-        <div class="card__container">
+        <article class="card__container">
             <div class="card__header">
                 <h1>{{ entry }}</h1>
             </div>
 
             {{ entry.body }}
 
-        </div>
+        </article>
     </main>
 
     {% if entry.minutesAssets | length %}
-        <div class="content__secondary [ card card--purple card--light ]">
+        <aside class="content__secondary [ card card--purple card--light ]">
             <div class="card__container">
                 <div class="card__header">
                     <h2>Downloads</h2>
@@ -36,7 +36,7 @@
                     {% endfor %}
                 </ul>
             </div>
-        </div>
+        </aside>
     {% endif %}
 </div>
 {% endblock %}
