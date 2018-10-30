@@ -29,27 +29,27 @@
 {% set currentMonthLastDay  = currentDate|date("Y-m-") ~ currentMonthTotalDays %}
 
 {% if arePastEventsVisible is defined %}
-    {% set startDate = currentMonthFirstDay %}
+  {% set startDate = currentMonthFirstDay %}
 {% endif %}
 
 {% set allEvents = craft.entries.section('events') %}
 {% set visibleEvents = [] %}
 
 {% for entry in allEvents %}
-    {% for block in entry.dateAndTime %}
-        {% if block.startDateAndTime >= startDate and block.startDateAndTime <= currentMonthLastDay and loop.index == 1 %}
-            {% set visibleEvents = visibleEvents|merge([{sortDate: block.startDateAndTime, entry: entry}]) %}
-        {% endif %}
-    {% endfor %}
+  {% for block in entry.dateAndTime %}
+    {% if block.startDateAndTime >= startDate and block.startDateAndTime <= currentMonthLastDay and loop.index == 1 %}
+      {% set visibleEvents = visibleEvents|merge([{sortDate: block.startDateAndTime, entry: entry}]) %}
+    {% endif %}
+  {% endfor %}
 {% endfor %}
 
 {% set sortedEvents = visibleEvents | supersort('sortAs', '{sortDate}') %}
 
 {% if sortedEvents|length %}
-    <h2>{{ currentMonth }}</h2>
-    <ul class="events__list">
-        {% for entry in sortedEvents %}
-            {% include "components/events/_event.twig" with { entry: entry.entry } %}
-        {% endfor %}
-    </ul>
+  <h2>{{ currentMonth }}</h2>
+  <ul class="events__list">
+    {% for entry in sortedEvents %}
+      {% include "components/events/_event.twig" with { entry: entry.entry } %}
+    {% endfor %}
+  </ul>
 {% endif %}

@@ -12,10 +12,10 @@ consistent
 
 markup:
 <div class="card--dark" style="background: #250f2c; padding: 2em 1em; margin: -2em -1em 0;">
-    <sg-wrapper-content/>
+  <sg-wrapper-content/>
 </div>
 <div class="card--light" style="background: #fff; padding: 1em; margin: 0 -1em -2em;">
-    <sg-wrapper-content/>
+  <sg-wrapper-content/>
 </div>
 
 Styleguide 9.1
@@ -45,9 +45,9 @@ Styleguide 1.1.1
 
 h1,
 .h1 {
-    font-size: 36px;
-    font-weight: 600;
-    margin: 0;
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
 }
 
 /*
@@ -64,9 +64,9 @@ Styleguide 1.1.2
 
 h2,
 .h2 {
-    font-size: 20px;
-    font-weight: 500;
-    margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
 }
 
 /*
@@ -83,9 +83,9 @@ Styleguide 1.1.3
 
 h3,
 .h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
 }
 
 /*
@@ -102,9 +102,9 @@ Styleguide 1.1.4
 
 h4,
 .h4 {
-    font-size: 14px;
-    font-weight: 500;
-    margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
 }
 
 
@@ -134,13 +134,13 @@ Styleguide 1.2.1
 p,
 div,
 span {
-    font-weight: 400;
-    margin: 0;
-    line-height: 1.25;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.25;
 }
 
 p + p {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 /*
@@ -159,7 +159,7 @@ Styleguide 1.2.2
 .small,
 p.small,
 span.small {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 /*
@@ -172,16 +172,16 @@ sg-wrapper:
 <sg-insert>9.1</sg-insert>
 
 Styleguide 1.3.0
- */
+*/
 
 p > a,
 .inline-link {
-    text-decoration: none;
-    font-weight: 500;
+  text-decoration: none;
+  font-weight: 500;
 
-    &:hover {
-        color: rgba($teal, .6);
-    }
+  &:hover {
+    color: rgba($teal, .6);
+  }
 }
 
 .card--dark p > a,
@@ -196,14 +196,14 @@ markup:
 <a class="action-link" href>More Info</a>
 
 Styleguide 1.3.1
- */
+*/
 .action-link {
-    @extend .inline-link;
+  @extend .inline-link;
 
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: .1em;
-    font-weight: 500;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: .1em;
+  font-weight: 500;
 }
 
 /*
@@ -217,14 +217,14 @@ Unordered Lists
 
 markup:
 <ul>
-    <li><strong>We're Slayers, <em>girlfriend</em></strong>. <em><strong><u>The</u></strong> Chosen two</em>. Why should we let him take all the fun out of it?</li>
-    <li>Life for a Slayer is very simple
-        <ul>
-            <li>Want</li>
-            <li>Take</li>
-            <li>Have</li>
-        </ul>
-    </li>
+  <li><strong>We're Slayers, <em>girlfriend</em></strong>. <em><strong><u>The</u></strong> Chosen two</em>. Why should we let him take all the fun out of it?</li>
+  <li>Life for a Slayer is very simple
+    <ul>
+      <li>Want</li>
+      <li>Take</li>
+      <li>Have</li>
+    </ul>
+  </li>
 </ul>
 
 sg-wrapper:
@@ -234,11 +234,11 @@ Styleguide 1.4.1
 */
 
 ul {
-    margin: 0;
+  margin: 0;
 }
 
 li + li {
-    margin-top: .25rem;
+  margin-top: .25rem;
 }
 
 .inline-list li + li {
@@ -266,54 +266,54 @@ sg-wrapper:
 <sg-insert>9.1</sg-insert>
 
 Styleguide 1.5.1
- */
+*/
 
 .events__body-copy h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
+  font-size: 1.75rem;
+  font-weight: 600;
 }
 
 .events__body-copy h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
- .events__body-copy h1,
- .events__body-copy h2,
- .events__body-copy h3,
- .events__body-copy h4,
- .events__body-copy h5,
- .events__body-copy h6 {
-     + h1,
-     + h2,
-     + h3,
-     + h4,
-     + h5,
-     + h6 {
-         margin-top: .5rem;
-     }
- }
+.events__body-copy h1,
+.events__body-copy h2,
+.events__body-copy h3,
+.events__body-copy h4,
+.events__body-copy h5,
+.events__body-copy h6 {
+  + h1,
+  + h2,
+  + h3,
+  + h4,
+  + h5,
+  + h6 {
+    margin-top: .5rem;
+  }
+}
 
- /*
- Body Copy - Headings + UL
+/*
+Body Copy - Headings + UL
 
- markup:
- <div class="events__body-copy">
- <sg-insert>1.1.1</sg-insert>
- <sg-insert>1.4.1</sg-insert>
- <sg-insert>1.1.2</sg-insert>
- <sg-insert>1.4.1</sg-insert>
- <sg-insert>1.1.3</sg-insert>
- <sg-insert>1.4.1</sg-insert>
- <sg-insert>1.1.4</sg-insert>
- <sg-insert>1.4.1</sg-insert>
- </div>
+markup:
+<div class="events__body-copy">
+<sg-insert>1.1.1</sg-insert>
+<sg-insert>1.4.1</sg-insert>
+<sg-insert>1.1.2</sg-insert>
+<sg-insert>1.4.1</sg-insert>
+<sg-insert>1.1.3</sg-insert>
+<sg-insert>1.4.1</sg-insert>
+<sg-insert>1.1.4</sg-insert>
+<sg-insert>1.4.1</sg-insert>
+</div>
 
- sg-wrapper:
- <sg-insert>9.1</sg-insert>
+sg-wrapper:
+<sg-insert>9.1</sg-insert>
 
- Styleguide 1.5.2
-  */
+Styleguide 1.5.2
+*/
 
 .events__body-copy ul + h1,
 .events__body-copy ul + h2,
@@ -321,7 +321,7 @@ Styleguide 1.5.1
 .events__body-copy ul + h4,
 .events__body-copy ul + h5,
 .events__body-copy ul + h6 {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .events__body-copy h1 + ul,
@@ -330,5 +330,5 @@ Styleguide 1.5.1
 .events__body-copy h4 + ul,
 .events__body-copy h5 + ul,
 .events__body-copy h6 + ul {
-    margin-top: .255rem;
+  margin-top: .255rem;
 }

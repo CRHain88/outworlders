@@ -12,7 +12,7 @@ Styleguide 5.5.0
 */
 .events__list + h2,
 .events__list + .h2 {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 /*
@@ -21,15 +21,15 @@ Events Month List
 markup:
 <h2>May</h2>
 <ul class="events__list">
-<sg-insert>5.5.2</sg-insert>
-<sg-insert>5.5.2</sg-insert>
+  <sg-insert>5.5.2</sg-insert>
+  <sg-insert>5.5.2</sg-insert>
 </ul>
 
 Styleguide 5.5.1
 */
 .events__list {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 /*
@@ -37,30 +37,30 @@ Event Summary
 
 markup:
 <li class="event" itemscope="" itemtype="http://schema.org/Event">
-    <a class="event__link" href="http://outworlders.org/events/1999/05/the-prom">
-        <meta itemprop="description" content="Party like it's 1999">
-        <div class="event__date">
-            <h3 class="event__start-date" itemprop="startDate" content="1999-05-11T20:00:00-04:00">11 Tuesday</h3>
-            <p class="event__start-time">8:00 PM</p>
-        </div>
-        <p itemprop="name">The Prom</p>
-    </a>
-    <a class="event__link" href="maps://maps.google.com/maps?q=Torrance+High+School%2C+2200+W+Carson+St%2C+Torrance%2C+CA%2C+90501%2C+U.S.&amp;zoom=5" target="blank" data-map-link="location">
-        <span class="small" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
-            <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                <meta itemprop="name" content="Sunnydale High School">
-                <span itemprop="streetAddress">2200 W Carson St</span>,&nbsp;
-                <span itemprop="streetAddress">
-                    <span itemprop="addressLocality">Torrance</span>,&nbsp;
-                    <span itemprop="streetAddress">
-                        <span itemprop="addressRegion">CA</span>&nbsp;
-                        <span itemprop="postalCode">90501</span>
-                    </span>
-                </span>
-            </span>
+  <a class="event__link" href="http://outworlders.org/events/1999/05/the-prom">
+    <meta itemprop="description" content="Party like it's 1999">
+    <div class="event__date">
+      <h3 class="event__start-date" itemprop="startDate" content="1999-05-11T20:00:00-04:00">11 Tuesday</h3>
+      <p class="event__start-time">8:00 PM</p>
+    </div>
+    <p itemprop="name">The Prom</p>
+  </a>
+  <a class="event__link" href="maps://maps.google.com/maps?q=Torrance+High+School%2C+2200+W+Carson+St%2C+Torrance%2C+CA%2C+90501%2C+U.S.&amp;zoom=5" target="blank" data-map-link="location">
+    <span class="small" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
+      <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+        <meta itemprop="name" content="Sunnydale High School">
+        <span itemprop="streetAddress">2200 W Carson St</span>,&nbsp;
+        <span itemprop="streetAddress">
+          <span itemprop="addressLocality">Torrance</span>,&nbsp;
+          <span itemprop="streetAddress">
+            <span itemprop="addressRegion">CA</span>&nbsp;
+            <span itemprop="postalCode">90501</span>
+          </span>
         </span>
-    </a>
-    <sg-insert>5.5.3</sg-insert>
+      </span>
+    </span>
+  </a>
+  <sg-insert>5.5.3</sg-insert>
 </li>
 
 Styleguide 5.5.2
@@ -71,28 +71,28 @@ Styleguide 5.5.2
 }
 
 .event + .event {
-    margin: 1rem 0 0;
+  margin: 1rem 0 0;
 }
 
 .event__link {
-    text-decoration: inherit;
-    color: inherit;
-    display: block;
+  text-decoration: inherit;
+  color: inherit;
+  display: block;
 
-    &:hover {
-      text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .event__date {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .event__start-time {
-    font-weight: 400;
-    font-size: .75rem;
+  font-weight: 400;
+  font-size: .75rem;
 }
 
 /*
@@ -107,20 +107,20 @@ markup:
 Styleguide 5.5.3
 */
 .action-bar {
-    margin: .5rem 0 0;
-    padding: .5rem 0 0;
-    border: 0;
-    border-top-width: 1px;
-    border-top-style: solid;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: flex-end;
+  margin: .5rem 0 0;
+  padding: .5rem 0 0;
+  border: 0;
+  border-top-width: 1px;
+  border-top-style: solid;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: flex-end;
 }
 
 .card--dark .action-bar {
-    border-top-color: rgba(white, .3);
+  border-top-color: rgba(white, .3);
 }
 
 .card--light .action-bar {
-    border-top-color: rgba($black, .3);
+  border-top-color: rgba($black, .3);
 }

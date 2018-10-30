@@ -1,58 +1,58 @@
 .officers__list {
-    list-style: none;
-    margin: .5rem 0 0;
-    padding: 0;
+  list-style: none;
+  margin: .5rem 0 0;
+  padding: 0;
 }
 
 .officers__open-positions {
-    color: rgba($white, .2);
-    margin: 2rem 0 0;
+  color: rgba($white, .2);
+  margin: 2rem 0 0;
 }
 
 .officer {
-    color: $white;
-    display: block;
-    font-size: 16px;
-    padding: .5rem 0;
-    text-decoration: none;
+  color: $white;
+  display: block;
+  font-size: 16px;
+  padding: .5rem 0;
+  text-decoration: none;
 
-    &:after { clear: both; content: ""; display: table; }
+  &:after { clear: both; content: ""; display: table; }
 }
 
 .officer__image {
-    border-radius: 52px;
-    height: 52px;
-    width: 52px;
-    float: left;
-    clear: left;
+  border-radius: 52px;
+  height: 52px;
+  width: 52px;
+  float: left;
+  clear: left;
 }
 
 .officer__image--placeholder {
-    background-color: rgba($purple, .5);
-    background-image: url('/assets/logo-comet.png');
-    background-size: 52px;
-    display: block;
+  background-color: rgba($purple, .5);
+  background-image: url('/assets/logo-comet.png');
+  background-size: 52px;
+  display: block;
 }
 
 .officer__text {
-    float: left;
-    margin-left: 1rem;
+  float: left;
+  margin-left: 1rem;
 }
 
 .officer__title {
-    font-size: 12px;
-    opacity: .5;
-    text-transform: uppercase;
+  font-size: 12px;
+  opacity: .5;
+  text-transform: uppercase;
 
-    .officer:hover & {
-        opacity: 1;
-    }
+  .officer:hover & {
+    opacity: 1;
+  }
 }
 
 .officer__email {
-    font-size: 12px;
+  font-size: 12px;
 
-    .officer & {
-        letter-spacing: 1px;
-    }
+  .officer & {
+    letter-spacing: 1px;
+  }
 }

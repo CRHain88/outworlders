@@ -8,17 +8,18 @@
 @import "components/6.0.pages/_index";
 
 /* styleguide:ignore:start */
-body,
-%body {
-    background-color: $black;
-    color: $white;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin: 0;
+%body,
+body {
+  background-color: $black;
+  color: $white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
+
 // Style-guide specific classes
 .sg-common {
-    @extend %body;
-    background-color: rgba($black, 1);
-    padding: 2em 1em;
+  @extend %body;
+  background-color: rgba($black, 1);
+  padding: 2em 1em;
 }
 /* styleguide:ignore:end */

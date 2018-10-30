@@ -15,61 +15,61 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=5">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=5">
 
-        {% hook 'seomaticRender' %}
+    {% hook 'seomaticRender' %}
 
-        <link rel="home" href="{{ siteUrl }}" />
-        <link rel="stylesheet" href="/css/styles.min.css"/>
+    <link rel="home" href="{{ siteUrl }}" />
+    <link rel="stylesheet" href="/css/styles.min.css"/>
 
-        <style>
-            .card__header {
-                display: flex;
-                justify-content: space-between;
-                align-items: baseline;
-            }
-        </style>
+    <style>
+      .card__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+    </style>
 
-        <!-- Facebook Pixel Code -->
-        <script>
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '342891702923040');
-            fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=342891702923040&ev=PageView&noscript=1"
-        /></noscript>
-        <!-- End Facebook Pixel Code -->
-    </head>
-    <body>
-        <div class="flex-content">
-            <div class="content flex-content--navigation" data-eq--content>
-                {% include "components/_navigation.twig" %}
-            </div>
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '342891702923040');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=342891702923040&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+  </head>
+  <body>
+    <div class="flex-content">
+      <div class="content flex-content--navigation" data-eq--content>
+        {% include "components/_navigation.twig" %}
+      </div>
 
-            <div class="flex-content---main-content">
-                {% include "components/_notification-banner.twig" %}
+      <div class="flex-content---main-content">
+        {% include "components/_notification-banner.twig" %}
 
-                {% block content %}
-                    <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-                    <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-                {% endblock %}
+        {% block content %}
+          <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+          <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+        {% endblock %}
 
-                {% include "components/_footer.twig" %}
-            </div>
+        {% include "components/_footer.twig" %}
+      </div>
 
-            <i class="planet planet--normal"></i>
-        </div>
+      <i class="planet planet--normal"></i>
+    </div>
 
-        <script src="/js/bundle.js.js"></script>
-    </body>
+    <script src="/js/bundle.js.js"></script>
+  </body>
 </html>

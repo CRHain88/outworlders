@@ -3,43 +3,43 @@ Notification Banner
 
 markup:
 <div class="notification-banner [ card card--pink ]">
-    <div class="card__container">
-        <ul>
-            <li>
-                <h3 class="card__heading">I killed Angel!</h3>
-                <p>I loved him more than I will ever love anything in this life and I put a sword through his heart because I had to.</p>
-            </li>
-            <li>
-                <h3 class="card__heading">What was the highlight of our relationship?</h3>
-                <p>When you broke up with me or when I killed you?</p>
-            </li>
-        </ul>
-    </div>
+  <div class="card__container">
+    <ul>
+      <li>
+        <h3 class="card__heading">I killed Angel!</h3>
+        <p>I loved him more than I will ever love anything in this life and I put a sword through his heart because I had to.</p>
+      </li>
+      <li>
+        <h3 class="card__heading">What was the highlight of our relationship?</h3>
+        <p>When you broke up with me or when I killed you?</p>
+      </li>
+    </ul>
+  </div>
 </div>
 
 Styleguide 5.2.0
 */
 
 .notification-banner {
-    @media (min-width: 900px) {
-        max-width: calc(65% - .5rem);
-    }
+  @media (min-width: 900px) {
+    max-width: calc(65% - .5rem);
+  }
 }
 
 .notification-banner ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .notification-banner li + li {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .card.notification-banner a {
-    color: inherit;
-    text-decoration: underline;
+  color: inherit;
+  text-decoration: underline;
 
-    &:hover {
-        color: $pink-onDark;
-    }
+  &:hover {
+    color: $pink-onDark;
+  }
 }

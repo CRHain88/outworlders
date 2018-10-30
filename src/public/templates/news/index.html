@@ -14,21 +14,21 @@
 {% set title = "News" %}
 
 {% block content %}
-    <main>
-        <div class="content" data-eq--content>
-            <div class="content__primary [ card card--blue card--light ]">
-                <div class="card__container">
-                    <div class="card__header">
-                        <h1>News</h1>
-                    </div>
+  <main>
+    <div class="content" data-eq--content>
+      <div class="content__primary [ card card--blue card--light ]">
+        <div class="card__container">
+          <div class="card__header">
+            <h1>News</h1>
+          </div>
 
-                    <ul>
-                      {% for entry in craft.entries.section('news') %}
-                          <li><a href="{{entry.url}}">{{entry.title}}</a></li>
-                      {% endfor %}
-                    </ul>
-                </div>
-            </div>
+          <ul>
+            {% for entry in craft.entries.section('news') %}
+            <li><a href="{{entry.url}}">{{entry.title}}</a></li>
+            {% endfor %}
+          </ul>
         </div>
-    </main>
+      </div>
+    </div>
+  </main>
 {% endblock %}

@@ -6,9 +6,9 @@ markup:
 
 sg-wrapper:
 <div class="card card--light card--orange card--no-border">
-    <div class="card__container">
-        <sg-wrapper-content/>
-    </div>
+  <div class="card__container">
+    <sg-wrapper-content/>
+  </div>
 </div>
 
 .card__header - A card with no header styling.
@@ -18,8 +18,8 @@ Styleguide 2.2.0
 */
 
 .card__header--solid {
-    margin: -1em -1em 0;
-    padding: 1em;
+  margin: -1em -1em 0;
+  padding: 1em;
 }
 
 .card__header--solid + * { margin-top: 1rem; }

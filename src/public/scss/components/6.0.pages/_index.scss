@@ -1,39 +1,39 @@
 @import "_6.1.http-error";
 
 body {
-    @media (min-width: $navigation-breakpoint) {
-        background-image: url('/assets/background-stars.png');
-        background-size: 50%;
-        -webkit-font-smoothing: antialiased;
-    }
+  @media (min-width: $navigation-breakpoint) {
+    background-image: url('/assets/background-stars.png');
+    background-size: 50%;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    @media (min-width: 900px) {
-        &:before {
-            content: "";
-            background-image: url('/assets/background-planet-top.png');
-            width: 465px;
-            height: 354px;
-            position: absolute;
-            top: 50px;
-            right: 0;
-            z-index: -1;
-        }
+  @media (min-width: 900px) {
+    &:before {
+      content: "";
+      background-image: url('/assets/background-planet-top.png');
+      width: 465px;
+      height: 354px;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      z-index: -1;
     }
+  }
 }
 
 .planet {
-    position: relative;
+  position: relative;
 }
 
 .planet--normal:before {
-    @media (min-width: $navigation-breakpoint) {
-        background-image: url('/assets/background-planet-bottom.png');
-        bottom: 0;
-        content: "";
-        height: 739px;
-        left: -1rem;
-        position: absolute;
-        width: 759px;
-        z-index: -1;
-    }
+  @media (min-width: $navigation-breakpoint) {
+    background-image: url('/assets/background-planet-bottom.png');
+    bottom: 0;
+    content: "";
+    height: 739px;
+    left: -1rem;
+    position: absolute;
+    width: 759px;
+    z-index: -1;
+  }
 }

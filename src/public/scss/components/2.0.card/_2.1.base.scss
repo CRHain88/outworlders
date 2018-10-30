@@ -27,7 +27,7 @@ Card States
 
 markup:
 <div class="{$modifiers}">
-    <sg-insert>9.2</sg-insert>
+  <sg-insert>9.2</sg-insert>
 </div>
 
 .card.card--dark - A dark card.
@@ -37,12 +37,12 @@ Styleguide 2.1.1
 */
 
 .card {
-    border-left: .5rem solid;
-    color: $white;
+  border-left: .5rem solid;
+  color: $white;
 }
 
 .card__container {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .card--light { background-color: $white; color: $black; }
@@ -55,7 +55,7 @@ Colors
 
 markup:
 <div class="{$modifiers}">
-    <sg-insert>9.2</sg-insert>
+  <sg-insert>9.2</sg-insert>
 </div>
 
 .card.card--dark.card--blue - A dark blue card.
@@ -72,11 +72,11 @@ markup:
 Styleguide 2.1.2
 */
 
-.card--blue { border-left-color: $blue; }
+.card--blue   { border-left-color: $blue; }
 .card--orange { border-left-color: $orange; }
-.card--pink { border-left-color: $pink; }
+.card--pink   { border-left-color: $pink; }
 .card--purple { border-left-color: $purple; }
-.card--teal { border-left-color: $teal; }
+.card--teal   { border-left-color: $teal; }
 
 //////////////////////////////////////////////////////////////////////////////// Card tints
 
@@ -85,7 +85,7 @@ Overlay Tints
 
 markup:
 <div class="{$modifiers}">
-    <sg-insert>9.2</sg-insert>
+  <sg-insert>9.2</sg-insert>
 </div>
 
 .card.card--tinted.card--dark.card--blue - A dark blue card with an overlay tint.
@@ -103,19 +103,19 @@ Styleguide 2.1.3
 */
 
 .card--tinted.card--blue .card__container {
-    background-color: rgba($blue, .3);
+  background-color: rgba($blue, .3);
 }
 .card--tinted.card--orange .card__container {
-    background-color: rgba($orange, .3);
+  background-color: rgba($orange, .3);
 }
 .card--tinted.card--pink .card__container {
-    background-color: rgba($pink, .3);
+  background-color: rgba($pink, .3);
 }
 .card--tinted.card--purple .card__container {
-    background-color: rgba($purple, .3);
+  background-color: rgba($purple, .3);
 }
 .card--tinted.card--teal .card__container {
-    background-color: rgba($teal, .3);
+  background-color: rgba($teal, .3);
 }
 
 //////////////////////////////////////////////////////////////////////////////// Card radials
@@ -143,19 +143,19 @@ Styleguide 2.1.4
 */
 
 .card--radial.card--blue .card__container {
-    background: radial-gradient(at top left, rgba($blue, .23) 0%, rgba($blue, 0) 45%);
+  background: radial-gradient(at top left, rgba($blue, .23) 0%, rgba($blue, 0) 45%);
 }
 .card--radial.card--orange .card__container {
-    background: radial-gradient(at top left, rgba($orange, .23) 0%, rgba($orange, 0) 45%);
+  background: radial-gradient(at top left, rgba($orange, .23) 0%, rgba($orange, 0) 45%);
 }
 .card--radial.card--pink .card__container {
-    background: radial-gradient(at top left, rgba($pink, .23) 0%, rgba($pink, 0) 45%);
+  background: radial-gradient(at top left, rgba($pink, .23) 0%, rgba($pink, 0) 45%);
 }
 .card--radial.card--purple .card__container {
-    background: radial-gradient(at top left, rgba($purple, .23) 0%, rgba($purple, 0) 45%);
+  background: radial-gradient(at top left, rgba($purple, .23) 0%, rgba($purple, 0) 45%);
 }
 .card--radial.card--teal .card__container {
-    background: radial-gradient(at top left, rgba($teal, .23) 0%, rgba($teal, 0) 45%);
+  background: radial-gradient(at top left, rgba($teal, .23) 0%, rgba($teal, 0) 45%);
 }
 
 /*
@@ -163,7 +163,7 @@ No Border
 
 markup:
 <div class="{$modifiers}">
-    <sg-insert>9.2</sg-insert>
+  <sg-insert>9.2</sg-insert>
 </div>
 
 .card.card--dark.card--no-border - A card with no border.
@@ -173,7 +173,7 @@ Styleguide 2.1.5
 */
 
 .card--no-border {
-    @media(min-width: 500px) {
-        border-left: 0;
-    }
+  @media(min-width: 500px) {
+    border-left: 0;
+  }
 }

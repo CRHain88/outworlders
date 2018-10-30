@@ -12,31 +12,33 @@
 {% extends "_layout" %}
 
 {% block content %}
-<div class="content" data-eq--content>
+  <div class="content" data-eq--content>
     <main class="content__primary [ card card--blue card--light ]">
-        <article class="card__container">
-            <div class="card__header">
-                <h1>{{ entry }}</h1>
-            </div>
+      <article class="card__container">
+        <div class="card__header">
+          <h1>{{ entry }}</h1>
+        </div>
 
-            {{ entry.body }}
+        {{ entry.body }}
 
-        </article>
+      </article>
     </main>
 
     {% if entry.minutesAssets | length %}
-        <aside class="content__secondary [ card card--purple card--light ]">
-            <div class="card__container">
-                <div class="card__header">
-                    <h2>Downloads</h2>
-                </div>
-                <ul>
-                    {% for asset in entry.minutesAssets %}
-                        <li><a href="{{ asset.getUrl() }}" target="blank">{{ asset }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </aside>
+      <aside class="content__secondary [ card card--purple card--light ]">
+        <div class="card__container">
+          <div class="card__header">
+            <h2>Downloads</h2>
+          </div>
+          <ul>
+            {% for asset in entry.minutesAssets %}
+              <li>
+                <a href="{{ asset.getUrl() }}" target="blank">{{ asset }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </aside>
     {% endif %}
-</div>
+  </div>
 {% endblock %}

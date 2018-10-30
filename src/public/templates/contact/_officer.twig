@@ -1,16 +1,20 @@
 <a class="officer" href="mailto:{{ entry.emailAddress }}" itemprop="employee" itemscope itemtype="http://schema.org/OrganizationRole">
-    <div itemprop="member" itemscope itemtype="http://schema.org/Person">
-        <i class="officer__image officer__image--placeholder" itemprop="image"></i>
-    </div>
-    <div class="officer__text">
-        <h3 class="officer__title card__color-text" itemprop="roleName">{{ entry }}</h3>
+  <div itemprop="member" itemscope itemtype="http://schema.org/Person">
+    <i class="officer__image officer__image--placeholder" itemprop="image"></i>
+  </div>
+  <div class="officer__text">
+    <h3 class="officer__title card__color-text" itemprop="roleName">
+      {{ entry }}
+    </h3>
 
-        {% for member in entry.members %}
-            <div itemprop="member" itemscope itemtype="http://schema.org/Person">
-                <h4 class="h2 officer__name" itemprop="name">{{ member }}</h4>
-            </div>
-        {% endfor %}
+    {% for member in entry.members %}
+      <div itemprop="member" itemscope itemtype="http://schema.org/Person">
+        <h4 class="h2 officer__name" itemprop="name">{{ member }}</h4>
+      </div>
+    {% endfor %}
 
-        <span class="officer__email" itemprop="email">{{ entry.emailAddress }}</span>
-    </div>
+    <span class="officer__email" itemprop="email">
+      {{ entry.emailAddress }}
+    </span>
+  </div>
 </a>

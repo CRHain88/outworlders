@@ -21,31 +21,31 @@
 
 {% block content %}
 
-    <div class="content" data-eq--content>
-        <main class="events content__primary [ card card--blue card--light ]">
-            <div class="card__container">
-                <div class="card__header">
-                    <h1>Events</h1>
-                    <a class="action-link" href="/events">See all events</a>
-                </div>
+  <div class="content" data-eq--content>
+    <main class="events content__primary [ card card--blue card--light ]">
+      <div class="card__container">
+        <div class="card__header">
+          <h1>Events</h1>
+          <a class="action-link" href="/events">See all events</a>
+        </div>
 
-                {% include "components/events/_month.twig" with {currentDate: now|date_modify("-12 hour")} %}
-                {% include "components/events/_month.twig" with {currentDate: now|date_modify("+28 day"), arePastEventsVisible: true} %}
-            </div>
-        </main>
-        <div class="about-us content__secondary [ card card--orange card--dark ]" data-eq--card="about-us">
-            <div class="card__container">
-                <div class="card__header">
-                    <h1>{{aboutUs.text}}</h1>
-                </div>
-                {{aboutUs.body}}
-            </div>
+        {% include "components/events/_month.twig" with {currentDate: now|date_modify("-12 hour")} %}
+        {% include "components/events/_month.twig" with {currentDate: now|date_modify("+28 day"), arePastEventsVisible: true} %}
+      </div>
+    </main>
+    <div class="about-us content__secondary [ card card--orange card--dark ]" data-eq--card="about-us">
+      <div class="card__container">
+        <div class="card__header">
+          <h1>{{aboutUs.text}}</h1>
         </div>
-        <div class="membership content__primary [ card card--teal card--tinted card--dark ]">
-            <div class="card__container">
-                <h1>{{becomeAMember.text}}</h1>
-                {{becomeAMember.body}}
-            </div>
-        </div>
+        {{aboutUs.body}}
+      </div>
     </div>
+    <div class="membership content__primary [ card card--teal card--tinted card--dark ]">
+      <div class="card__container">
+        <h1>{{becomeAMember.text}}</h1>
+        {{becomeAMember.body}}
+      </div>
+    </div>
+  </div>
 {% endblock %}
