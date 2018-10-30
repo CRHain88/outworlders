@@ -1,7 +1,8 @@
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
+var webpack = require('webpack');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 var envIsProd = (process.env.NODE_ENV === 'production');
 
@@ -47,6 +48,14 @@ module.exports = [
         },
         plugins: [
             new ExtractTextPlugin('[name].css'),
+            new ExtractTextPlugin('[name].min.css'),
+
+            new OptimizeCssAssetsPlugin({
+                assetNameRegExp: /\.min\.css$/g,
+                cssProcessor: require('cssnano'),
+                cssProcessorOptions: { discardComments: {removeAll: true } },
+                canPrint: true
+            }),
 
             // Copy Craft resources
             new CopyWebpackPlugin([
