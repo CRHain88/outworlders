@@ -1,13 +1,16 @@
 {
-  "name": "outworlders",
+  "name": "@outworlders/website",
   "version": "1.0.0",
-  "description": "Website for the Atlanta Outworders",
+  "description": "Website for the Atlanta OutWorders",
   "main": "index.js",
   "scripts": {
     "start": "docker-compose up && npm run webpack",
     "styleguide": "styleguide --kssSource ./dist/public/css/styles.css --styleSource ./dist/public/css/styles.css --overviewPath README.md --output ./dist/styleguide/ --commonClass sg-common --watch --server --port 3030",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch"
+  },
+  "engines": {
+    "node": ">=11.0.0"
   },
   "author": "Christian Hain <christian@crhain.com> (crhain.com)",
   "license": "GPL-3.0",
@@ -25,7 +28,7 @@
     "gulp-rename": "1.2.2",
     "gulp-run-sequence": "0.3.2",
     "imports-loader": "0.7.1",
-    "markdown-toc": "1.1.0",
+    "markdown-toc": "1.2.0",
     "node-sass": "4.5.1",
     "optimize-css-assets-webpack-plugin": "3.2.0",
     "postcss-load-config": "1.2.0",

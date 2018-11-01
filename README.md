@@ -5,12 +5,39 @@ This is the repo for the [Atlanta Outworlders website](http://outworlders.info).
 
 <!-- toc -->
 
-- [Installation](#installation)
+- [Compile & Deploy](#compile--deploy)
 - [CSS Style Guide](#css-style-guide)
+- [Installation](#installation)
+- [Migrate Databases](#migrate-databases)
 - [Support](#support)
 - [Contributing](#contributing)
 
 <!-- tocstop -->
+
+
+Compile & Deploy
+--------------------------------------------------------------------------------
+Follow the steps outlined below to compile the code and deploy to production:
+
+1. Run weback to bundle the code:
+    ```sh
+    $ yarn webpack
+    ```
+
+2. Copy the contents of `dist/public` to the server
+
+
+CSS Style Guide
+--------------------------------------------------------------------------------
+This project uses a CSS style guide generator. Whenever working with components,
+be sure to keep the style guide up to date.
+
+To start the style guide, run:
+
+```sh
+$ yarn styleguide
+```
+
 
 Installation
 --------------------------------------------------------------------------------
@@ -19,7 +46,7 @@ the latest copy of [NodeJS](http://nodejs.org) and [NPM](http://npmjs.com)
 installed before following these installation instructions.
 
 ```sh
-$ npm i
+$ yarn
 ```
 
 
@@ -35,11 +62,11 @@ Panel.
 3. Re-create the destination database.
 4. Run
 
-  ```sh
-  $ docker exec -i outworlders_db_1 \
-    mysql -uroot -proot --database craft_outworlders \
-    < $SQL_BACKUP_PATH
-  ```
+    ```sh
+    $ docker exec -i outworlders_db_1 \
+      mysql -uroot -proot --database craft_outworlders \
+      < $SQL_BACKUP_PATH
+    ```
 
   Where:
 
@@ -47,17 +74,6 @@ Panel.
   - `$DATABASE_NAME` is the name of the database (such as `magento_asp`); and
   - `$SQL_BACKUP_PATH` is the directory where the `.sql` back up file was
     downloaded.
-
-CSS Style Guide
---------------------------------------------------------------------------------
-This project uses a CSS style guide generator. Whenever working with components,
-be sure to keep the style guide up to date.
-
-To start the style guide, run:
-
-```
-$ npm run styleguide
-```
 
 
 Support
