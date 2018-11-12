@@ -7,6 +7,7 @@
           <meta itemprop="priceCurrency" content="USD">
           <meta itemprop="availability" content="http://schema.org/InStock">
         </div>
+		<meta itemprop="eventStatus" content="http://schema.org/{{ entry.eventStatus }}">
 
         {% for block in entry.dateAndTime %}
             <div class="event__date">
