@@ -23,8 +23,11 @@
           <h1>{{ entry.title }}</h1>
         </div>
 
-        <p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-        {{ entry.body }}
+        <p style="color:#888;font-size:.875rem">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+
+        <div class="dynamic-body-copy" style="margin-top:1rem">
+          {{ entry.body }}
+        </div>
 
       </article>
     </main>

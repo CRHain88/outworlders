@@ -1,3 +1,11 @@
+/*
+Text
+
+markup:
+<h2 class="card__heading">I think I know why Joan's the boss!</h2>
+
+Styleguide 2.4.0
+*/
 .card--blue   .card__color-text { @extend %color-text--blue; }
 .card--orange .card__color-text { @extend %color-text--orange; }
 .card--pink   .card__color-text { @extend %color-text--pink; }
