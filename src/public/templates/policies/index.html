@@ -1,0 +1,30 @@
+{#
+ # Policies index template
+ # -----------------------
+ #
+ # This template is loaded whenever http://example.com/privacy-policy is requested,
+ # because it is located at contact/index.html in the public/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+{% set seomaticMeta = {seoTitle: Policies} %}
+
+
+{% block content %}
+  <div class="content" data-eq--content>
+    <main class="content__primary [ card card--blue card--light ]">
+      <article class="card__container">
+        <div class="card__header">
+          <h1>Policies</h1>
+        </div>
+        <ul>
+          <li><a href="{{ baseUrl }}/policies/privacy">Privacy Policy</a></li>
+          <li><a href="{{ baseUrl }}/policies/anti-harassment">Anti-Harassment Policy</a></li>
+        </ul>
+      </article>
+    </main>
+  </div>
+{% endblock %}

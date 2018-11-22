@@ -207,6 +207,36 @@ Styleguide 1.3.1
 }
 
 /*
+Button Link
+
+markup:
+<a class="button-link" href>Embrace the pain, spank your inner moppet, whatever, but get over it.</a>
+
+Styleguide 1.3.2
+*/
+
+.button-link {
+  background-color: #ccc;
+  border: 1px solid #ddd;
+  color: #000;
+
+  border-radius: 5px;
+  display: block;
+  font-weight: 600;
+  line-height: 2;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-link:hover {
+  background-color: #ddd;
+}
+
+* + .button-link {
+  margin-top: 1rem;
+}
+
+/*
 Lists
 
 Styleguide 1.4.0

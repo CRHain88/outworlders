@@ -1,0 +1,164 @@
+/*
+Button Links
+
+markup:
+<sg-insert>1.3.2</sg-insert>
+
+sg-wrapper:
+<div class="card card--light card--blue">
+  <div class="card__container">
+    <sg-wrapper-content/>
+    <p>’Cause pretty soon you’re not even gonna have the loser friends you’ve got now.</p>
+  </div>
+</div>
+<div class="card card--light card--orange">
+  <div class="card__container">
+    <sg-wrapper-content/>
+    <p>’Cause pretty soon you’re not even gonna have the loser friends you’ve got now.</p>
+  </div>
+</div>
+<div class="card card--light card--pink">
+  <div class="card__container">
+    <sg-wrapper-content/>
+    <p>’Cause pretty soon you’re not even gonna have the loser friends you’ve got now.</p>
+  </div>
+</div>
+<div class="card card--light card--purple">
+  <div class="card__container">
+    <sg-wrapper-content/>
+    <p>’Cause pretty soon you’re not even gonna have the loser friends you’ve got now.</p>
+  </div>
+</div>
+<div class="card card--light card--teal">
+  <div class="card__container">
+    <sg-wrapper-content/>
+    <p>’Cause pretty soon you’re not even gonna have the loser friends you’ve got now.</p>
+  </div>
+</div>
+<div class="card card--dark card--blue">
+  <div class="card__container">
+    <sg-wrapper-content/>
+    <p>’Cause pretty soon you’re not even gonna have the loser friends you’ve got now.</p>
+  </div>
+</div>
+<div class="card card--dark card--orange">
+  <div class="card__container">
+    <sg-wrapper-content/>
+    <p>’Cause pretty soon you’re not even gonna have the loser friends you’ve got now.</p>
+  </div>
+</div>
+<div class="card card--dark card--pink">
+  <div class="card__container">
+    <sg-wrapper-content/>
+    <p>’Cause pretty soon you’re not even gonna have the loser friends you’ve got now.</p>
+  </div>
+</div>
+<div class="card card--dark card--purple">
+  <div class="card__container">
+    <sg-wrapper-content/>
+    <p>’Cause pretty soon you’re not even gonna have the loser friends you’ve got now.</p>
+  </div>
+</div>
+<div class="card card--dark card--teal">
+  <div class="card__container">
+    <sg-wrapper-content/>
+    <p>’Cause pretty soon you’re not even gonna have the loser friends you’ve got now.</p>
+  </div>
+</div>
+
+Styleguide 2.5.0
+*/
+.card--blue.card--light .button-link {
+  background-color: $blue-onLight;
+  border-color: darken($blue-onLight, 10%);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($blue-onLight, 10%);
+  }
+}
+.card--blue.card--dark .button-link {
+  background-color: $blue-onDark;
+  border-color: lighten($blue-onDark, 10%);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($blue-onDark, 10%);
+  }
+}
+
+.card--orange.card--light .button-link {
+  background-color: $orange-onLight;
+  border-color: darken($orange-onLight, 10%);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($orange-onLight, 10%);
+  }
+}
+.card--orange.card--dark .button-link {
+  background-color: $orange-onDark;
+  border-color: lighten($orange-onDark, 10%);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($orange-onDark, 10%);
+  }
+}
+
+.card--pink.card--light .button-link {
+  background-color: $pink-onLight;
+  border-color: darken($pink-onLight, 10%);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($pink-onLight, 10%);
+  }
+}
+.card--pink.card--dark .button-link {
+  background-color: $pink-onDark;
+  border-color: lighten($pink-onDark, 10%);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($pink-onDark, 10%);
+  }
+}
+
+.card--purple.card--light .button-link {
+  background-color: $purple-onLight;
+  border-color: darken($purple-onLight, 10%);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($purple-onLight, 10%);
+  }
+}
+.card--purple.card--dark .button-link {
+  background-color: $purple-onDark;
+  border-color: lighten($purple-onDark, 10%);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($purple-onDark, 10%);
+  }
+}
+
+.card--teal.card--light .button-link {
+  background-color: $teal-onLight;
+  border-color: darken($teal-onLight, 10%);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($teal-onLight, 10%);
+  }
+}
+.card--teal.card--dark .button-link {
+  background-color: $teal-onDark;
+  border-color: lighten($teal-onDark, 10%);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($teal-onDark, 10%);
+  }
+}
