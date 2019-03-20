@@ -1,0 +1,75 @@
+/*
+Events HUD
+
+markup:
+<div class="events-hud">
+  <div>
+    <i class="hud-icon hud-icon--map-marker"></i>
+    The Bronze
+  </div>
+  <div>
+    <span class="hud-date"><i class="hud-icon hud-icon--time-of-day"></i><span>Sat. Jul. 5</span></span>
+    <span class="hud-price"><i class="hud-icon hud-icon--map-price"></i><span>FREE!</span></span>
+  </div>
+</div>
+
+sg-wrapper:
+<sg-insert>9.1</sg-insert>
+
+Styleguide 5.6.0
+*/
+.events-hud {
+  border-bottom: 1px solid rgba($black, .1);
+  border-top: 1px solid rgba($black, .1);
+  color: rgba($black, .6);
+  display: flex;
+  font-size: .75em;
+  justify-content: space-between;
+  padding: .5em .25em;
+
+  [data-eq-state~="content--large"] & {
+    font-size: 1em;
+  }
+}
+
+.events-hud__anchor {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hud-date + .hud-price {
+  margin-left: 2em;
+}
+
+.hud-icon {
+  display: inline-block;
+  height: 1em;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(.1em);
+  opacity: .4;
+}
+
+.hud-icon--map-marker {
+  background-image: url('/assets/map-marker-alt-solid.svg');
+  width: .75em;
+}
+
+.hud-icon--map-price {
+  background-image: url('/assets/dollar-sign-solid.svg');
+  width: .6em;
+}
+
+.hud-icon--time-of-day {
+  background-image: url('/assets/sun-solid.svg');
+  width: 1em;
+}
+
+.hud-icon--time-of-day.hud-icon--night {
+  background-image: url('/assets/moon-solid.svg');
+  width: 1em;
+}
+
+.hud-icon + span {
+  margin-left: .25em;
+}

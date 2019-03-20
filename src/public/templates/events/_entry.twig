@@ -12,6 +12,46 @@
 {% extends "_layout" %}
 
 {% block content %}
+  {% set addressName = "" %}
+  {% set addressStreet = "" %}
+  {% set addressCity = "" %}
+  {% set addressRegion = "" %}
+  {% set addressPostalCode = "" %}
+
+  {% if entry.address is defined and entry.address != "" %}
+    {% set addressName = entry.address.name|trim %}
+    {% set addressStreet = entry.address.street|trim ~ " " ~ entry.address.street2|trim %}
+    {% set addressCity = entry.address.city|trim %}
+    {% set addressRegion = entry.address.region|trim %}
+    {% set addressPostalCode = entry.address.postalCode|trim %}
+  {% endif %}
+
+  {% for block in entry.location %}
+    {% if block.address is defined and block.address != "" %}
+      {% set addressName = block.address.name|trim %}
+      {% set addressStreet = block.address.street|trim ~ " " ~ block.address.street2|trim %}
+      {% set addressCity = block.address.city|trim %}
+      {% set addressRegion = block.address.region|trim %}
+      {% set addressPostalCode = block.address.postalCode|trim %}
+    {% endif %}
+  {% endfor %}
+
+  {% set cost %}
+    {% if entry.cost == "0.00" %}
+      FREE!
+    {% else %}
+      ${{ entry.cost }}
+    {% endif %}
+  {% endset %}
+
+  {% set timeOfDay %}
+    {% if entry.dateAndTime[0].startDateAndTime|date("G") < 18 %}
+      day
+    {% else %}
+      night
+    {% endif %}
+  {% endset %}
+
   <style>
     .dynamic-body-copy {
       margin-top: 1rem;
@@ -32,6 +72,10 @@
     .events__detail-note {
       margin-top: 1rem;
     }
+
+	.events-hud {
+		margin-top: 1rem;
+	}
   </style>
   <div class="content" data-eq--content>
     <main class="events content__primary [ card card--blue card--light ]">
@@ -47,6 +91,25 @@
             </div>
           {% endif %}
         {% endfor %}
+
+        <div class="events-hud">
+          <a class="events-hud__anchor" href="#event-location">
+            <i class="hud-icon hud-icon--map-marker" aria-label="location"></i>
+            {{ addressName }}
+          </a>
+          <div>
+            {% for block in entry.dateAndTime %}
+              <span class="hud-date">
+                <i class="hud-icon hud-icon--time-of-day hud-icon--{{ timeOfDay|trim }}" aria-label="date"></i>
+                <span>{{ block.startDateAndTime|date("D. M. j") }}</span>
+              </span>
+            {% endfor %}
+            <span class="hud-price">
+              <i class="hud-icon hud-icon--map-price" aria-label="cost"></i>
+              <span>{{ cost }}</span>
+            </span>
+          </div>
+        </div>
 
         <div class="dynamic-body-copy">
           {{ entry.body }}
@@ -93,10 +156,15 @@
         {% endif %}
 
         <div class="events__details">
+          <h3>Cost?</h3>
+          <p class="small">{{ cost }}</p>
+        </div>
+
+        <div class="events__details">
           <h3>When?</h3>
           {% for block in entry.dateAndTime %}
             <p class="small" itemprop="startDate" content="{{ block.startDateAndTime|date("c") }}">{{ block.startDateAndTime|date("l, F d, Y") }}</p>
-            <p class="small">{{ block.startDateAndTime|date("g:i A") }}</p>
+            <p class="small">{{ block.startDateAndTime|date("g:i A") }}&mdash;{{ block.endDateAndTime|date("g:i A") }}</p>
           {% endfor %}
         </div>
 
@@ -106,33 +174,9 @@
               font-size: .75rem;
             }
           </style>
-          <h3>Where?</h3>
+          <h3 id="event-location">Where?</h3>
           <span class="small" itemprop="location" itemscope itemtype="http://schema.org/Place">
             <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-              {% set addressName = "" %}
-              {% set addressStreet = "" %}
-              {% set addressCity = "" %}
-              {% set addressRegion = "" %}
-              {% set addressPostalCode = "" %}
-
-              {% if entry.address is defined and entry.address != "" %}
-                {% set addressName = entry.address.name|trim %}
-                {% set addressStreet = entry.address.street|trim ~ " " ~ entry.address.street2|trim %}
-                {% set addressCity = entry.address.city|trim %}
-                {% set addressRegion = entry.address.region|trim %}
-                {% set addressPostalCode = entry.address.postalCode|trim %}
-              {% endif %}
-
-              {% for block in entry.location %}
-                {% if block.address is defined and block.address != "" %}
-                  {% set addressName = block.address.name|trim %}
-                  {% set addressStreet = block.address.street|trim ~ " " ~ block.address.street2|trim %}
-                  {% set addressCity = block.address.city|trim %}
-                  {% set addressRegion = block.address.region|trim %}
-                  {% set addressPostalCode = block.address.postalCode|trim %}
-                {% endif %}
-              {% endfor %}
-
               <span itemprop="name">{{ addressName }}</span><br />
               <span itemprop="streetAddress">{{ addressStreet|trim }}</span><br />
               <span itemprop="addressLocality">{{ addressCity }}</span> <span itemprop="addressRegion">{{ addressRegion }}</span> <span itemprop="postalCode">{{ addressPostalCode }}</span>
