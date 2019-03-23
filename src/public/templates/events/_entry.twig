@@ -17,6 +17,7 @@
   {% set addressCity = "" %}
   {% set addressRegion = "" %}
   {% set addressPostalCode = "" %}
+  {% set addressCountry = "" %}
 
   {% if entry.address is defined and entry.address != "" %}
     {% set addressName = entry.address.name|trim %}
@@ -24,6 +25,7 @@
     {% set addressCity = entry.address.city|trim %}
     {% set addressRegion = entry.address.region|trim %}
     {% set addressPostalCode = entry.address.postalCode|trim %}
+    {% set addressCountry = entry.address.country|trim %}
   {% endif %}
 
   {% for block in entry.location %}
@@ -33,6 +35,7 @@
       {% set addressCity = block.address.city|trim %}
       {% set addressRegion = block.address.region|trim %}
       {% set addressPostalCode = block.address.postalCode|trim %}
+      {% set addressCountry = block.address.country|trim %}
     {% endif %}
   {% endfor %}
 
@@ -51,6 +54,34 @@
       night
     {% endif %}
   {% endset %}
+
+  {% set myJSONLD = {
+    type: "Event",
+    name: entry,
+    url: entry.url,
+    startDate: entry.dateAndTime[0].startDateAndTime|date("c"),
+    endDate: entry.dateAndTime[0].endDateAndTime|date("c"),
+    location: {
+      type: "Place",
+      name: addressName,
+      address: {
+        type: "PostalAddress",
+        streetAddress: addressStreet,
+        addressLocality: addressCity,
+        addressRegion: addressRegion,
+        postalCode: addressPostalCode,
+        addressCountry: addressCountry,
+      },
+    },
+    offers: {
+      type: "Offer",
+      price: entry.cost,
+      priceCurrency: "USD",
+      availability: "http://schema.org/InStock",
+      validFrom: entry.postDate|date("c"),
+    }
+  } %}
+  {{ myJSONLD | renderJSONLD }}
 
   <style>
     .dynamic-body-copy {
@@ -73,9 +104,9 @@
       margin-top: 1rem;
     }
 
-	.events-hud {
-		margin-top: 1rem;
-	}
+  .events-hud {
+    margin-top: 1rem;
+  }
   </style>
   <div class="content" data-eq--content>
     <main class="events content__primary [ card card--blue card--light ]">
@@ -163,7 +194,7 @@
         <div class="events__details">
           <h3>When?</h3>
           {% for block in entry.dateAndTime %}
-            <p class="small" itemprop="startDate" content="{{ block.startDateAndTime|date("c") }}">{{ block.startDateAndTime|date("l, F d, Y") }}</p>
+            <p class="small">{{ block.startDateAndTime|date("l, F d, Y") }}</p>
             <p class="small">{{ block.startDateAndTime|date("g:i A") }}&mdash;{{ block.endDateAndTime|date("g:i A") }}</p>
           {% endfor %}
         </div>
@@ -175,13 +206,9 @@
             }
           </style>
           <h3 id="event-location">Where?</h3>
-          <span class="small" itemprop="location" itemscope itemtype="http://schema.org/Place">
-            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-              <span itemprop="name">{{ addressName }}</span><br />
-              <span itemprop="streetAddress">{{ addressStreet|trim }}</span><br />
-              <span itemprop="addressLocality">{{ addressCity }}</span> <span itemprop="addressRegion">{{ addressRegion }}</span> <span itemprop="postalCode">{{ addressPostalCode }}</span>
-            </span>
-          </span>
+          {{ addressName }}<br />
+          {{ addressStreet|trim }}<br />
+          {{ addressCity }} {{ addressRegion }} {{ addressPostalCode }}
 
           <div>
             {% set locationNotes = [] %}
