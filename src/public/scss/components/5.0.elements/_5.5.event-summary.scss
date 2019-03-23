@@ -38,27 +38,28 @@ Event Summary
 markup:
 <li class="event" itemscope="" itemtype="http://schema.org/Event">
   <a class="event__link" href="http://outworlders.org/events/1999/05/the-prom">
-    <meta itemprop="description" content="Party like it's 1999">
-    <div class="event__date">
-      <h3 class="event__start-date" itemprop="startDate" content="1999-05-11T20:00:00-04:00">11 Tuesday</h3>
-      <p class="event__start-time">8:00 PM</p>
-    </div>
-    <p itemprop="name">The Prom</p>
-  </a>
-  <a class="event__link" href="maps://maps.google.com/maps?q=Torrance+High+School%2C+2200+W+Carson+St%2C+Torrance%2C+CA%2C+90501%2C+U.S.&amp;zoom=5" target="blank" data-map-link="location">
-    <span class="small" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
-      <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-        <meta itemprop="name" content="Sunnydale High School">
-        <span itemprop="streetAddress">2200 W Carson St</span>,&nbsp;
-        <span itemprop="streetAddress">
-          <span itemprop="addressLocality">Torrance</span>,&nbsp;
+    <img class="event__image" height="60" width="60" src="https://placehold.it/60" />
+    <div class="event__details">
+      <meta itemprop="description" content="Party like it's 1999">
+      <div class="event__date">
+        <h3 class="event__start-date" itemprop="startDate" content="1999-05-11T20:00:00-04:00">11 Tuesday</h3>
+        <p class="event__start-time">8:00 PM</p>
+      </div>
+      <p itemprop="name">The Prom</p>
+      <span class="small" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
+        <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+          <meta itemprop="name" content="Sunnydale High School">
+          <span itemprop="streetAddress">2200 W Carson St</span>,&nbsp;
           <span itemprop="streetAddress">
-            <span itemprop="addressRegion">CA</span>&nbsp;
-            <span itemprop="postalCode">90501</span>
+            <span itemprop="addressLocality">Torrance</span>,&nbsp;
+            <span itemprop="streetAddress">
+              <span itemprop="addressRegion">CA</span>&nbsp;
+              <span itemprop="postalCode">90501</span>
+            </span>
           </span>
         </span>
       </span>
-    </span>
+    </div>
   </a>
   <sg-insert>5.5.3</sg-insert>
 </li>
@@ -68,20 +69,25 @@ Styleguide 5.5.2
 
 .event {
   list-style: none;
-}
-
-.event + .event {
   margin: 1rem 0 0;
 }
 
 .event__link {
   text-decoration: inherit;
   color: inherit;
-  display: block;
+  display: flex;
 
   &:hover {
     text-decoration: underline;
   }
+}
+
+.event__details {
+  width: 100%;
+}
+
+.event__image + .event__details {
+  margin-left: .5rem;
 }
 
 .event__date {
