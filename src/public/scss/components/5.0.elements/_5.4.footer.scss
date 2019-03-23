@@ -12,7 +12,16 @@ markup:
               <a class="footer-navigation__menu-link" href="//outworlders.org/minutes">Minutes</a>
             </li>
             <li class="footer-navigation__list-item">
+              <a class="footer-navigation__menu-link" href="//outworlders.org/bylaws">Bylaws</a>
+            </li>
+            <li class="footer-navigation__list-item">
               <a class="footer-navigation__menu-link" href="//wiki.outworlders.org">Wiki</a>
+            </li>
+            <li class="footer-navigation__list-item">
+              <a class="footer-navigation__menu-link" href="//outworlders.org/policies/privacy">Privacy Policy</a>
+            </li>
+            <li class="footer-navigation__list-item">
+              <a class="footer-navigation__menu-link" href="//outworlders.org/policies/anti-harassment">Anti-Harassment Policy</a>
             </li>
           </ul>
         </div>
@@ -44,9 +53,10 @@ Styleguide 5.4.0
 
 .footer-navigation__list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   list-style: none;
-  margin: 0;
+  margin: -1em 0 0;
   padding: 0;
 
   &:after {
@@ -66,6 +76,10 @@ Styleguide 5.4.0
   &:hover {
     color: $pink;
   }
+}
+
+.footer-navigation__list.inline-list .footer-navigation__list-item {
+  margin-top: 1em;
 }
 
 .copyright {
