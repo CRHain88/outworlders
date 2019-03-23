@@ -925,7 +925,7 @@ class CController extends CBaseController
 	 */
 	public function renderDynamic($callback)
 	{
-		$n=count($this->_dynamicOutput);
+		$n=($this->_dynamicOutput === null ? 0 : count($this->_dynamicOutput));
 		echo "<###dynamic-$n###>";
 		$params=func_get_args();
 		array_shift($params);
@@ -1212,7 +1212,7 @@ class CController extends CBaseController
 				if(extension_loaded('zlib'))
 					$data=@gzuncompress($data);
 				if(($data=Yii::app()->getSecurityManager()->validateData($data))!==false)
-					return unserialize($data);
+					return @unserialize($data, array('allowed_classes' => false));
 			}
 		}
 		return array();

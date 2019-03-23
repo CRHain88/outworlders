@@ -1,4 +1,4 @@
-/*! Craft  - 2018-01-31 */
+/*! Craft  - 2018-12-12 */
 (function($){
 
 // Set all the standard Craft.* stuff
@@ -2058,7 +2058,7 @@ Craft.BaseElementIndex = Garnish.Base.extend(
 			source:              this.instanceState.selectedSource,
 			criteria:            criteria,
 			disabledElementIds:  this.settings.disabledElementIds,
-			viewState:           this.getSelectedSourceState()
+			viewState:           $.extend({}, this.getSelectedSourceState())
 		};
 
 		// Possible that the order/sort isn't entirely accurate if we're sorting by Score
@@ -2473,14 +2473,10 @@ Craft.BaseElementIndex = Garnish.Base.extend(
 
 	setStoredSortOptionsForSource: function()
 	{
-		// Default to whatever's first
-		this.setSortAttribute();
-		this.setSortDirection('asc');
-
 		var sortAttr = this.getSelectedSourceState('order'),
 			sortDir = this.getSelectedSourceState('sort');
 
-		if (!sortAttr)
+		if (!sortAttr || !sortDir)
 		{
 			// Get the default
 			sortAttr = this.getDefaultSort();
@@ -5847,10 +5843,23 @@ Craft.AssetIndex = Craft.BaseElementIndex.extend(
 			{
 				if (doReload)
 				{
-					this.updateElements();
+					this._updateAfterUpload();
 				}
 			}
 		}
+	},
+
+	/**
+	 * Update the elements after an upload, setting sort to dateModified descending, if not using index.
+	 *
+	 * @private
+	 */
+	_updateAfterUpload: function () {
+		if (this.settings.context !== 'index') {
+			this.setSortAttribute('dateModified');
+			this.setSortDirection('desc');
+		}
+		this.updateElements();
 	},
 
 	/**
@@ -5870,7 +5879,7 @@ Craft.AssetIndex = Craft.BaseElementIndex.extend(
 		{
 			this.setIndexAvailable();
 			this.progressBar.hideProgressBar();
-			this.updateElements();
+            this._updateAfterUpload();
 		}, this);
 
 		this.progressBar.setItemCount(returnData.length);
@@ -13151,8 +13160,10 @@ Craft.LightSwitch = Garnish.Base.extend(
 		this.$input.val('1');
 		this.$outerContainer.addClass('on');
 		this.$outerContainer.attr('aria-checked', 'true');
-		this.on = true;
-		this.onChange();
+
+		if (this.on !== (this.on = true)) {
+			this.onChange();
+		}
 	},
 
 	turnOff: function()
@@ -13166,8 +13177,10 @@ Craft.LightSwitch = Garnish.Base.extend(
 		this.$input.val('');
 		this.$outerContainer.removeClass('on');
 		this.$outerContainer.attr('aria-checked', 'false');
-		this.on = false;
-		this.onChange();
+
+		if (this.on !== (this.on = false)) {
+			this.onChange();
+		}
 	},
 
 	toggle: function(event)

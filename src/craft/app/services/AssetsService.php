@@ -816,6 +816,11 @@ class AssetsService extends BaseApplicationComponent
 			foreach ($fileIds as $fileId)
 			{
 				$file = $this->getFileById($fileId);
+
+				if (!$file) {
+				    continue;
+                }
+
 				$source = craft()->assetSources->getSourceTypeById($file->sourceId);
 
 				// Fire an 'onBeforeDeleteAsset' event
@@ -999,6 +1004,12 @@ class AssetsService extends BaseApplicationComponent
 			$sourceType = craft()->assetSources->getSourceTypeById($file->sourceId);
 			return AssetsHelper::generateUrl($sourceType, $file);
 		}
+
+        if (StringHelper::toLowerCase(IOHelper::getExtension($file->filename)) === 'gif' && !craft()->config->get('transformGifs'))
+        {
+            $sourceType = craft()->assetSources->getSourceTypeById($file->sourceId);
+            return AssetsHelper::generateUrl($sourceType, $file);
+        }
 
 		// Get the transform index model
 		$index = craft()->assetTransforms->getTransformIndex($file, $transform);

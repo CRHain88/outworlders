@@ -1437,7 +1437,7 @@ class CCookieCollection extends CMap
 			foreach($_COOKIE as $name=>$value)
 			{
 				if(is_string($value) && ($value=$sm->validateData($value))!==false)
-					$cookies[$name]=new CHttpCookie($name,@unserialize($value));
+					$cookies[$name]=new CHttpCookie($name,@unserialize($value,array('allowed_classes' => false)));
 			}
 		}
 		else
