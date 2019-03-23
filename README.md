@@ -56,22 +56,19 @@ Before doing any development, make sure to get the latest copy of the Database
 from the production server. Advise Smart Vent that you'll be making some updates
 and any edits they make should wait until after the code update is complete.
 
-1. Create and download a backup of the source database from the Magento Admin
-Panel.
+1. Create and download a backup of the source database from cPanel phpMyAdmin.
 2. Drop the destination database.
 3. Re-create the destination database.
 4. Run
 
     ```sh
     $ docker exec -i outworlders_db_1 \
-      mysql -uroot -proot --database craft_outworlders \
+      mysql -uroot -proot --database outwuopz_craft \
       < $SQL_BACKUP_PATH
     ```
 
   Where:
 
-  - `$CONTAINER_NAME` is the name of the container (such as `asp_db_1`)
-  - `$DATABASE_NAME` is the name of the database (such as `magento_asp`); and
   - `$SQL_BACKUP_PATH` is the directory where the `.sql` back up file was
     downloaded.
 
