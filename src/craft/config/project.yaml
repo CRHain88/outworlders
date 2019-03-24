@@ -1,0 +1,1732 @@
+dateModified: 1553617099
+email:
+  fromEmail: no-reply@outworlders.org
+  fromName: OutWorlders
+  template: ''
+  transportType: craft\mail\transportadapters\Smtp
+  transportSettings:
+    host: server224.web-hosting.com
+    port: '465'
+    useAuthentication: 1
+    username: no-reply@outworlders.org
+    password: '5_jZUiTWsU*h'
+    encryptionMethod: ssl
+    timeout: '30'
+fieldGroups:
+  ca53f745-cd05-47a0-8f34-6590a1df338a:
+    name: Default
+  163b2041-4009-454a-b522-3a1f52380f68:
+    name: Locations
+  bb42762e-9d2a-42c3-adb7-419d61b11b5a:
+    name: Events
+  6ebed5ff-c4b5-4293-8310-120d0c0a4a4e:
+    name: SEO
+  37c29b67-d746-4410-a246-1a87667f1ffc:
+    name: Ads
+fields:
+  c8c0558b-2690-4251-95e7-019eb336ea70:
+    name: Body
+    handle: body
+    instructions: null
+    searchable: '1'
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      configFile: Standard.json
+      columnType: text
+    fieldGroup: ca53f745-cd05-47a0-8f34-6590a1df338a
+    contentColumnType: string
+  e418f2ee-4b93-43b1-8710-5c01c799e188:
+    name: Tags
+    handle: tags
+    instructions: null
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Tags
+    settings:
+      source: 'taggroup:d6a56adf-ca23-4bd3-8597-088543119dbf'
+      localizeRelations: false
+    fieldGroup: ca53f745-cd05-47a0-8f34-6590a1df338a
+    contentColumnType: string
+  a7c46927-5cd8-4a91-92f0-7eac489cf759:
+    name: Text
+    handle: text
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    fieldGroup: ca53f745-cd05-47a0-8f34-6590a1df338a
+    contentColumnType: text
+  cb33046a-d9ba-415e-bd32-0966d03e95ce:
+    name: Members
+    handle: members
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+      limit: '1'
+      selectionLabel: ''
+      localizeRelations: false
+    fieldGroup: ca53f745-cd05-47a0-8f34-6590a1df338a
+    contentColumnType: string
+  ce43600e-f005-47e4-9025-90b7ed57e1c8:
+    name: 'Email Address'
+    handle: emailAddress
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    fieldGroup: ca53f745-cd05-47a0-8f34-6590a1df338a
+    contentColumnType: text
+  61387fdc-b618-47c5-a882-c3704b756184:
+    name: 'Phone Number'
+    handle: phoneNumber
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: '(000) 000-0000'
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    fieldGroup: ca53f745-cd05-47a0-8f34-6590a1df338a
+    contentColumnType: text
+  8cec34cd-422b-4b79-8174-23de22444ed7:
+    name: 'Date and Time'
+    handle: dateAndTime
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      maxBlocks: null
+      localizeBlocks: false
+      contentTable: '{{%matrixcontent_dateandtime}}'
+    fieldGroup: ca53f745-cd05-47a0-8f34-6590a1df338a
+    contentColumnType: string
+  476d1687-4d60-441d-9b8d-2913444d7ae5:
+    name: 'Minutes Files'
+    handle: minutesAssets
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      sources: '*'
+      defaultUploadLocationSource: 'volume:873cf9d4-260a-42dd-9ff3-e923a182f6ad'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:873cf9d4-260a-42dd-9ff3-e923a182f6ad'
+      singleUploadLocationSubpath: ''
+      restrictFiles: ''
+      limit: ''
+      viewMode: list
+      selectionLabel: ''
+      localizeRelations: false
+    fieldGroup: ca53f745-cd05-47a0-8f34-6590a1df338a
+    contentColumnType: string
+  2df5f4d1-d81e-4d28-93e6-58ac02608970:
+    name: 'Member Headshot'
+    handle: memberHeadshot
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      sources:
+        - 'volume:5258e23f-dbfb-4918-bdd0-e7b2249bc177'
+      defaultUploadLocationSource: 'volume:5258e23f-dbfb-4918-bdd0-e7b2249bc177'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:873cf9d4-260a-42dd-9ff3-e923a182f6ad'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      limit: ''
+      viewMode: large
+      selectionLabel: ''
+      localizeRelations: false
+    fieldGroup: ca53f745-cd05-47a0-8f34-6590a1df338a
+    contentColumnType: string
+  de711386-c50f-45d3-b980-069b7047d3ad:
+    name: 'Location Notes'
+    handle: locationNotes
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      maxBlocks: null
+      localizeBlocks: false
+      contentTable: '{{%matrixcontent_locationnotes}}'
+    fieldGroup: 163b2041-4009-454a-b522-3a1f52380f68
+    contentColumnType: string
+  197166e4-2cc7-4b16-a401-c8d0815e2f86:
+    name: 'Additional Information'
+    handle: additionalInformation
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      configFile: Simple.json
+      availableTransforms: '*'
+      cleanupHtml: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+    fieldGroup: 163b2041-4009-454a-b522-3a1f52380f68
+    contentColumnType: string
+  fa155aa5-45f1-45be-afbc-fea1cf5b6fac:
+    name: Location
+    handle: location
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+      limit: '1'
+      selectionLabel: ''
+      localizeRelations: false
+    fieldGroup: bb42762e-9d2a-42c3-adb7-419d61b11b5a
+    contentColumnType: string
+  36ced3f6-7b0e-44fb-b843-a6000e70ca68:
+    name: Host
+    handle: host
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+      limit: ''
+      selectionLabel: ''
+      localizeRelations: false
+    fieldGroup: bb42762e-9d2a-42c3-adb7-419d61b11b5a
+    contentColumnType: string
+  2e01e98a-a387-444c-aaa0-bb12f04e6013:
+    name: Movies
+    handle: movies
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      maxBlocks: null
+      localizeBlocks: false
+      contentTable: '{{%matrixcontent_movies}}'
+    fieldGroup: bb42762e-9d2a-42c3-adb7-419d61b11b5a
+    contentColumnType: string
+  7a82edfb-17e4-46bd-832f-c176d3d2bfa1:
+    name: 'Event Descriptions'
+    handle: eventDescriptions
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      maxBlocks: null
+      localizeBlocks: false
+      contentTable: '{{%matrixcontent_eventdescriptions}}'
+    fieldGroup: bb42762e-9d2a-42c3-adb7-419d61b11b5a
+    contentColumnType: string
+  9a8d26cb-096f-4d5a-a077-45a1157f22af:
+    name: 'Event Status'
+    handle: eventStatus
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Dropdown
+    settings:
+      options:
+        -
+          label: Scheduled
+          value: EventScheduled
+          default: '1'
+        -
+          label: Rescheduled
+          value: EventRecheduled
+          default: ''
+        -
+          label: Postponed
+          value: EventPostponed
+          default: ''
+        -
+          label: Cancelled
+          value: EventCancelled
+          default: ''
+    fieldGroup: bb42762e-9d2a-42c3-adb7-419d61b11b5a
+    contentColumnType: string
+  095d7967-c1d7-4e39-811c-0a9a9454dbd2:
+    name: Cost
+    handle: cost
+    instructions: 'Costs in USD. If the event is free, type in 0.'
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Number
+    settings:
+      min: '0'
+      max: ''
+      decimals: '2'
+    fieldGroup: bb42762e-9d2a-42c3-adb7-419d61b11b5a
+    contentColumnType: 'decimal(12,2)'
+  07d01475-9eb4-4a34-a882-5cdd39e65240:
+    name: 'Event Image'
+    handle: eventImage
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      sources:
+        - 'volume:d4652767-9334-4057-8335-e80edfa042e6'
+      defaultUploadLocationSource: 'volume:d4652767-9334-4057-8335-e80edfa042e6'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: null
+      singleUploadLocationSubpath: ''
+      restrictFiles: ''
+      limit: '1'
+      viewMode: list
+      selectionLabel: ''
+      localizeRelations: false
+    fieldGroup: bb42762e-9d2a-42c3-adb7-419d61b11b5a
+    contentColumnType: string
+  52c49eea-a5f0-4c04-a38b-eaeddda27a8b:
+    name: 'SEOMatic — Minutes Meta'
+    handle: seomaticMinutesMeta
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: Seomatic_Meta
+    settings:
+      assetSources:
+        - 'folder:5'
+      seoMainEntityCategory: CreativeWork
+      seoMainEntityOfPage: WebPage
+      seoTitleSource: custom
+      seoTitleSourceField: title
+      seoTitle: ''
+      seoTitleSourceChangeable: '1'
+      seoDescriptionSource: custom
+      seoDescriptionSourceField: title
+      seoDescription: ''
+      seoDescriptionSourceChangeable: '1'
+      seoKeywordsSource: custom
+      seoKeywordsSourceField: title
+      seoKeywords: ''
+      seoKeywordsSourceChangeable: '1'
+      seoImageIdSource: custom
+      seoImageIdSourceField: minutesAssets
+      seoImageIdSourceChangeable: '1'
+      seoImageTransform: ''
+      twitterCardType: ''
+      twitterCardTypeChangeable: '1'
+      seoTwitterImageIdSource: custom
+      seoTwitterImageIdSourceField: minutesAssets
+      seoTwitterImageIdSourceChangeable: '1'
+      seoTwitterImageTransform: ''
+      openGraphType: ''
+      openGraphTypeChangeable: '1'
+      seoFacebookImageIdSource: custom
+      seoFacebookImageIdSourceField: minutesAssets
+      seoFacebookImageIdSourceChangeable: '1'
+      seoFacebookImageTransform: ''
+      robots: ''
+      robotsChangeable: '1'
+    fieldGroup: 6ebed5ff-c4b5-4293-8310-120d0c0a4a4e
+    contentColumnType: string
+  77eb1abd-2c05-4a44-9f2f-894c20005116:
+    name: 'SEOMatic — Game Night Meta'
+    handle: seomaticGameNightMeta
+    instructions: ''
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: Seomatic_Meta
+    settings:
+      assetSources:
+        - 'folder:5'
+      seoMainEntityCategory: Event
+      seoMainEntityOfPage: SocialEvent
+      seoTitleSource: field
+      seoTitleSourceField: title
+      seoTitle: ''
+      seoTitleSourceChangeable: '1'
+      seoDescriptionSource: custom
+      seoDescriptionSourceField: title
+      seoDescription: ''
+      seoDescriptionSourceChangeable: '1'
+      seoKeywordsSource: custom
+      seoKeywordsSourceField: title
+      seoKeywords: 'game, games, gaymer, gay, lgbtq+, board games, tabletop'
+      seoKeywordsSourceChangeable: '1'
+      seoImageIdSource: custom
+      seoImageIdSourceField: memberHeadshot
+      seoImageIdSourceChangeable: '1'
+      seoImageTransform: ''
+      twitterCardType: ''
+      twitterCardTypeChangeable: '1'
+      seoTwitterImageIdSource: custom
+      seoTwitterImageIdSourceField: memberHeadshot
+      seoTwitterImageIdSourceChangeable: '1'
+      seoTwitterImageTransform: ''
+      openGraphType: ''
+      openGraphTypeChangeable: '1'
+      seoFacebookImageIdSource: custom
+      seoFacebookImageIdSourceField: memberHeadshot
+      seoFacebookImageIdSourceChangeable: '1'
+      seoFacebookImageTransform: ''
+      robots: ''
+      robotsChangeable: '1'
+    fieldGroup: 6ebed5ff-c4b5-4293-8310-120d0c0a4a4e
+    contentColumnType: string
+  65d30588-4188-41e0-bd8f-d8d267e48ad6:
+    name: 'SEOMatic — Default Meta'
+    handle: seomaticDefaultMeta
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: nystudio107\seomatic\fields\SeoSettings
+    settings:
+      elementDisplayPreviewType: google
+      generalTabEnabled: '1'
+      generalEnabledFields:
+        - seoPreview
+        - seoTitle
+        - seoDescription
+        - seoKeywords
+        - seoImage
+        - seoImageTransform
+        - seoImageTransformMode
+        - seoImageDescription
+      twitterTabEnabled: '1'
+      twitterEnabledFields:
+        - seoPreview
+        - twitterCardType
+        - twitterTitle
+        - twitterDescription
+        - twitterImage
+        - transformTwitterImage
+        - twitterImageTransformMode
+        - twitterImageDescription
+      facebookTabEnabled: '1'
+      facebookEnabledFields:
+        - seoPreview
+        - ogTitle
+        - ogSiteNamePosition
+        - ogDescription
+        - ogImage
+        - ogImageTransform
+        - ogImageTransformMode
+        - ogImageDescription
+      sitemapTabEnabled: '1'
+      sitemapEnabledFields:
+        - sitemapUrls
+        - sitemapAssets
+        - sitemapFiles
+        - sitemapAltLinks
+        - sitemapChangeFreq
+        - sitemapPriority
+        - sitemapLimit
+    contentColumnType: text
+    fieldGroup: 6ebed5ff-c4b5-4293-8310-120d0c0a4a4e
+  58ca8dd4-bff5-45ad-803a-3d5d7b1988e0:
+    name: 'Ad - Square'
+    handle: adSquare
+    instructions: 'Minimum: 250 x 250'
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      sources:
+        - 'volume:d4652767-9334-4057-8335-e80edfa042e6'
+      defaultUploadLocationSource: 'volume:d4652767-9334-4057-8335-e80edfa042e6'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:d4652767-9334-4057-8335-e80edfa042e6'
+      singleUploadLocationSubpath: '{title}'
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      limit: '1'
+      viewMode: list
+      selectionLabel: ''
+      localizeRelations: false
+    fieldGroup: 37c29b67-d746-4410-a246-1a87667f1ffc
+    contentColumnType: string
+  217831e5-2628-4306-88fc-b409fa0db4b3:
+    name: 'Ad - Half-Page'
+    handle: adHalfPage
+    instructions: 'Minimum Size: 300 x 600'
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      sources: '*'
+      defaultUploadLocationSource: 'volume:873cf9d4-260a-42dd-9ff3-e923a182f6ad'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:d4652767-9334-4057-8335-e80edfa042e6'
+      singleUploadLocationSubpath: '{title}'
+      restrictFiles: ''
+      limit: '1'
+      viewMode: list
+      selectionLabel: ''
+      localizeRelations: false
+    fieldGroup: 37c29b67-d746-4410-a246-1a87667f1ffc
+    contentColumnType: string
+  e6a370f2-a29b-47bc-8180-93ae01a297e8:
+    name: 'Ad - Inline Rectangle'
+    handle: adInlineRectangle
+    instructions: 'Minimum: 300 x 250'
+    searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      sources: '*'
+      defaultUploadLocationSource: 'volume:873cf9d4-260a-42dd-9ff3-e923a182f6ad'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:d4652767-9334-4057-8335-e80edfa042e6'
+      singleUploadLocationSubpath: '{title}'
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      limit: '1'
+      viewMode: list
+      selectionLabel: ''
+      localizeRelations: false
+    fieldGroup: 37c29b67-d746-4410-a246-1a87667f1ffc
+    contentColumnType: string
+  9818698b-51c9-4ff0-b5bd-c06a08221bef:
+    name: Address
+    handle: address
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: newism\fields\fields\Address
+    settings:
+      defaultCountryCode: US
+      showAutoComplete: '1'
+      autoCompleteConfiguration: ''
+      showOrganization: '1'
+      showRecipient: '1'
+      showLatLng: '1'
+      showMapUrl: '1'
+    contentColumnType: text
+    fieldGroup: 163b2041-4009-454a-b522-3a1f52380f68
+globalSets:
+  733c595c-0486-4aa4-ba9e-6f918369fed8:
+    name: 'Event Descriptions'
+    handle: eventDescriptions
+    fieldLayouts:
+      da5508f1-e339-4c35-a8a8-6d19db6cd8da:
+        tabs:
+          -
+            name: Content
+            sortOrder: '1'
+            fields:
+              7a82edfb-17e4-46bd-832f-c176d3d2bfa1:
+                required: '0'
+                sortOrder: '1'
+  02bbdd64-8ead-461f-858c-e6944f6693ca:
+    name: 'About Us'
+    handle: aboutUs
+    fieldLayouts:
+      0406145b-682c-4bc2-a5d4-698df3f49599:
+        tabs:
+          -
+            name: Content
+            sortOrder: '1'
+            fields:
+              a7c46927-5cd8-4a91-92f0-7eac489cf759:
+                required: '0'
+                sortOrder: '1'
+              c8c0558b-2690-4251-95e7-019eb336ea70:
+                required: '0'
+                sortOrder: '2'
+  39fb18ac-e218-491a-9a1a-fd3677c96705:
+    name: 'Our Mission'
+    handle: ourMission
+    fieldLayouts:
+      d7580482-7adc-4943-8fb0-d8e1312577c2:
+        tabs:
+          -
+            name: Content
+            sortOrder: '1'
+            fields:
+              a7c46927-5cd8-4a91-92f0-7eac489cf759:
+                required: '0'
+                sortOrder: '1'
+              c8c0558b-2690-4251-95e7-019eb336ea70:
+                required: '0'
+                sortOrder: '2'
+  ee001efb-e7a7-4401-b482-d0e609e8f4c3:
+    name: 'Contact Us'
+    handle: contactUs
+    fieldLayouts:
+      7667de82-efb2-490f-8c13-75fbc067ad26:
+        tabs:
+          -
+            name: Content
+            sortOrder: '1'
+            fields:
+              a7c46927-5cd8-4a91-92f0-7eac489cf759:
+                required: '0'
+                sortOrder: '1'
+              c8c0558b-2690-4251-95e7-019eb336ea70:
+                required: '0'
+                sortOrder: '2'
+  139acc48-3a8b-41c6-b649-c32665da1ac6:
+    name: 'Our Community'
+    handle: ourCommunity
+    fieldLayouts:
+      fc7f1a9f-a3fa-43bf-8248-55d019d7af6c:
+        tabs:
+          -
+            name: Content
+            sortOrder: '1'
+            fields:
+              a7c46927-5cd8-4a91-92f0-7eac489cf759:
+                required: '0'
+                sortOrder: '1'
+              c8c0558b-2690-4251-95e7-019eb336ea70:
+                required: '0'
+                sortOrder: '2'
+  3209a06b-8a71-43e7-8c36-6d461253ebe5:
+    name: 'Become a Member'
+    handle: becomeAMember
+    fieldLayouts:
+      fdae8729-8e01-4cab-aa72-91643215aee7:
+        tabs:
+          -
+            name: Content
+            sortOrder: '1'
+            fields:
+              a7c46927-5cd8-4a91-92f0-7eac489cf759:
+                required: '0'
+                sortOrder: '1'
+              c8c0558b-2690-4251-95e7-019eb336ea70:
+                required: '0'
+                sortOrder: '2'
+matrixBlockTypes:
+  3afdeabf-d8b9-436f-a013-a3ebb00f5f5c:
+    name: Note
+    handle: note
+    sortOrder: '1'
+    field: de711386-c50f-45d3-b980-069b7047d3ad
+    fieldLayouts:
+      c4767ef9-31c7-4924-9011-ec0bce8024c3:
+        tabs:
+          -
+            name: Content
+            sortOrder: '1'
+            fields:
+              27ae3036-3e0b-4b31-8423-80eea2d95d15:
+                required: '0'
+                sortOrder: '1'
+              0ee952a3-e08e-42ee-8006-bb3b12d74c05:
+                required: '0'
+                sortOrder: '2'
+    fields:
+      27ae3036-3e0b-4b31-8423-80eea2d95d15:
+        name: Title
+        handle: noteTitle
+        instructions: ''
+        searchable: '1'
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        fieldGroup: null
+        contentColumnType: text
+      0ee952a3-e08e-42ee-8006-bb3b12d74c05:
+        name: Text
+        handle: noteText
+        instructions: ''
+        searchable: '1'
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          configFile: Simple.json
+          availableTransforms: '*'
+          cleanupHtml: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+        fieldGroup: null
+        contentColumnType: string
+  554d8119-bc54-4fb3-8b7c-a5793cc0c085:
+    name: Movie
+    handle: movie
+    sortOrder: '1'
+    field: 2e01e98a-a387-444c-aaa0-bb12f04e6013
+    fieldLayouts:
+      beb0efb9-e431-4091-aa4c-0f31d61aaca9:
+        tabs:
+          -
+            name: Content
+            sortOrder: '1'
+            fields:
+              6a9e6710-42e3-488d-9f24-803ea6830be1:
+                required: '0'
+                sortOrder: '1'
+              53e61e0c-0d0b-4e33-a42e-b63df341658e:
+                required: '0'
+                sortOrder: '2'
+              daaead90-035a-47b9-aa61-cf6257e3d64c:
+                required: '0'
+                sortOrder: '3'
+              1598de98-1c4b-412b-9f5b-ef91cc8b1ed0:
+                required: '0'
+                sortOrder: '4'
+    fields:
+      6a9e6710-42e3-488d-9f24-803ea6830be1:
+        name: 'Movie Title'
+        handle: movieTitle
+        instructions: ''
+        searchable: '1'
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        fieldGroup: null
+        contentColumnType: text
+      53e61e0c-0d0b-4e33-a42e-b63df341658e:
+        name: Synopsis
+        handle: synopsis
+        instructions: ''
+        searchable: '1'
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          multiline: '1'
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        fieldGroup: null
+        contentColumnType: text
+      daaead90-035a-47b9-aa61-cf6257e3d64c:
+        name: 'Movie Link'
+        handle: movieLink
+        instructions: ''
+        searchable: '1'
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        fieldGroup: null
+        contentColumnType: text
+      1598de98-1c4b-412b-9f5b-ef91cc8b1ed0:
+        name: 'Start Time'
+        handle: movieStartTime
+        instructions: ''
+        searchable: '1'
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Date
+        settings:
+          minuteIncrement: '60'
+          showTime: 1
+          showDate: 0
+        fieldGroup: null
+        contentColumnType: datetime
+  ede16af2-b7de-4a2d-9ea8-84a4b24c7f4a:
+    name: 'Date and Time'
+    handle: dateAndTime
+    sortOrder: '1'
+    field: 8cec34cd-422b-4b79-8174-23de22444ed7
+    fieldLayouts:
+      a130ee61-289a-4180-bcd5-87d94eb8f84e:
+        tabs:
+          -
+            name: Content
+            sortOrder: '1'
+            fields:
+              9aa3099f-4ce5-4828-a3df-8d203092de6b:
+                required: '1'
+                sortOrder: '1'
+              a8629e35-2858-460a-8344-3bde5308674b:
+                required: '1'
+                sortOrder: '2'
+    fields:
+      9aa3099f-4ce5-4828-a3df-8d203092de6b:
+        name: 'Start Date and Time'
+        handle: startDateAndTime
+        instructions: ''
+        searchable: '1'
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Date
+        settings:
+          minuteIncrement: '60'
+          showTime: 1
+          showDate: 1
+        fieldGroup: null
+        contentColumnType: datetime
+      a8629e35-2858-460a-8344-3bde5308674b:
+        name: 'End Time'
+        handle: endDateAndTime
+        instructions: ''
+        searchable: '1'
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Date
+        settings:
+          minuteIncrement: '60'
+          showTime: 1
+          showDate: 1
+        fieldGroup: null
+        contentColumnType: datetime
+  17b3e6da-adb9-4199-afa2-6a6fded3c4f5:
+    name: Description
+    handle: eventDescription
+    sortOrder: '1'
+    field: 7a82edfb-17e4-46bd-832f-c176d3d2bfa1
+    fieldLayouts:
+      16a75d6a-c43b-40b5-8f91-f538813abc44:
+        tabs:
+          -
+            name: Content
+            sortOrder: '1'
+            fields:
+              540814a7-2caf-4bdb-8481-61907334f6f1:
+                required: '1'
+                sortOrder: '1'
+              d9d1cab6-f7d0-4cc8-bb43-9ae8e30b3750:
+                required: '0'
+                sortOrder: '2'
+    fields:
+      540814a7-2caf-4bdb-8481-61907334f6f1:
+        name: 'Event Type Handle'
+        handle: eventType
+        instructions: 'Make sure this is `camelCased`'
+        searchable: '1'
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: eventTypeHandle
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        fieldGroup: null
+        contentColumnType: text
+      d9d1cab6-f7d0-4cc8-bb43-9ae8e30b3750:
+        name: Description
+        handle: eventDescription
+        instructions: ''
+        searchable: '1'
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          configFile: ''
+          availableTransforms: '*'
+          cleanupHtml: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+        fieldGroup: null
+        contentColumnType: string
+plugins:
+  vz-address:
+    settings: null
+    licenseKey: null
+    enabled: '0'
+    schemaVersion: 1.0.0
+  redirect-manager:
+    settings: null
+    licenseKey: null
+    enabled: '0'
+    schemaVersion: 1.0.0
+  seomatic:
+    settings:
+      pluginNameOverride: ''
+    licenseKey: null
+    enabled: '1'
+    schemaVersion: 3.0.6
+  venti:
+    settings:
+      timeInterval: '60'
+      eventDuration: '60'
+      pluginName: Calendar
+      translate: 0
+      license: 9A107721-6DE64992-842BE9D4-81B5FEEA
+      googleMapsApiKey: ''
+      country: US
+      hideRegistration: ''
+      hideLocation: ''
+    licenseKey: null
+    enabled: '0'
+    schemaVersion: 2.0.0
+  super-sort:
+    settings: null
+    licenseKey: null
+    enabled: '1'
+    schemaVersion: 0.0.0.0
+  feed-me:
+    settings:
+      pluginNameOverride: null
+      cache: 60
+      enabledTabs: 1
+      edition: '1'
+    licenseKey: null
+    enabled: '1'
+    schemaVersion: 2.1.1
+  supersort:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.2
+  nsm-fields:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redirect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.4
+sections:
+  4c5508a2-7325-4f41-b4c4-dcff4efc82e7:
+    name: Officers
+    handle: officers
+    type: structure
+    enableVersioning: '1'
+    propagateEntries: '1'
+    structure:
+      uid: 510f6b92-ee12-4f21-860b-3f2a0ca96060
+      maxLevels: '1'
+    entryTypes:
+      5ad37c90-d53b-4594-8b1f-78fdaa7a1a21:
+        name: Officers
+        handle: officers
+        hasTitleField: '1'
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: '1'
+        fieldLayouts:
+          d9909282-7b77-4ad6-bcc5-b999be1c9cf9:
+            tabs:
+              -
+                name: 'Tab 1'
+                sortOrder: '1'
+                fields:
+                  cb33046a-d9ba-415e-bd32-0966d03e95ce:
+                    required: '0'
+                    sortOrder: '1'
+                  ce43600e-f005-47e4-9025-90b7ed57e1c8:
+                    required: '0'
+                    sortOrder: '2'
+    siteSettings:
+      89c1c2cc-4b65-4e57-96b9-163c7c77dd79:
+        enabledByDefault: '1'
+        hasUrls: '0'
+        uriFormat: null
+        template: null
+  e4e6851c-1ff9-455f-b653-7dd857a5ef8d:
+    name: Homepage
+    handle: homepage
+    type: single
+    enableVersioning: '1'
+    propagateEntries: '1'
+    entryTypes:
+      3ef7fe76-efa5-49d0-b0ef-3c158df95197:
+        name: Homepage
+        handle: homepage
+        hasTitleField: '1'
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: '1'
+        fieldLayouts:
+          3c1d03b6-feca-4398-8c69-d24d7fd5ec43:
+            tabs:
+              -
+                name: Content
+                sortOrder: '1'
+                fields:
+                  c8c0558b-2690-4251-95e7-019eb336ea70:
+                    required: '1'
+                    sortOrder: '1'
+    siteSettings:
+      89c1c2cc-4b65-4e57-96b9-163c7c77dd79:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        uriFormat: __home__
+        template: index
+  6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5:
+    name: News
+    handle: news
+    type: channel
+    enableVersioning: '1'
+    propagateEntries: '1'
+    entryTypes:
+      954560fa-b63d-457c-b5b7-01f2d586bd2a:
+        name: News
+        handle: news
+        hasTitleField: '1'
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: '1'
+        fieldLayouts:
+          64cb20d2-b207-4626-be5d-294f410a0ffd:
+            tabs:
+              -
+                name: Content
+                sortOrder: '1'
+                fields:
+                  c8c0558b-2690-4251-95e7-019eb336ea70:
+                    required: '1'
+                    sortOrder: '1'
+                  e418f2ee-4b93-43b1-8710-5c01c799e188:
+                    required: '0'
+                    sortOrder: '2'
+    siteSettings:
+      89c1c2cc-4b65-4e57-96b9-163c7c77dd79:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        uriFormat: 'news/{postDate.year}/{slug}'
+        template: news/_entry
+  afbb9b5e-f2f8-4dec-a645-b6393423e0a3:
+    name: Notifications
+    handle: notifications
+    type: channel
+    enableVersioning: '1'
+    propagateEntries: '1'
+    entryTypes:
+      4debb1f2-dc3b-4ded-b74e-dc5b226331a7:
+        name: Notifications
+        handle: notifications
+        hasTitleField: '1'
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: '1'
+        fieldLayouts:
+          2c69e778-c29a-4ee9-a13d-9bf6b560306d:
+            tabs:
+              -
+                name: 'Tab 1'
+                sortOrder: '1'
+                fields:
+                  a7c46927-5cd8-4a91-92f0-7eac489cf759:
+                    required: '0'
+                    sortOrder: '1'
+                  c8c0558b-2690-4251-95e7-019eb336ea70:
+                    required: '0'
+                    sortOrder: '2'
+    siteSettings:
+      89c1c2cc-4b65-4e57-96b9-163c7c77dd79:
+        enabledByDefault: '1'
+        hasUrls: '0'
+        uriFormat: null
+        template: null
+  933ec71b-0d84-44ba-9d1f-97b2f0110f64:
+    name: Members
+    handle: members
+    type: channel
+    enableVersioning: '1'
+    propagateEntries: '1'
+    entryTypes:
+      a43723b4-cba5-4b51-ac28-54300f334394:
+        name: Members
+        handle: members
+        hasTitleField: '1'
+        titleLabel: 'Full Name'
+        titleFormat: null
+        sortOrder: '1'
+        fieldLayouts:
+          4958d637-d118-4f3a-8982-45b6021ed4d4:
+            tabs:
+              -
+                name: 'Tab 1'
+                sortOrder: '1'
+                fields:
+                  2df5f4d1-d81e-4d28-93e6-58ac02608970:
+                    required: '0'
+                    sortOrder: '1'
+    siteSettings:
+      89c1c2cc-4b65-4e57-96b9-163c7c77dd79:
+        enabledByDefault: '1'
+        hasUrls: '0'
+        uriFormat: null
+        template: null
+  65c12e51-71dc-4969-a6b7-e6d76ec603c1:
+    name: Locations
+    handle: locations
+    type: channel
+    enableVersioning: '1'
+    propagateEntries: '1'
+    entryTypes:
+      84d085d7-7933-48b9-b563-94ed772f6f7e:
+        name: Locations
+        handle: locations
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          5949b964-28fa-43cd-993e-e34864b84a75:
+            tabs:
+              -
+                name: Default
+                sortOrder: 1
+                fields:
+                  61387fdc-b618-47c5-a882-c3704b756184:
+                    required: false
+                    sortOrder: 1
+                  9818698b-51c9-4ff0-b5bd-c06a08221bef:
+                    required: false
+                    sortOrder: 2
+                  197166e4-2cc7-4b16-a401-c8d0815e2f86:
+                    required: false
+                    sortOrder: 3
+                  de711386-c50f-45d3-b980-069b7047d3ad:
+                    required: false
+                    sortOrder: 4
+    siteSettings:
+      89c1c2cc-4b65-4e57-96b9-163c7c77dd79:
+        enabledByDefault: '1'
+        hasUrls: '0'
+        uriFormat: null
+        template: null
+  6762084b-227f-4238-82f2-4fc4d058f0ff:
+    name: Events
+    handle: events
+    type: channel
+    enableVersioning: '1'
+    propagateEntries: '1'
+    entryTypes:
+      2c08326d-3fb5-4975-9b22-0386fe227bb7:
+        name: Events
+        handle: events
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          69a5a84c-a5c2-45c5-b1c8-2c8facb4c8d9:
+            tabs:
+              -
+                name: Default
+                sortOrder: 1
+                fields:
+                  8cec34cd-422b-4b79-8174-23de22444ed7:
+                    required: false
+                    sortOrder: 1
+                  9a8d26cb-096f-4d5a-a077-45a1157f22af:
+                    required: false
+                    sortOrder: 2
+                  095d7967-c1d7-4e39-811c-0a9a9454dbd2:
+                    required: false
+                    sortOrder: 3
+                  c8c0558b-2690-4251-95e7-019eb336ea70:
+                    required: false
+                    sortOrder: 4
+              -
+                name: Location
+                sortOrder: 2
+                fields:
+                  36ced3f6-7b0e-44fb-b843-a6000e70ca68:
+                    required: false
+                    sortOrder: 1
+                  fa155aa5-45f1-45be-afbc-fea1cf5b6fac:
+                    required: false
+                    sortOrder: 2
+                  9818698b-51c9-4ff0-b5bd-c06a08221bef:
+                    required: false
+                    sortOrder: 3
+                  61387fdc-b618-47c5-a882-c3704b756184:
+                    required: false
+                    sortOrder: 4
+                  197166e4-2cc7-4b16-a401-c8d0815e2f86:
+                    required: false
+                    sortOrder: 5
+                  de711386-c50f-45d3-b980-069b7047d3ad:
+                    required: false
+                    sortOrder: 6
+              -
+                name: Images
+                sortOrder: 3
+                fields:
+                  58ca8dd4-bff5-45ad-803a-3d5d7b1988e0:
+                    required: false
+                    sortOrder: 1
+                  e6a370f2-a29b-47bc-8180-93ae01a297e8:
+                    required: false
+                    sortOrder: 2
+                  217831e5-2628-4306-88fc-b409fa0db4b3:
+                    required: false
+                    sortOrder: 3
+              -
+                name: SEO
+                sortOrder: 4
+                fields:
+                  65d30588-4188-41e0-bd8f-d8d267e48ad6:
+                    required: false
+                    sortOrder: 1
+      20f141af-517c-48d4-a351-e911870df410:
+        name: 'Friday Night Feature'
+        handle: fridayNightFeature
+        hasTitleField: '1'
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: '5'
+        fieldLayouts:
+          fac1ac67-e360-46fe-ad23-27fac69c9268:
+            tabs:
+              -
+                name: Default
+                sortOrder: '1'
+                fields:
+                  8cec34cd-422b-4b79-8174-23de22444ed7:
+                    required: '0'
+                    sortOrder: '1'
+                  9a8d26cb-096f-4d5a-a077-45a1157f22af:
+                    required: '0'
+                    sortOrder: '2'
+                  c8c0558b-2690-4251-95e7-019eb336ea70:
+                    required: '0'
+                    sortOrder: '3'
+                  2e01e98a-a387-444c-aaa0-bb12f04e6013:
+                    required: '0'
+                    sortOrder: '4'
+              -
+                name: Location
+                sortOrder: '2'
+                fields:
+                  36ced3f6-7b0e-44fb-b843-a6000e70ca68:
+                    required: '0'
+                    sortOrder: '1'
+                  fa155aa5-45f1-45be-afbc-fea1cf5b6fac:
+                    required: '0'
+                    sortOrder: '2'
+      4702774f-1f9c-44da-9cb0-f8068227c00d:
+        name: 'Business Meeting'
+        handle: businessMeeting
+        hasTitleField: '0'
+        titleLabel: null
+        titleFormat: 'AOW Business Meeting'
+        sortOrder: '4'
+        fieldLayouts:
+          ea11386e-a3aa-433b-9388-3e5c27434267:
+            tabs:
+              -
+                name: Default
+                sortOrder: '1'
+                fields:
+                  8cec34cd-422b-4b79-8174-23de22444ed7:
+                    required: '0'
+                    sortOrder: '1'
+                  9a8d26cb-096f-4d5a-a077-45a1157f22af:
+                    required: '0'
+                    sortOrder: '2'
+                  c8c0558b-2690-4251-95e7-019eb336ea70:
+                    required: '0'
+                    sortOrder: '3'
+              -
+                name: Location
+                sortOrder: '2'
+                fields:
+                  36ced3f6-7b0e-44fb-b843-a6000e70ca68:
+                    required: '0'
+                    sortOrder: '1'
+                  fa155aa5-45f1-45be-afbc-fea1cf5b6fac:
+                    required: '0'
+                    sortOrder: '2'
+              -
+                name: Images
+                sortOrder: '3'
+                fields:
+                  58ca8dd4-bff5-45ad-803a-3d5d7b1988e0:
+                    required: '0'
+                    sortOrder: '1'
+                  e6a370f2-a29b-47bc-8180-93ae01a297e8:
+                    required: '0'
+                    sortOrder: '2'
+                  217831e5-2628-4306-88fc-b409fa0db4b3:
+                    required: '0'
+                    sortOrder: '3'
+              -
+                name: SEO
+                sortOrder: '4'
+                fields:
+                  52c49eea-a5f0-4c04-a38b-eaeddda27a8b:
+                    required: '0'
+                    sortOrder: '1'
+      0e10212c-8bc9-438d-b6ce-86b89945f70e:
+        name: 'Game Night'
+        handle: gameNight
+        hasTitleField: '1'
+        titleLabel: ''
+        titleFormat: null
+        sortOrder: '2'
+        fieldLayouts:
+          f39041c6-377f-4b86-a7a2-942b2802eb8f:
+            tabs:
+              -
+                name: Default
+                sortOrder: '1'
+                fields:
+                  8cec34cd-422b-4b79-8174-23de22444ed7:
+                    required: '0'
+                    sortOrder: '1'
+                  9a8d26cb-096f-4d5a-a077-45a1157f22af:
+                    required: '0'
+                    sortOrder: '2'
+                  095d7967-c1d7-4e39-811c-0a9a9454dbd2:
+                    required: '0'
+                    sortOrder: '3'
+                  c8c0558b-2690-4251-95e7-019eb336ea70:
+                    required: '0'
+                    sortOrder: '4'
+              -
+                name: Location
+                sortOrder: '2'
+                fields:
+                  36ced3f6-7b0e-44fb-b843-a6000e70ca68:
+                    required: '0'
+                    sortOrder: '1'
+                  fa155aa5-45f1-45be-afbc-fea1cf5b6fac:
+                    required: '0'
+                    sortOrder: '2'
+              -
+                name: Images
+                sortOrder: '3'
+                fields:
+                  58ca8dd4-bff5-45ad-803a-3d5d7b1988e0:
+                    required: '0'
+                    sortOrder: '1'
+                  e6a370f2-a29b-47bc-8180-93ae01a297e8:
+                    required: '0'
+                    sortOrder: '2'
+                  217831e5-2628-4306-88fc-b409fa0db4b3:
+                    required: '0'
+                    sortOrder: '3'
+              -
+                name: SEO
+                sortOrder: '4'
+                fields:
+                  77eb1abd-2c05-4a44-9f2f-894c20005116:
+                    required: '0'
+                    sortOrder: '1'
+      a43fc7dd-3996-4db3-96b1-1a0ec4befc48:
+        name: 'Breakfast Salon'
+        handle: breakfastSalon
+        hasTitleField: '0'
+        titleLabel: null
+        titleFormat: 'Third Saturday Breakfast Salon'
+        sortOrder: '6'
+        fieldLayouts:
+          76a353b1-7e8d-47c4-8d55-3c3ff80fb1bb:
+            tabs:
+              -
+                name: Default
+                sortOrder: '1'
+                fields:
+                  8cec34cd-422b-4b79-8174-23de22444ed7:
+                    required: '0'
+                    sortOrder: '1'
+                  9a8d26cb-096f-4d5a-a077-45a1157f22af:
+                    required: '0'
+                    sortOrder: '2'
+                  c8c0558b-2690-4251-95e7-019eb336ea70:
+                    required: '0'
+                    sortOrder: '3'
+              -
+                name: Location
+                sortOrder: '2'
+                fields:
+                  36ced3f6-7b0e-44fb-b843-a6000e70ca68:
+                    required: '0'
+                    sortOrder: '1'
+                  fa155aa5-45f1-45be-afbc-fea1cf5b6fac:
+                    required: '0'
+                    sortOrder: '2'
+      d1561531-26c9-481c-8207-805406ff3950:
+        name: 'Thrid Saturday Salon'
+        handle: thridSaturdaySalon
+        hasTitleField: '1'
+        titleLabel: 'Third Saturday Salon'
+        titleFormat: null
+        sortOrder: '7'
+        fieldLayouts:
+          7264c10d-2d04-4e83-956b-72f98635b1d5:
+            tabs:
+              -
+                name: Events
+                sortOrder: '1'
+                fields:
+                  9a8d26cb-096f-4d5a-a077-45a1157f22af:
+                    required: '0'
+                    sortOrder: '1'
+                  7a82edfb-17e4-46bd-832f-c176d3d2bfa1:
+                    required: '0'
+                    sortOrder: '2'
+                  36ced3f6-7b0e-44fb-b843-a6000e70ca68:
+                    required: '0'
+                    sortOrder: '3'
+                  fa155aa5-45f1-45be-afbc-fea1cf5b6fac:
+                    required: '0'
+                    sortOrder: '4'
+      2ee68d50-926d-4419-a9d5-dac15d8813d5:
+        name: 'Movie Night'
+        handle: movieNight
+        hasTitleField: '1'
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: '3'
+        fieldLayouts:
+          c29bc757-b353-42b4-b5c8-1a1b1d91846d:
+            tabs:
+              -
+                name: Default
+                sortOrder: '1'
+                fields:
+                  8cec34cd-422b-4b79-8174-23de22444ed7:
+                    required: '0'
+                    sortOrder: '1'
+                  9a8d26cb-096f-4d5a-a077-45a1157f22af:
+                    required: '0'
+                    sortOrder: '2'
+                  095d7967-c1d7-4e39-811c-0a9a9454dbd2:
+                    required: '0'
+                    sortOrder: '3'
+                  c8c0558b-2690-4251-95e7-019eb336ea70:
+                    required: '0'
+                    sortOrder: '4'
+                  2e01e98a-a387-444c-aaa0-bb12f04e6013:
+                    required: '0'
+                    sortOrder: '5'
+              -
+                name: Location
+                sortOrder: '2'
+                fields:
+                  36ced3f6-7b0e-44fb-b843-a6000e70ca68:
+                    required: '0'
+                    sortOrder: '1'
+                  fa155aa5-45f1-45be-afbc-fea1cf5b6fac:
+                    required: '0'
+                    sortOrder: '2'
+                  a890bb64-13be-4b40-a001-6a985a2c789c:
+                    required: '0'
+                    sortOrder: '3'
+                  197166e4-2cc7-4b16-a401-c8d0815e2f86:
+                    required: '0'
+                    sortOrder: '4'
+                  de711386-c50f-45d3-b980-069b7047d3ad:
+                    required: '0'
+                    sortOrder: '5'
+    siteSettings:
+      89c1c2cc-4b65-4e57-96b9-163c7c77dd79:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        uriFormat: 'events/{dateAndTime[0].startDateAndTime|date("Y")}/{dateAndTime[0].startDateAndTime|date("m")}/{% if object.type == "gameNight" %}game-night{% elseif object.type == "businessMeeting"%}business-meeting{% elseif object.type == "movieNight"%}movie-night{% elseif object.type == "fridayNightFeature"%}friday-night-feature{% elseif object.type == "breakfastSalon"%}breakfast-salon{% else %}{slug}{% endif %}'
+        template: events/_entry
+  560057f1-4adf-4c53-8244-304b4787cfd4:
+    name: Minutes
+    handle: minutes
+    type: channel
+    enableVersioning: '1'
+    propagateEntries: '1'
+    entryTypes:
+      269ccae2-6456-4d07-aa14-8b13170f1d0b:
+        name: Minutes
+        handle: minutes
+        hasTitleField: '1'
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: '1'
+        fieldLayouts:
+          7b7354bf-713b-4122-876b-731716af7151:
+            tabs:
+              -
+                name: Default
+                sortOrder: '1'
+                fields:
+                  c8c0558b-2690-4251-95e7-019eb336ea70:
+                    required: '0'
+                    sortOrder: '1'
+                  476d1687-4d60-441d-9b8d-2913444d7ae5:
+                    required: '0'
+                    sortOrder: '2'
+              -
+                name: 'SEO Meta'
+                sortOrder: '2'
+                fields:
+                  52c49eea-a5f0-4c04-a38b-eaeddda27a8b:
+                    required: '0'
+                    sortOrder: '1'
+    siteSettings:
+      89c1c2cc-4b65-4e57-96b9-163c7c77dd79:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        uriFormat: 'minutes/{postDate.year}-{postDate.month}'
+        template: minutes/_entry
+siteGroups:
+  9ba806a3-3220-4dc6-b681-1f6174b016b2:
+    name: 'OutWorlders (en-US)'
+sites:
+  89c1c2cc-4b65-4e57-96b9-163c7c77dd79:
+    name: 'OutWorlders (en-US)'
+    handle: en_us
+    language: en-US
+    hasUrls: '1'
+    baseUrl: '@baseUrl'
+    sortOrder: '1'
+    primary: '1'
+    siteGroup: 9ba806a3-3220-4dc6-b681-1f6174b016b2
+system:
+  edition: pro
+  live: true
+  name: 'OutWorlders, Inc.'
+  timeZone: America/New_York
+  schemaVersion: 3.1.25
+tagGroups:
+  d6a56adf-ca23-4bd3-8597-088543119dbf:
+    name: Default
+    handle: default
+users:
+  requireEmailVerification: true
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoVolumeUid: null
+  photoSubpath: ''
+  groups:
+    879fd1e1-e237-45d8-97fb-e1bb3bf223cc:
+      name: 'Officers and Admin'
+      handle: officersAndAdmin
+      permissions:
+        - accesssitewhensystemisoff
+        - accesscpwhensystemisoff
+        - 'utility:updates'
+        - accessplugin-redirectmanager
+        - accesscp
+        - registerusers
+        - administrateusers
+        - moderateusers
+        - assignuserpermissions
+        - assignusergroups
+        - editusers
+        - deleteusers
+        - 'createentries:6762084b-227f-4238-82f2-4fc4d058f0ff'
+        - 'publishentries:6762084b-227f-4238-82f2-4fc4d058f0ff'
+        - 'deleteentries:6762084b-227f-4238-82f2-4fc4d058f0ff'
+        - 'publishpeerentries:6762084b-227f-4238-82f2-4fc4d058f0ff'
+        - 'deletepeerentries:6762084b-227f-4238-82f2-4fc4d058f0ff'
+        - 'editpeerentries:6762084b-227f-4238-82f2-4fc4d058f0ff'
+        - 'publishpeerentrydrafts:6762084b-227f-4238-82f2-4fc4d058f0ff'
+        - 'deletepeerentrydrafts:6762084b-227f-4238-82f2-4fc4d058f0ff'
+        - 'editpeerentrydrafts:6762084b-227f-4238-82f2-4fc4d058f0ff'
+        - 'editentries:6762084b-227f-4238-82f2-4fc4d058f0ff'
+        - 'publishentries:e4e6851c-1ff9-455f-b653-7dd857a5ef8d'
+        - 'publishpeerentrydrafts:e4e6851c-1ff9-455f-b653-7dd857a5ef8d'
+        - 'deletepeerentrydrafts:e4e6851c-1ff9-455f-b653-7dd857a5ef8d'
+        - 'editpeerentrydrafts:e4e6851c-1ff9-455f-b653-7dd857a5ef8d'
+        - 'editentries:e4e6851c-1ff9-455f-b653-7dd857a5ef8d'
+        - 'createentries:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+        - 'publishentries:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+        - 'deleteentries:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+        - 'publishpeerentries:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+        - 'deletepeerentries:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+        - 'editpeerentries:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+        - 'publishpeerentrydrafts:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+        - 'deletepeerentrydrafts:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+        - 'editpeerentrydrafts:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+        - 'editentries:65c12e51-71dc-4969-a6b7-e6d76ec603c1'
+        - 'createentries:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+        - 'publishentries:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+        - 'deleteentries:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+        - 'publishpeerentries:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+        - 'deletepeerentries:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+        - 'editpeerentries:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+        - 'publishpeerentrydrafts:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+        - 'deletepeerentrydrafts:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+        - 'editpeerentrydrafts:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+        - 'editentries:933ec71b-0d84-44ba-9d1f-97b2f0110f64'
+        - 'createentries:560057f1-4adf-4c53-8244-304b4787cfd4'
+        - 'publishentries:560057f1-4adf-4c53-8244-304b4787cfd4'
+        - 'deleteentries:560057f1-4adf-4c53-8244-304b4787cfd4'
+        - 'publishpeerentries:560057f1-4adf-4c53-8244-304b4787cfd4'
+        - 'deletepeerentries:560057f1-4adf-4c53-8244-304b4787cfd4'
+        - 'editpeerentries:560057f1-4adf-4c53-8244-304b4787cfd4'
+        - 'publishpeerentrydrafts:560057f1-4adf-4c53-8244-304b4787cfd4'
+        - 'deletepeerentrydrafts:560057f1-4adf-4c53-8244-304b4787cfd4'
+        - 'editpeerentrydrafts:560057f1-4adf-4c53-8244-304b4787cfd4'
+        - 'editentries:560057f1-4adf-4c53-8244-304b4787cfd4'
+        - 'createentries:6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5'
+        - 'publishentries:6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5'
+        - 'deleteentries:6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5'
+        - 'publishpeerentries:6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5'
+        - 'deletepeerentries:6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5'
+        - 'editpeerentries:6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5'
+        - 'publishpeerentrydrafts:6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5'
+        - 'deletepeerentrydrafts:6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5'
+        - 'editpeerentrydrafts:6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5'
+        - 'editentries:6c6b1729-63ed-46f4-9a3b-5ffb5bf748f5'
+        - 'createentries:afbb9b5e-f2f8-4dec-a645-b6393423e0a3'
+        - 'publishentries:afbb9b5e-f2f8-4dec-a645-b6393423e0a3'
+        - 'deleteentries:afbb9b5e-f2f8-4dec-a645-b6393423e0a3'
+        - 'publishpeerentries:afbb9b5e-f2f8-4dec-a645-b6393423e0a3'
+        - 'deletepeerentries:afbb9b5e-f2f8-4dec-a645-b6393423e0a3'
+        - 'editpeerentries:afbb9b5e-f2f8-4dec-a645-b6393423e0a3'
+        - 'publishpeerentrydrafts:afbb9b5e-f2f8-4dec-a645-b6393423e0a3'
+        - 'deletepeerentrydrafts:afbb9b5e-f2f8-4dec-a645-b6393423e0a3'
+        - 'editpeerentrydrafts:afbb9b5e-f2f8-4dec-a645-b6393423e0a3'
+        - 'editentries:afbb9b5e-f2f8-4dec-a645-b6393423e0a3'
+        - 'createentries:4c5508a2-7325-4f41-b4c4-dcff4efc82e7'
+        - 'publishentries:4c5508a2-7325-4f41-b4c4-dcff4efc82e7'
+        - 'deleteentries:4c5508a2-7325-4f41-b4c4-dcff4efc82e7'
+        - 'publishpeerentries:4c5508a2-7325-4f41-b4c4-dcff4efc82e7'
+        - 'deletepeerentries:4c5508a2-7325-4f41-b4c4-dcff4efc82e7'
+        - 'editpeerentries:4c5508a2-7325-4f41-b4c4-dcff4efc82e7'
+        - 'publishpeerentrydrafts:4c5508a2-7325-4f41-b4c4-dcff4efc82e7'
+        - 'deletepeerentrydrafts:4c5508a2-7325-4f41-b4c4-dcff4efc82e7'
+        - 'editpeerentrydrafts:4c5508a2-7325-4f41-b4c4-dcff4efc82e7'
+        - 'editentries:4c5508a2-7325-4f41-b4c4-dcff4efc82e7'
+        - 'editglobalset:733c595c-0486-4aa4-ba9e-6f918369fed8'
+        - accessplugin-seomatic
+        - 'editglobalset:02bbdd64-8ead-461f-858c-e6944f6693ca'
+        - 'editglobalset:3209a06b-8a71-43e7-8c36-6d461253ebe5'
+        - 'editglobalset:ee001efb-e7a7-4401-b482-d0e609e8f4c3'
+        - 'editglobalset:139acc48-3a8b-41c6-b649-c32665da1ac6'
+        - 'editglobalset:39fb18ac-e218-491a-9a1a-fd3677c96705'
+        - 'saveassetinvolume:873cf9d4-260a-42dd-9ff3-e923a182f6ad'
+        - 'createfoldersinvolume:873cf9d4-260a-42dd-9ff3-e923a182f6ad'
+        - 'deletefilesandfoldersinvolume:873cf9d4-260a-42dd-9ff3-e923a182f6ad'
+        - 'viewvolume:873cf9d4-260a-42dd-9ff3-e923a182f6ad'
+        - 'saveassetinvolume:70db9195-bb39-41b8-aa7a-3606cd291bcb'
+        - 'createfoldersinvolume:70db9195-bb39-41b8-aa7a-3606cd291bcb'
+        - 'deletefilesandfoldersinvolume:70db9195-bb39-41b8-aa7a-3606cd291bcb'
+        - 'viewvolume:70db9195-bb39-41b8-aa7a-3606cd291bcb'
+        - 'saveassetinvolume:4d8ce42f-6ff6-44c6-8092-1eee80adbb90'
+        - 'createfoldersinvolume:4d8ce42f-6ff6-44c6-8092-1eee80adbb90'
+        - 'deletefilesandfoldersinvolume:4d8ce42f-6ff6-44c6-8092-1eee80adbb90'
+        - 'viewvolume:4d8ce42f-6ff6-44c6-8092-1eee80adbb90'
+volumes:
+  873cf9d4-260a-42dd-9ff3-e923a182f6ad:
+    name: Minutes
+    handle: minutes
+    type: craft\volumes\Local
+    hasUrls: '1'
+    url: null
+    settings:
+      path: '@basePath/uploads/v1/minutes'
+      url: '@baseUrl/uploads/v1/minutes'
+    sortOrder: '4'
+  70db9195-bb39-41b8-aa7a-3606cd291bcb:
+    name: SEO
+    handle: seoAssets
+    type: craft\volumes\Local
+    hasUrls: '1'
+    url: null
+    settings:
+      path: '@basePath/uploads/v1/seo'
+      url: '@baseUrl/uploads/v1/seo'
+    sortOrder: '5'
+  4d8ce42f-6ff6-44c6-8092-1eee80adbb90:
+    name: Maps
+    handle: maps
+    type: craft\volumes\Local
+    hasUrls: '1'
+    url: null
+    settings:
+      path: '@basePath/uploads/v1/maps'
+      url: '@baseUrl/uploads/v1/maps'
+    sortOrder: '2'
+  5258e23f-dbfb-4918-bdd0-e7b2249bc177:
+    name: Members
+    handle: members
+    type: craft\volumes\Local
+    hasUrls: '1'
+    url: null
+    settings:
+      path: '@basePath/uploads/v1/members'
+      url: '@baseUrl/uploads/v1/members'
+    sortOrder: '3'
+  d4652767-9334-4057-8335-e80edfa042e6:
+    name: Ads
+    handle: ads
+    type: craft\volumes\Local
+    hasUrls: '1'
+    url: null
+    settings:
+      path: '@basePath/uploads/v1/ads'
+      url: '@baseUrl/uploads/v1/ads'
+    sortOrder: '1'
+  c467deeb-0b5f-4aa4-ba88-e757be0a5459:
+    name: 'User Photos'
+    handle: userPhotos
+    type: craft\volumes\Local
+    hasUrls: '0'
+    url: null
+    settings:
+      path: '@storage/userphotos'
+    sortOrder: '6'

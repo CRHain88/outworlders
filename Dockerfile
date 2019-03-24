@@ -52,8 +52,8 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
 
-VOLUME $(pwd)/dist/craft:/var/www/craft
-VOLUME $(pwd)/dist/public:/var/www/html
+VOLUME $(pwd)/dist/craft3:/var/www/craft
+VOLUME $(pwd)/dist/web:/var/www/html
 VOLUME $(pwd)/dist/uploads:/var/www/uploads
 
 COPY src/apache-config.local.conf /etc/apache2/sites-enabled/000-default.conf

@@ -52,6 +52,9 @@ $ yarn
 
 Migrate Databases
 --------------------------------------------------------------------------------
+
+
+### Restore
 Before doing any development, make sure to get the latest copy of the Database
 from the production server. Advise Smart Vent that you'll be making some updates
 and any edits they make should wait until after the code update is complete.
@@ -71,6 +74,20 @@ and any edits they make should wait until after the code update is complete.
 
   - `$SQL_BACKUP_PATH` is the directory where the `.sql` back up file was
     downloaded.
+
+
+### Backup
+1. Run
+    ```sh
+    $ docker exec outworlders_db_1 \
+      /usr/bin/mysqldump -uroot -proot outwuopz_craft > \
+      outwuopz_craft-backup.sql
+    ```
+2. Log into cPanel phpMyAdmin
+3. Download a backup of the production database
+4. Drop the database
+5. Re-create the database
+6. Import the sql file generated in Step 1
 
 
 Support

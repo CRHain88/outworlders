@@ -1,0 +1,37 @@
+{# Define the site navigation #}
+{% set nav = {
+  home: { title: "Home", uri: "/" },
+  events: { title: "Events", uri: "events" },
+  contact:  { title: "About / Contact", uri: "contact" }
+} %}
+
+<div class="navigation">
+  <div class="navigation__container">
+    <a href="/">
+      <h1 class="navigation__logo">Atlanta OutWorlders</h1>
+    </a>
+
+    <button class="navigation__menu-toggle" aria-pressed="false"><i></i><span>Menu</span></button>
+    <div class="navigation__menu" aria-expanded="false">
+      <ul class="navigation__list navigation__list--sections inline-list" role="navigation">
+        {% for item in nav %}
+          {% set nav_class %}
+            {% if craft.app.request.segments|first == item.uri or craft.app.request.segments|first == '' and item.uri == '/' %}
+              navigation__list-item--sections navigation__list-item--active
+            {% else %}
+              navigation__list-item--sections
+            {% endif %}
+          {% endset %}
+          <li class="{{ nav_class }}">
+            <a class="navigation__menu-link" href="{{ url(item.uri) }}">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <ul class="navigation-list--social social-list inline-list">
+        <li><a class="social-item social-item--facebook" href="https://www.facebook.com/Outworlders" rel="nofollow">Facebook</a></li>
+        <li><a class="social-item social-item--twitter" href="https://twitter.com/outworlders" rel="nofollow">Twitter</a></li>
+        <li><a class="social-item social-item--instagram" href="https://www.instagram.com/outworlders" rel="nofollow">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

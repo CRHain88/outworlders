@@ -1,0 +1,72 @@
+{#
+ # Layout template
+ # ---------------
+ #
+ # This template defines your site’s global layout. It can be
+ # “extended” by other templates to fill in the gaps.
+ #
+ # See Twig’s Template Inheritance documentation for more details:
+ # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
+ #
+ # SEO Managed by SEOMatic Plugin
+ # - Page Title
+ # - Global site tag (gtag.js) - Google Analytics
+ #}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=5">
+
+    {% hook 'seomaticRender' %}
+
+    <link rel="home" href="{{ siteUrl }}" />
+    <link rel="stylesheet" href="/css/styles.min.css"/>
+
+    <style>
+      .card__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+    </style>
+
+    <!-- Termly Cookie Policy -->
+    <script>
+      (function () {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://app.termly.io/embed.min.js';
+        s.id = 'f048ea27-92a1-4514-812b-eab8962626a0';
+        s.setAttribute("data-name", "termly-embed-banner");
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      })();
+    </script>
+    <!-- End Termly Cookie Policy -->
+  </head>
+  <body>
+    <div class="flex-content">
+      <div class="content flex-content--navigation" data-eq--content>
+        {% include "components/_navigation.twig" %}
+      </div>
+
+      <div class="flex-content---main-content">
+        {% include "components/_notification-banner.twig" %}
+
+        {% block content %}
+          <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+          <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+        {% endblock %}
+
+        {% include "components/_footer.twig" %}
+      </div>
+
+      <i class="planet planet--normal"></i>
+    </div>
+
+    <script src="/js/bundle.js.js"></script>
+  </body>
+</html>

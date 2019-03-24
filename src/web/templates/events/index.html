@@ -1,0 +1,50 @@
+{#
+ # Events index template
+ # ---------------------
+ #
+ # This template is loaded whenever http://example.com/events is requested,
+ # because it is located at events/index.html in the public/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+{% do seomatic.meta.seoTitle("Events") %}
+
+{% block content %}
+  {% set currentYear = now|date("Y-m-d") %}
+
+  <main class="content" data-eq--content>
+    <div class="events content__primary [ card card--blue card--light ]">
+      <div class="card__container">
+        <div class="card__header">
+          <h1>Events</h1>
+        </div>
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("-12 hour")} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+1 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+2 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+3 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+4 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+5 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+6 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+7 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+8 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+9 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+10 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+11 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("+12 month"), showWholeMonth: true} %}
+      </div>
+    </div>
+    <div class="events content__primary [ card card--blue card--dark ]">
+      <div class="card__container">
+        <div class="card__header">
+          <h1>Past Events</h1>
+        </div>
+        {% include "components/events/_month.twig" with {startDate: currentYear, showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("-1 month"), showWholeMonth: true} %}
+        {% include "components/events/_month.twig" with {startDate: currentYear|date_modify("-2 month"), showWholeMonth: true} %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

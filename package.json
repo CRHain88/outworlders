@@ -4,7 +4,7 @@
   "description": "Website for the Atlanta OutWorders",
   "main": "index.js",
   "scripts": {
-    "start": "docker-compose up && npm run webpack",
+    "start": "docker-compose up",
     "styleguide": "styleguide --kssSource ./dist/public/css/styles.css --styleSource ./dist/public/css/styles.css --overviewPath README.md --output ./dist/styleguide/ --commonClass sg-common --watch --server --port 3030",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch"

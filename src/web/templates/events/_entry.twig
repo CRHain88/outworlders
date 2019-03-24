@@ -1,0 +1,234 @@
+{#
+ # Events index template
+ # ---------------------
+ #
+ # This template is loaded whenever http://example.com/events is requested,
+ # because it is located at events/index.html in the public/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+  {% set addressData = "" %}
+  {% if entry.address is defined and entry.address != "" %}
+    {% set addressData = entry.address %}
+  {% endif %}
+  {% for block in entry.location.all() %}
+    {% if block.address is defined and block.address != "" %}
+      {% set addressData = block.address %}
+    {% endif %}
+  {% endfor %}
+  {% set addressName = addressData.organization|trim %}
+  {% set addressStreet = addressData.addressLine1|trim ~ " " ~ addressData.addressLine2|trim %}
+  {% set addressCity = addressData.locality|trim %}
+  {% set addressRegion = addressData.administrativeArea|trim %}
+  {% set addressPostalCode = addressData.postalCode|trim %}
+  {% set addressCountry = addressData.country.name|trim %}
+  {% set addressMapLink = addressData.mapUrl('google', {zoom: 5}) %}
+
+  {% set cost %}
+    {% if entry.cost == "0.00" %}
+      FREE!
+    {% else %}
+      ${{ entry.cost }}
+    {% endif %}
+  {% endset %}
+
+  {% set timeOfDay %}
+    {% if entry.dateAndTime[0].startDateAndTime|date("G") < 18 %}
+      day
+    {% else %}
+      night
+    {% endif %}
+  {% endset %}
+
+  {% set mainEntity = seomatic.jsonLd.get('mainEntityOfPage') %}
+  {% set jsonLdEvent = seomatic.jsonLd.create({
+    type: "Event",
+    startDate: entry.dateAndTime[0].startDateAndTime|date("c"),
+    endDate: entry.dateAndTime[0].endDateAndTime|date("c"),
+  }, false) %}
+  {% set jsonLdOffers = seomatic.jsonLd.create({
+    type: "Offer",
+    price: entry.cost,
+    priceCurrency: "USD",
+    availability: "http://schema.org/InStock",
+    validFrom: entry.postDate|date("c"),
+  }, false) %}
+  {% set jsonLdLocation = seomatic.jsonLd.create({
+    type: "Place",
+    name: addressName,
+    address: {
+      type: "PostalAddress",
+      streetAddress: addressStreet,
+      addressLocality: addressCity,
+      addressRegion: addressRegion,
+      postalCode: addressPostalCode,
+      addressCountry: addressCountry,
+    },
+  }, false) %}
+  {% do mainEntity.offers(jsonLdOffers) %}
+  {% do mainEntity.location(jsonLdLocation) %}
+  {% do mainEntity.eventStatus(entry.eventStatus.value) %}
+  {% do mainEntity.startDate(entry.dateAndTime[0].startDateAndTime|date("c")) %}
+  {% do mainEntity.endDate(entry.dateAndTime[0].endDateAndTime|date("c")) %}
+
+  <style>
+    .dynamic-body-copy {
+      margin-top: 1rem;
+    }
+
+    .events__details {
+      margin-top: 1rem;
+    }
+
+    .events__details p {
+      margin: 0;
+    }
+
+    .events__details img {
+      width: 100%;
+    }
+
+    .events__detail-note {
+      margin-top: 1rem;
+    }
+
+  .events-hud {
+    margin-top: 1rem;
+  }
+  </style>
+  <div class="content" data-eq--content>
+    <main class="events content__primary [ card card--blue card--light ]">
+      <article class="card__container">
+        <div class="card__header">
+          <h1>{{ entry }}</h1>
+        </div>
+
+        {% for block in eventDescriptions.eventDescriptions.all() %}
+          {% if block.eventType == entry.type %}
+            <div class="small">
+              {{ block.eventDescription }}
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <div class="events-hud">
+          <a class="events-hud__anchor" href="#event-location">
+            <i class="hud-icon hud-icon--map-marker" aria-label="location"></i>
+            {{ addressName }}
+          </a>
+          <div>
+            {% for block in entry.dateAndTime.all() %}
+              <span class="hud-date">
+                <i class="hud-icon hud-icon--time-of-day hud-icon--{{ timeOfDay|trim }}" aria-label="date"></i>
+                <span>{{ block.startDateAndTime|date("D. M. j") }}</span>
+              </span>
+            {% endfor %}
+            <span class="hud-price">
+              <i class="hud-icon hud-icon--map-price" aria-label="cost"></i>
+              <span>{{ cost }}</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="dynamic-body-copy">
+          {{ entry.body }}
+        </div>
+
+        {% if entry.movies is defined %}
+          <style>
+            .movie {
+              margin-top: 1rem;
+            }
+
+            .movie__link {
+              color: inherit;
+              display: block;
+              text-decoration: none;
+            }
+
+            .movie__header {
+              align-items: baseline;
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+            }
+          </style>
+          {% for block in entry.movies.all() %}
+            <div class="movie">
+              {% set movieContent %}
+                <div class="movie__header">
+                  <h2 class="movie__title">{{ block.movieTitle }}</h2>
+                  <!--p class="movie__show-time">{{ block.movieStartTime|date("g:i A") }}</p-->
+                </div>
+                <p>{{ block.synopsis }}</p>
+              {% endset %}
+
+              {% if block.movieLink != "" %}
+                <a class="movie__link" href="{{ block.movieLink }}" target="_blank" rel="nofollow">
+                  {{ movieContent }}
+                </a>
+              {% else %}
+                {{ movieContent}}
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        <div class="events__details">
+          <h3>Cost?</h3>
+          <p class="small">{{ cost }}</p>
+        </div>
+
+        <div class="events__details">
+          <h3>When?</h3>
+          {% for block in entry.dateAndTime.all() %}
+            <p class="small">{{ block.startDateAndTime|date("l, F d, Y") }}</p>
+            <p class="small">{{ block.startDateAndTime|date("g:i A") }}&mdash;{{ block.endDateAndTime|date("g:i A") }}</p>
+          {% endfor %}
+        </div>
+
+        <div class="events__details">
+          <style>
+            .location__notes > p {
+              font-size: .75rem;
+            }
+          </style>
+          <h3 id="event-location">Where?</h3>
+          {% if addressName %}{{ addressName }}<br />{% endif %}
+          {% if addressStreet %}{{ addressStreet }}<br />{% endif %}
+          {% if addressCity %}{{ addressCity }}, {% endif %}
+          {% if addressRegion %}{{ addressRegion }} {% endif %}
+          {% if addressPostalCode %}{{ addressPostalCode }}{% endif %}
+
+          <div>
+            {% set locationNotes = [] %}
+
+            {% for block in entry.locationNotes.all() %}
+              {% set locationNotes = locationNotes|merge([block])%}
+            {% endfor %}
+
+            {% for block in entry.location.all() %}
+              {% for block in block.locationNotes.all() %}
+                {% set locationNotes = locationNotes|merge([block])%}
+              {% endfor %}
+            {% endfor %}
+
+            {% for block in locationNotes.all() %}
+              <div class="events__detail-note">
+                <h4>{{ block.noteTitle }}</h4>
+                <div class="small">
+                  {{ block.noteText }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </article>
+    </main>
+  </div>
+{% endblock %}

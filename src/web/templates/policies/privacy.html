@@ -1,0 +1,23 @@
+{#
+ # Privacy Policy index template
+ # -----------------------------
+ #
+ # This template is loaded whenever http://example.com/policies/privacy is requested,
+ # because it is located at contact/index.html in the public/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+{% do seomatic.meta.seoTitle("Privacy Policy") %}
+
+{% block content %}
+  <div class="content" data-eq--content>
+    <main class="content__primary [ card card--blue card--light ]">
+      <iframe width="100%" style="height: 70vh" src="https://app.termly.io/document/privacy-policy/c5f6015d-52d0-4804-b415-6cadc9e739e3" frameborder="0" allowfullscreen>
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+    </main>
+  </div>
+{% endblock %}

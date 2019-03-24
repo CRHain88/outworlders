@@ -1,0 +1,65 @@
+<li class="event" itemscope="itemscope" itemtype="http://schema.org/Event">
+  <a class="event__link" href="{{ entry.url }}" itemprop="url">
+    {% for asset in entry.adSquare.all() %}
+      <img class="event__image" height="60" width="60" src="{{ asset.getUrl() }}" />
+    {% endfor%}
+    <div class="event__details">
+      <meta itemprop="description" content="Come have fun">
+      <div itemprop="isAccessibleForFree" content="true">
+        <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/AggregateOffer">
+          <meta itemprop="price" content="{{ entry.cost }}">
+          <meta itemprop="priceCurrency" content="USD">
+          <meta itemprop="availability" content="http://schema.org/InStock">
+        </div>
+        <meta itemprop="eventStatus" content="http://schema.org/{{ entry.eventStatus }}">
+      </div>
+      {% for block in entry.dateAndTime.all() %}
+        <div class="event__date">
+          <h3 class="event__start-date" itemprop="startDate" content="{{ block.startDateAndTime|date(" c") }}"="c") }}"">{{ block.startDateAndTime|date("d l") }}</h3>
+          <meta itemprop="endDate" content="{{ block.endDateAndTime|date(" c") }}"="c") }}"">
+          <p class="event__start-time">{{ block.startDateAndTime|date("g:i A") }}</p>
+        </div>
+      {% endfor %}
+
+      <p itemprop="name">{{ entry }}</p>
+
+      {% set addressData = "" %}
+      {% if entry.address is defined and entry.address != "" %}
+        {% set addressData = entry.address %}
+      {% endif %}
+      {% for block in entry.location.all() %}
+        {% if block.address is defined and block.address != "" %}
+          {% set addressData = block.address %}
+        {% endif %}
+      {% endfor %}
+      {% set addressName = addressData.organization|trim %}
+      {% set addressStreet = addressData.addressLine1|trim ~ " " ~ addressData.addressLine2|trim %}
+      {% set addressCity = addressData.locality|trim %}
+      {% set addressRegion = addressData.administrativeArea|trim %}
+      {% set addressPostalCode = addressData.postalCode|trim %}
+      {% set addressCountry = addressData.country.name|trim %}
+      {% set addressMapLink = addressData.mapUrl('google', {zoom: 5}) %}
+
+      <span class="small" itemprop="location" itemscope="itemscope" itemtype="http://schema.org/Place">
+        {% if addressName %}<meta itemprop="name" content="{{ addressName }}">{% endif %}
+        <span itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
+          {% if addressName %}<meta itemprop="name" content="{{ addressName }}">{% endif %}
+          {% if addressStreet %}
+            <span itemprop="streetAddress">{{ addressStreet|trim }}</span>.&nbsp;
+          {% endif %}
+          {% if addressCity %}<span itemprop="streetAddress"><span itemprop="addressLocality">{{ addressCity }}</span>,&nbsp;{% endif %}
+          {% if addressRegion %}<span itemprop="streetAddress"><span itemprop="addressRegion">{{ addressRegion }}</span>&nbsp;{% endif %}
+          {% if addressRegion %}<span itemprop="postalCode">{{ addressPostalCode }}</span>{% endif %}
+        </span>
+      </span>
+    </div>
+  </a>
+
+  <div class="action-bar">
+    <a class="action-link" href="{{ entry.url }}" itemprop="url">More Info</a>
+    {% if addressMapLink %}
+      <a class="action-link" href="{{ addressMapLink }}" data-map-link="directions">Directions</a>
+    {% endif %}
+    {# <a class="action-link" href>Share</a> #}
+  </div>
+</li>

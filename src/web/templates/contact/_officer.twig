@@ -1,0 +1,35 @@
+{% set officerImage %}
+  <i class="officer__image officer__image--placeholder" itemprop="image"></i>
+{% endset %}
+
+{% for member in entry.members.all() %}
+  {% if member.memberHeadshot|length %}
+    {% for asset in member.memberHeadshot.all() %}
+      {% set officerImage %}
+        <img class="officer__image" src="{{ asset.url }}" alt="{{ asset.title }}">
+      {% endset %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+<a class="officer" href="mailto:{{ entry.emailAddress }}" itemprop="employee" itemscope itemtype="http://schema.org/OrganizationRole">
+  <div itemprop="member" itemscope itemtype="http://schema.org/Person">
+    {{ officerImage }}
+  </div>
+
+  <div class="officer__text">
+    <h3 class="officer__title card__color-text" itemprop="roleName">
+      {{ entry }}
+    </h3>
+
+    {% for member in entry.members.all() %}
+      <div itemprop="member" itemscope itemtype="http://schema.org/Person">
+        <h4 class="h2 officer__name" itemprop="name">{{ member }}</h4>
+      </div>
+    {% endfor %}
+
+    <span class="officer__email" itemprop="email">
+      {{ entry.emailAddress }}
+    </span>
+  </div>
+</a>

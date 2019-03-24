@@ -1,6 +1,7 @@
 /dist
 /.tmp
 /src/craft-db-config.php
+/src/craft-dot-env-config
 
 ################################################################################
 # Craft CMS

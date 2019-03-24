@@ -1,0 +1,53 @@
+{#
+ # Month's event template
+ # ---------------
+ #
+ # Params:
+ # - currentDate {Date}
+ #   The starting point for the template. It will use this value to find events
+ #   in that month.
+ #
+ # - showWholeMonth {Boolean[false]}
+ #   A boolean to determine if the template should return events that have
+ #   already happened in the specificed month. This is intended to be used when
+ #   showing future months relative to today's current date.
+ #
+ # Example:
+ #
+ # ```twig
+ # {% include "components/events/_month.twig" with {
+ #     startDate: now|date_modify("+1 month"),
+ #     showWholeMonth: true
+ # } %}
+ # ```
+ #}
+
+{% if showWholeMonth is defined %}
+  {% set startDate = date(startDate|date("Y-m-01")) %}
+{% endif %}
+
+{% set currentMonth = startDate|date("F") %}
+{% set currentMonthTotalDays = startDate|date('t') %}
+{% set currentMonthLastDay  = date(startDate|date("Y-m-") ~ currentMonthTotalDays) %}
+
+{% set allEvents = craft.entries.section('events') %}
+{% set visibleEvents = [] %}
+
+{% for entry in allEvents.all() %}
+  {% for block in entry.dateAndTime.all() %}
+    {% if block.startDateAndTime >= startDate and block.startDateAndTime <= currentMonthLastDay and loop.index == 1 %}
+      {% set visibleEvents = visibleEvents|merge([{sortDate: block.startDateAndTime|date("Y-m-d"), entry: entry}]) %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% set sortedEvents = visibleEvents | supersort('sortAs', '{sortDate}') %}
+
+{% if sortedEvents|length %}
+  <h2>{{ currentMonth }}</h2>
+  <ul class="events__list">
+    {% for entry in sortedEvents %}
+      {% include "components/events/_event.twig" with { entry: entry.entry } %}
+    {% endfor %}
+  </ul>
+{% endif %}

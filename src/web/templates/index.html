@@ -1,0 +1,51 @@
+{#
+ # Homepage template
+ # ---------------
+ #
+ # When this template gets loaded, it will be because someone has accessed
+ # http://yoursite.com/ (without any URI). Craft checks to see if you have
+ # a Single section set to be the Homepage (as you do, by default), and
+ # loads the section’s Template (this file). A special ‘entry’ variable
+ # will already be set for you, assigned to the Homepage entry.
+ #
+ # It's worth noting that even if you didn't have a Homepage Single section,
+ # as long as this template remains at craft/templates/index.html, it
+ # would still be the one to get loaded when accessing http://yoursite.com/,
+ # albeit without an ‘entry’ variable already set for you.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+  <div class="content" data-eq--content>
+    <main class="events content__primary [ card card--blue card--light ]">
+      <div class="card__container">
+        <div class="card__header">
+          <h1>Events</h1>
+          <a class="action-link" href="/events">See all events</a>
+        </div>
+
+        {% include "components/events/_month.twig" with {startDate: now|date_modify("-12 hour")} %}
+        {% include "components/events/_month.twig" with {startDate: now|date_modify("+1 month"), showWholeMonth: true} %}
+      </div>
+    </main>
+    <div class="about-us content__secondary [ card card--orange card--dark ]" data-eq--card="about-us">
+      <div class="card__container">
+        <div class="card__header">
+          <h1>{{aboutUs.text}}</h1>
+        </div>
+        {{aboutUs.body}}
+      </div>
+    </div>
+    <div class="membership content__primary [ card card--teal card--tinted card--dark ]">
+      <div class="card__container">
+        <h1>{{becomeAMember.text}}</h1>
+        {{becomeAMember.body}}
+      </div>
+    </div>
+  </div>
+{% endblock %}
